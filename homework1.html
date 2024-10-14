@@ -72,7 +72,8 @@
 									<p><strong>What it does:</strong> Inferential statistics go beyond describing the data to make generalizations or predictions about a larger population based on a sample.</p>
 									<p><strong>Techniques:</strong> Inferential tools include hypothesis testing, confidence intervals, regression analysis, and p-values.</p>
 									<p><strong>Use:</strong> Inferential statistics answer questions like “What might happen?” or “What is the likelihood of this result occurring?” For instance, if we want to know the average height of the entire population of a country, inferential statistics allows us to use the data from a small group (sample) to make conclusions about the whole population.</p>
-
+                                </div>
+                                <div class="inner">
 									<h3 class="major">Basic Notions</h3>
 
 									<h3>Population</h3>
@@ -124,10 +125,35 @@
 
                                     <p>Compared to mode and median, the arithmetic average is easier to compute and interpret, but it's more sensitive to outliers that may distort the result and is not always representative of skewed data.</p>
 
-
 								</div>
 
 								<div class="inner">
+                                    <h4>Computational Problems with Floating Point Representation</h4>
+<p>Computers store and manipulate numbers using a system called floating-point representation, which allows them to handle a wide range of numbers despite hardware limitations. It’s called "floating-point" because the decimal (or binary) point "floats" depending on the size of the number being represented. Floating-point numbers are expressed in a scientific notation form, but in base-2 (binary), instead of base-10 (decimal).</p>
+
+<p>The number is written as:</p>
+<p>$$x = s \times m \times 2^e$$</p>
+
+<p>Where:</p>
+<ul>
+  <li><strong>s</strong> is the sign bit (0 for positive, 1 for negative),</li>
+  <li><strong>m</strong> is the mantissa or significand (which contains the precision of the number),</li>
+  <li><strong>e</strong> is the exponent, determining how large or small the number is by adjusting its scale (the number of powers of 2 to multiply by).</li>
+</ul>
+
+<p>However, floating-point arithmetic isn’t perfect, and can lead to computational errors:</p>
+<ul>
+  <li>The mantissa can only store a fixed number of digits, and some numbers cannot be represented exactly, leading to rounding errors. As most floating-point numbers are only approximations, most of the problems arise in long chains of computations, where these small errors can accumulate.</li>
+  <li><strong>Catastrophic cancellation</strong> is a significant loss of precision that occurs when subtracting two nearly equal numbers. The subtraction causes the most significant digits (the leading digits) to cancel out, leaving behind only the smaller and less accurate trailing digits, resulting in a loss of meaningful precision.</li>
+</ul>
+
+<p>The renowned American computer scientist and mathematician Donald Knuth proposed various solutions to these problems in his work "The Art of Computer Programming", among them:</p>
+
+<ul>
+  <li><strong>Compensated Summation Techniques:</strong> These techniques involve tracking small errors during summation processes using a compensating variable that accounts for the error in each step of the summation. This helps maintain accuracy in the results.</li>
+  <li><strong>Reformulating Expressions:</strong> This approach aims to find algebraic transformations that reduce or eliminate the need to subtract nearly equal numbers. For example, $$a^2 - b^2$$ can be reformulated as $$(a - b) \times (a + b)$$ to avoid direct subtraction.</li>
+  <li><strong>Using higher precision:</strong> This method consists of using higher precision arithmetic when possible, particularly when dealing with operations that are prone to significant cancellation. For example, switching from single-precision (32-bit) to double-precision (64-bit) or even higher precision can mitigate some of the effects of floating-point errors, though it won't eliminate them entirely.</li>
+</ul>
 
 								</div>
 							</div>
