@@ -4196,6 +4196,7 @@ input, select, textarea {
 
 	.underline-link {
 		text-decoration: underline;
-		color: blue; /* Optional: you can set the color of the link */
+		text-align: center; /* Centers the text under the image */
+		color: #1E1E1E; /* Optional: you can set the color of the link */
 	}
 	
