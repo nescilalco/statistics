@@ -64,8 +64,6 @@
                         dataset incrementally. It avoids the numerical instability that can occur when you calculate the
                         mean and variance in a batch manner (e.g., by summing values first and dividing later).</p>
 
-                    <h2 class="major">Descriptive vs. Inferential Statistics: The Key Difference</h2>
-
                     <p>Given a sequence of data points \( x_1, x_2, \dots, x_n \), you want to calculate the mean and
                         variance as new data points are added, without needing to store all the previous data points.
                         Welford’s recursion does this efficiently in two steps:
