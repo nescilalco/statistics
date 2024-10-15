@@ -4175,4 +4175,21 @@ input, select, textarea {
 	.image-description {
 		flex: 1; /* Takes up remaining space on the right */
 	}
+
+	.image-pair-container {
+		display: flex;
+		justify-content: space-around; /* Distributes space between the images */
+		gap: 20px; /* Adds space between the two images */
+		margin: 20px 0; /* Adds space above and below the container */
+	}
 	
+	.image-item {
+		text-align: center; /* Centers the text under the image */
+		flex: 1; /* Ensures that both images take up equal space */
+	}
+	
+	.image-item img {
+		width: 600px; /* Adjust the image width */
+		height: auto; /* Keeps the aspect ratio */
+		margin-bottom: 10px; /* Adds space between the image and the text */
+	}
