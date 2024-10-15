@@ -4367,8 +4367,6 @@ body.is-preload #banner p {
 	/* Make image fill the width of its container */
 	height: auto;
 	/* Let height adjust automatically to maintain aspect ratio */
-	max-height: 200px;
-	/* Set a maximum height */
 	object-fit: cover;
 	/* Crop the image to fit the container without distortion */
 	margin-bottom: 10px;
