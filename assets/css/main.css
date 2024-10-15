@@ -4194,9 +4194,14 @@ input, select, textarea {
 		margin-bottom: 10px; /* Adds space between the image and the text */
 	}
 
+	.link-container {
+		text-align: center; /* Centers the link */
+		margin-top: 20px; /* Adds some space above the link */
+	}
+
 	.underline-link {
 		text-decoration: underline;
-		text-align: center; /* Centers the text under the image */
 		color: #1E1E1E; /* Optional: you can set the color of the link */
+		font-size: 1.5em;
 	}
 	
