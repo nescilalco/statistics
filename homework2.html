@@ -75,13 +75,51 @@
                     <div class="formula">
                         <p>\( \mu_n = \mu_{n-1} + \frac{x_n - \mu_{n-1}}{n} \)</p>
                     </div>
-                    <p>Here:</p>
+                    <p>Here:
                     <ul>
                         <li>\( \mu_n \) is the updated mean after \( n \) observations.</li>
                         <li>\( \mu_{n-1} \) is the mean of the first \( n-1 \) observations.</li>
                         <li>\( x_n \) is the new data point being added.</li>
                         <li>\( n \) is the total number of observations so far.</li>
                     </ul>
+                    </p>
+
+
+                    <h3>Variance Update</h3>
+
+                    <p>The variance \( \sigma_n^2 \) after the \( n \)-th data point can be updated using:</p>
+
+                    <p>$$ M_n = M_{n-1} + (x_n - \mu_{n-1})(x_n - \mu_n) $$</p>
+
+                    <p>$$ \sigma_n^2 = \frac{M_n}{n} $$</p>
+
+                    <p>Where:</p>
+                    <ul>
+                        <li>\( M_n \) is the sum of squares of differences from the current mean, and is updated
+                            incrementally.</li>
+                        <li>\( \sigma_n^2 \) is the variance after \( n \) data points.</li>
+                    </ul>
+
+                    <h2>Algorithmic Steps</h2>
+                    <ol>
+                        <li>Initialize:
+                            <ul>
+                                <li>Set \( \mu_0 = 0 \), \( M_0 = 0 \).</li>
+                            </ul>
+                        </li>
+                        <li>For each new data point \( x_n \):
+                            <ul>
+                                <li>Update the mean:
+                                    $$ \mu_n = \mu_{n-1} + \frac{x_n - \mu_{n-1}}{n} $$</li>
+                                <li>Update the sum of squares of differences:
+                                    $$ M_n = M_{n-1} + (x_n - \mu_{n-1})(x_n - \mu_n) $$</li>
+                            </ul>
+                        </li>
+                        <li>After all points, compute the variance:
+                            $$ \sigma_n^2 = \frac{M_n}{n} $$</li>
+                    </ol>
+
+
 
                     <h3>Variance Update Formula</h3>
                     <div class="formula">
