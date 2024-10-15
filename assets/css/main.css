@@ -4168,7 +4168,7 @@ input, select, textarea {
 	}
 	
 	.image-text-container img {
-		width: 300px; /* Adjust the width of the image */
+		width: 900px; /* Adjust the width of the image */
 		height: auto; /* Maintain aspect ratio */
 	}
 	
