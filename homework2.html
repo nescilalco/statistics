@@ -73,14 +73,14 @@
                     <div class="formula">
                         <p>\( \mu_n = \mu_{n-1} + \frac{x_n - \mu_{n-1}}{n} \)</p>
                     </div>
-                    <p>Here:
+                    <p>Here:</p>
                     <ul>
                         <li>\( \mu_n \) is the updated mean after \( n \) observations.</li>
                         <li>\( \mu_{n-1} \) is the mean of the first \( n-1 \) observations.</li>
                         <li>\( x_n \) is the new data point being added.</li>
                         <li>\( n \) is the total number of observations so far.</li>
                     </ul>
-                    </p>
+                    
 
 
                     <h3>Variance Update</h3>
@@ -119,20 +119,6 @@
 
                     <p>This recursion allows the mean and variance to be computed in one pass over the data, which is
                         computationally efficient, especially for large datasets.</p>
-
-
-
-                    <h3>Variance Update Formula</h3>
-                    <div class="formula">
-                        <code>Mₙ = Mₙ₋₁ + (xₙ - μₙ₋₁)(xₙ - μₙ)</code>
-                        <br>
-                        <code>σ²ₙ = Mₙ / n</code>
-                    </div>
-                    <p>
-                        The variance is calculated based on the updated mean and sum of squares of differences, where
-                        <code>Mₙ</code> is an intermediary variable that accumulates the squared differences from the
-                        mean.
-                    </p>
                 </div>
             </div>
             <div class="wrapper">
