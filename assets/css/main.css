@@ -4374,13 +4374,15 @@ body.is-preload #banner p {
 }
 
 @media (max-width: 600px) {
-    .image-pair-container {
-        flex-direction: column; /* Stack images vertically on small screens */
-    }
+	.image-pair-container {
+		flex-direction: column;
+		/* Stack images vertically on small screens */
+	}
 
-    .image-item {
-        flex: 1 1 100%; /* Full width on smaller screens */
-    }
+	.image-item {
+		flex: 1 1 100%;
+		/* Full width on smaller screens */
+	}
 }
 
 .link-container {
@@ -4395,4 +4397,21 @@ body.is-preload #banner p {
 	color: #5F7D8C;
 	/* Optional: you can set the color of the link */
 	font-size: 1.5em;
+}
+
+code {
+	background-color: #f8f8f8;
+	padding: 2px 6px;
+	border-radius: 4px;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.formula {
+	margin: 20px 0;
+	text-align: center;
+	font-size: 20px;
+}
+
+.center {
+	text-align: center;
 }
