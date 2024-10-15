@@ -4160,3 +4160,19 @@ input, select, textarea {
 		font-weight: bold; /* Makes the title bold */
 	}
 	
+	.image-text-container {
+		display: flex;
+		align-items: center; /* This vertically aligns the content */
+		gap: 20px; /* Adds space between the image and the text */
+		margin: 20px 0; /* Optional: Adds some space above and below the container */
+	}
+	
+	.image-text-container img {
+		width: 300px; /* Adjust the width of the image */
+		height: auto; /* Maintain aspect ratio */
+	}
+	
+	.image-description {
+		flex: 1; /* Takes up remaining space on the right */
+	}
+	
