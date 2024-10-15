@@ -4363,10 +4363,26 @@ body.is-preload #banner p {
 .image-item img {
 	max-width: 100%;
 	/* Make image responsive */
+	width: 100%;
+	/* Make image fill the width of its container */
 	height: auto;
-	/* Keeps the aspect ratio */
+	/* Let height adjust automatically to maintain aspect ratio */
+	max-height: 200px;
+	/* Set a maximum height */
+	object-fit: cover;
+	/* Crop the image to fit the container without distortion */
 	margin-bottom: 10px;
 	/* Adds space between the image and the text */
+}
+
+@media (max-width: 600px) {
+    .image-pair-container {
+        flex-direction: column; /* Stack images vertically on small screens */
+    }
+
+    .image-item {
+        flex: 1 1 100%; /* Full width on smaller screens */
+    }
 }
 
 .link-container {
