@@ -4193,3 +4193,9 @@ input, select, textarea {
 		height: auto; /* Keeps the aspect ratio */
 		margin-bottom: 10px; /* Adds space between the image and the text */
 	}
+
+	.underline-link {
+		text-decoration: underline;
+		color: blue; /* Optional: you can set the color of the link */
+	}
+	
