@@ -123,92 +123,75 @@
             </div>
             <div class="wrapper">
                 <div class="inner">
-                    <h2 class="major">Basic Notions</h2>
+                    <h2 class="major">Example Calculation</h2>
 
-                    <h3>Population</h3>
-                    <p>In statistics, the term "population" refers to the complete set of all possible elements or
-                        entities that we are interested in studying. A population could be anything, from all the
-                        students in a school to the entire human population of a country or even the total number of
-                        cars produced by a company in a year.</p>
-                    <p><strong>Example:</strong> If a researcher wants to study the average height of adults in a
-                        country, the population would be every adult in that country.</p>
-                    <p>Populations are often too large to examine in their entirety, which is why statisticians often
-                        take a sample, a smaller subset of the population, to make the study manageable. The goal is to
-                        use the sample data to make inferences about the population.</p>
+                    <p>Let's take a simple example with a sequence of data points: \( x_1 = 5 \), \( x_2 = 7 \), \( x_3
+                        = 9 \).</p>
 
-                    <h3>Statistical Units</h3>
-                    <p>A statistical unit is any single element or individual from the population that provides data for
-                        a study. It’s the basic unit of observation. These units can be people, objects, events, or even
-                        measurements depending on the nature of the study.</p>
-                    <p><strong>Example:</strong> If we’re looking at the height of adults, each individual adult is a
-                        statistical unit. In a study of car performance, each car would be a statistical unit.</p>
-                    <p>Statistical units compose the sample, and for this reason they should be clearly defined and
-                        measurable to ensure consistency and accuracy in data collection. Well-chosen statistical units
-                        help avoid bias and confusion in data interpretation.</p>
+                    <p><strong>Step 1: Initialization</strong></p>
+                    <p>
+                        \[
+                        \mu_0 = 0, \quad M_0 = 0
+                        \]
+                    </p>
 
-                    <h3>Distribution</h3>
-                    <p>A distribution describes how the values of a dataset are spread out. It shows the frequency or
-                        probability of different outcomes within a dataset. Understanding a distribution allows us to
-                        see patterns, outliers, and trends in data.</p>
-                    <p>There are many types of distribution:</p>
+                    <p><strong>Step 2: Update for each new data point</strong></p>
+
+                    <p>For \( x_1 = 5 \):</p>
+                    <p>
+                        Mean update:
+                        \[
+                        \mu_1 = \mu_0 + \frac{x_1 - \mu_0}{1} = 0 + \frac{5 - 0}{1} = 5
+                        \]
+                    </p>
+                    <p>
+                        Sum of squares update:
+                        \[
+                        M_1 = M_0 + (x_1 - \mu_0)(x_1 - \mu_1) = 0 + (5 - 0)(5 - 5) = 0
+                        \]
+                    </p>
+
+                    <p>For \( x_2 = 7 \):</p>
+                    <p>
+                        Mean update:
+                        \[
+                        \mu_2 = \mu_1 + \frac{x_2 - \mu_1}{2} = 5 + \frac{7 - 5}{2} = 6
+                        \]
+                    </p>
+                    <p>
+                        Sum of squares update:
+                        \[
+                        M_2 = M_1 + (x_2 - \mu_1)(x_2 - \mu_2) = 0 + (7 - 5)(7 - 6) = 2
+                        \]
+                    </p>
+
+                    <p>For \( x_3 = 9 \):</p>
+                    <p>
+                        Mean update:
+                        \[
+                        \mu_3 = \mu_2 + \frac{x_3 - \mu_2}{3} = 6 + \frac{9 - 6}{3} = 7
+                        \]
+                    </p>
+                    <p>
+                        Sum of squares update:
+                        \[
+                        M_3 = M_2 + (x_3 - \mu_2)(x_3 - \mu_3) = 2 + (9 - 6)(9 - 7) = 8
+                        \]
+                    </p>
+
+                    <p><strong>Step 3: Variance Calculation</strong></p>
+                    <p>After processing all three data points, the variance is calculated as follows:</p>
+                    <p>
+                        \[
+                        \sigma_3^2 = \frac{M_3}{3} = \frac{8}{3} \approx 2.67
+                        \]
+                    </p>
+
+                    <p><strong>Final result:</strong></p>
                     <ul>
-                        <li><strong>Normal Distribution:</strong> The classic bell-shaped curve, where most data points
-                            are clustered around the mean, with fewer and fewer data points appearing as you move away
-                            from the center. This is common in natural phenomena like heights or test scores.</li>
-                        <li><strong>Skewed Distribution:</strong> When the data is not symmetrically distributed. For
-                            example, a right (positive) skew indicates more data points on the lower end, with a long
-                            tail on the higher end.</li>
-                        <li><strong>Uniform Distribution:</strong> All outcomes are equally likely, such as rolling a
-                            fair die.</li>
+                        <li>Mean: \( \mu_3 = 7 \)</li>
+                        <li>Variance: \( \sigma_3^2 \approx 2.67 \)</li>
                     </ul>
-
-                    <h3>Frequency</h3>
-                    <p>Frequency gives us a way to see how often certain values or categories appear in a dataset. Here
-                        we analyze three key types of frequency: absolute, relative, and percentage.</p>
-
-                    <h5>Absolute Frequency</h5>
-                    <p>The absolute frequency is the simplest measure. It’s the number of times a particular value or
-                        category appears in a dataset. This is just a straightforward count of occurrences.</p>
-                    <p><strong>Example:</strong> Let’s say we’re surveying 100 people about their favorite fruit, and 25
-                        people say "apple." The absolute frequency of “apple” is 25 because it was mentioned 25 times.
-                    </p>
-
-                    <h5>Relative Frequency</h5>
-                    <p>While absolute frequency counts the occurrences, relative frequency tells us how those counts
-                        compare to the total number of observations in the dataset. It's expressed as a proportion or
-                        fraction of the total.</p>
-                    <p><strong>Formula:</strong> Relative Frequency = Absolute Frequency / Total Number of Observations
-                    </p>
-                    <p><strong>Example:</strong> In the fruit survey, if 25 out of 100 people said "apple," the relative
-                        frequency would be 25/100 = 0.25. This means 1/4 of the people surveyed chose apples, which
-                        provides more context than just knowing 25 people did.</p>
-
-                    <h5>Percentage Frequency</h5>
-                    <p>Percentage frequency is simply the relative frequency multiplied by 100, converting the
-                        proportion into a percentage. This is one of the most intuitive ways for people to understand
-                        frequency, as percentages are commonly used in everyday life.</p>
-                    <p><strong>Formula:</strong> Percentage Frequency = Relative Frequency x 100</p>
-                    <p><strong>Example:</strong> Continuing with our fruit survey, the percentage frequency of people
-                        who said "apple" would be 25%.</p>
-                    <p>$$0.25 \times 100 = 25\%$$</p>
-
-                    <h4>Arithmetic Average</h4>
-                    <p>An average is a single number that gives us a general idea of what is typical or representative
-                        within a set of values. It’s a measure that summarizes a collection of data, giving us a sense
-                        of the "middle" or the "norm."</p>
-
-                    <p>There are many types of average. The "Arithmetic Average" is one of the most used averages to
-                        summarise a set of data.</p>
-
-                    <p><strong>Formula:</strong></p>
-                    <p>$$\text{avg} = \frac{\sum x_i}{n}$$</p>
-
-                    <p>This is the sum of the values divided by the total number of values.</p>
-
-                    <p>Compared to mode and median, the arithmetic average is easier to compute and interpret, but it's
-                        more sensitive to outliers that may distort the result and is not always representative of
-                        skewed data.</p>
-
                 </div>
             </div>
             <div class="wrapper">
