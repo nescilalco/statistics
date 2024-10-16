@@ -98,25 +98,6 @@
                         <li>\( \sigma_n^2 \) is the variance after \( n \) data points.</li>
                     </ul>
 
-                    <h2>Algorithmic Steps</h2>
-                    <ol>
-                        <li>Initialize:
-                            <ul>
-                                <li>Set \( \mu_0 = 0 \), \( M_0 = 0 \).</li>
-                            </ul>
-                        </li>
-                        <li>For each new data point \( x_n \):
-                            <ul>
-                                <li>Update the mean:
-                                    $$ \mu_n = \mu_{n-1} + \frac{x_n - \mu_{n-1}}{n} $$</li>
-                                <li>Update the sum of squares of differences:
-                                    $$ M_n = M_{n-1} + (x_n - \mu_{n-1})(x_n - \mu_n) $$</li>
-                            </ul>
-                        </li>
-                        <li>After all points, compute the variance:
-                            $$ \sigma_n^2 = \frac{M_n}{n} $$</li>
-                    </ol>
-
                     <p>This recursion allows the mean and variance to be computed in one pass over the data, which is
                         computationally efficient, especially for large datasets.</p>
                 </div>
