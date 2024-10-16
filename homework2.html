@@ -60,14 +60,14 @@
 
                     <h2 class="major">Welford's Recursion</h2>
 
-                    <p>The Welford algorithm is an elegant method for calculating the mean (average) and variance of a
-                        dataset incrementally. It avoids the numerical instability that can occur when you calculate the
-                        mean and variance in a batch manner (e.g., by summing values first and dividing later).</p>
+                    <p>Welford's method provides an elegant and efficient way to compute the mean and variance
+                        incrementally,
+                        avoiding the need to store all the data points or recompute the entire dataset each time.
+                        For a dataset \( x_1, x_2, \dots, x_n \), the recursion updates the mean \( \mu_n \) and the sum
+                        of squares \( M_n \)
+                        as new data points arrive.</p>
 
-                    <p>Given a sequence of data points \( x_1, x_2, \dots, x_n \), you want to calculate the mean and
-                        variance as new data points are added, without needing to store all the previous data points.
-                        Welford’s recursion does this efficiently in two steps:
-                    </p>
+                    <p>At each step, the following 2 steps are made:</p>
 
                     <h3>Mean Update</h3>
                     <div class="formula">
@@ -80,7 +80,7 @@
                         <li>\( x_n \) is the new data point being added.</li>
                         <li>\( n \) is the total number of observations so far.</li>
                     </ul>
-                    
+
 
 
                     <h3>Variance Update</h3>
