@@ -273,6 +273,61 @@
                 </div>
             </div>
 
+            <div class="wrapper">
+                <div class="inner">
+                    <h2 class="major">Observations</h2>
+                    <p>In all four cases, the behavior of mean and variance over time reveals different dynamics
+                        depending on the type of process (Bernoulli vs. Random Walk) and the way we measure frequency
+                        (relative vs. absolute).</p>
+
+                    <ul>
+                        <li>
+                            <strong>Relative Frequencies in Bernoulli Trials:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean stabilizes towards the expected probability of
+                                    success as the number of trials increases. Initially, fluctuations are more
+                                    pronounced due to fewer trials, but over time the mean converges to the true
+                                    probability \(p\).</li>
+                                <li><strong>Variance:</strong> The variance decreases over time and stabilizes, as
+                                    results average out and the distribution centers around the mean.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Absolute Frequencies in Bernoulli Trials:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean increases continuously over time, reflecting the
+                                    accumulation of successes.</li>
+                                <li><strong>Variance:</strong> The variance grows with time, as the total number of
+                                    successes fluctuates more widely due to accumulated deviations from the expected
+                                    path.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Relative Frequencies in Random Walk Model:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean fluctuates around zero due to the random nature of
+                                    the walk. It does not stabilize toward a fixed value.</li>
+                                <li><strong>Variance:</strong> The variance increases indefinitely as the random walk
+                                    diverges over time, reflecting growing unpredictability in the results.</li>
+                            </ul>
+                        </li>
+
+                        <li>
+                            <strong>Absolute Frequencies in Random Walk Model:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean represents the cumulative change in position and
+                                    fluctuates depending on the direction of the walk.</li>
+                                <li><strong>Variance:</strong> Variance grows more rapidly over time compared to
+                                    Bernoulli trials, showing increasing unpredictability as the random walk progresses.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
 
     </div>
     </section>
