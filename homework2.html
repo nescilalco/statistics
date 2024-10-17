@@ -177,55 +177,34 @@
             </div>
             <div class="wrapper">
                 <div class="inner">
-                    <h2 class="major">Computational Problems with Floating Point Representation</h2>
-                    <p>Computers store and manipulate numbers using a system called floating-point representation, which
-                        allows them to handle a wide range of numbers despite hardware limitations. It’s called
-                        "floating-point" because the decimal (or binary) point "floats" depending on the size of the
-                        number being represented. Floating-point numbers are expressed in a scientific notation form,
-                        but in base-2 (binary), instead of base-10 (decimal).</p>
+                    <h2 class="major">Euler–Maruyama Simulator</h2>
+                    <div class="image-text-container">
+                        <img src="images/attack_simulation_function.png" alt="Simulate penetration">
 
-                    <p>The number is written as:</p>
-                    <p>$$x = s \times m \times 2^e$$</p>
-
-                    <p>Where:</p>
-                    <ul>
-                        <li><strong>s</strong> is the sign bit (0 for positive, 1 for negative),</li>
-                        <li><strong>m</strong> is the mantissa or significand (which contains the precision of the
-                            number),</li>
-                        <li><strong>e</strong> is the exponent, determining how large or small the number is by
-                            adjusting its scale (the number of powers of 2 to multiply by).</li>
-                    </ul>
-
-                    <p>However, floating-point arithmetic isn’t perfect, and can lead to computational errors:</p>
-                    <ul>
-                        <li>The mantissa can only store a fixed number of digits, and some numbers cannot be represented
-                            exactly, leading to rounding errors. As most floating-point numbers are only approximations,
-                            most of the problems arise in long chains of computations, where these small errors can
-                            accumulate.</li>
-                        <li><strong>Catastrophic cancellation</strong> is a significant loss of precision that occurs
-                            when subtracting two nearly equal numbers. The subtraction causes the most significant
-                            digits (the leading digits) to cancel out, leaving behind only the smaller and less accurate
-                            trailing digits, resulting in a loss of meaningful precision.</li>
-                    </ul>
-
-                    <p>The renowned American computer scientist and mathematician Donald Knuth proposed various
-                        solutions to these problems in his work "The Art of Computer Programming", among them:</p>
-
-                    <ul>
-                        <li><strong>Compensated Summation Techniques:</strong> These techniques involve tracking small
-                            errors during summation processes using a compensating variable that accounts for the error
-                            in each step of the summation. This helps maintain accuracy in the results.</li>
-                        <li><strong>Reformulating Expressions:</strong> This approach aims to find algebraic
-                            transformations that reduce or eliminate the need to subtract nearly equal numbers. For
-                            example, $$a^2 - b^2$$ can be reformulated as $$(a - b) \times (a + b)$$ to avoid direct
-                            subtraction.</li>
-                        <li><strong>Using higher precision:</strong> This method consists of using higher precision
-                            arithmetic when possible, particularly when dealing with operations that are prone to
-                            significant cancellation. For example, switching from single-precision (32-bit) to
-                            double-precision (64-bit) or even higher precision can mitigate some of the effects of
-                            floating-point errors, though it won't eliminate them entirely.</li>
-                    </ul>
-
+                        <div class="image-description">
+                            <h3>Attack Simulation Function</h3>
+                            <p>
+                                This updated code now includes the possibility for attackers to jump both up and down, making the simulation more flexible. 
+                                At each step, attackers can either move up (+1) or down (-1) based on a random value compared to the probability <code>p</code>. 
+                                If the random number is less than <code>p</code>, they move up; otherwise, they move down. The movement is restricted within a range, 
+                                from a maximum of 20 to a minimum of -20, ensuring the attackers don’t go beyond these limits. 
+                                This is different from the earlier version where attackers could only jump upward.
+                            </p>
+                        
+                            <p>
+                                The <code>positionAtNSteps</code> array stores the attackers' positions when they reach exactly <code>n_steps</code>. 
+                                This is useful for calculating intermediate distributions, as it lets us analyze the attackers' positions at a specific point 
+                                in the simulation, rather than only looking at their final positions.
+                            </p>
+                        
+                            <p>
+                                Additionally, <code>totalSuccessfulJumps</code> tracks how many times attackers successfully jumped up at each server. 
+                                This data is used to calculate the absolute and relative frequencies of upward jumps for each server, giving a clearer view of 
+                                how many positive moves happened compared to the total number of attackers. 
+                                These frequencies will later be plotted to show the overall distribution of successes, helping to visualize the results of the random walk simulation.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
 
