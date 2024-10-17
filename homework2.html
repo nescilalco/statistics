@@ -192,7 +192,8 @@
                             limits.
                             This is different from the earlier version where attackers could only jump upward.
                         </p>
-
+                    </div>
+                    <div class="image-text-container">
                         <img src="images/HW2/attack_simulation_function2.png" alt="Simulate penetration">
 
                         <p>
@@ -218,11 +219,18 @@
 
 
 
-                    <h3>Relative Frequency</h3>
-                    <img src="images/HW2/rel_freq_calc.png" alt="Relative Frequency Calculation">
+                    <h3>Plotting Frequencies</h3>
+
+                    The computed absolute and relative frequencies are passed as arguments to a new function called
+                    <code>PlotFrequencies</code>.
+
+                    <img src="images/HW2/plot_freq.png" alt="Plotting">
+
                     <div class="image-description">
-                        <p>This code calculates the <strong>relative frequencies</strong> of successful upward jumps
+                        <p>This code plots the <strong>absolute frequencies</strong> (blue line) and <strong>relative
+                                frequencies</strong> (green line) of successful upward jumps
                             at each server.</p>
+
 
                         <p>For each server (<code>j</code>), it takes the total number of successful jumps
                             (<code>totalSuccessfulJumps[j]</code>), which was tracked during the simulation, and
