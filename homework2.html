@@ -178,41 +178,40 @@
             <div class="wrapper">
                 <div class="inner">
                     <h2 class="major">Euler–Maruyama Simulator</h2>
-                    <div class="image-text-container">
-                        <img src="images//HW1/simulate_pen.png" alt="Simulate penetration">
+                    
+                    <h3>Attack Simulation</h3>
+                    <div class="image-description">
+                        <p>
+                            This updated code from the previous homework (1) now includes the possibility for
+                            attackers to jump both up and down, making the simulation more flexible.
+                            At each step, attackers can either move up (+1) or down (-1) based on a random value
+                            compared to the probability <code>p</code>.
+                            If the random number is less than <code>p</code>, they move up; otherwise, they move
+                            down. The movement is restricted within a range,
+                            from a maximum of 20 to a minimum of -20, ensuring the attackers don’t go beyond these
+                            limits.
+                            This is different from the earlier version where attackers could only jump upward.
+                        </p>
+                        
+                        <img src="images/HW2/attack_simulation_function.png" alt="Simulate penetration">
+                        
+                        <p>
+                            The <code>positionAtNSteps</code> array stores the attackers' positions when they reach
+                            exactly <code>n_steps</code>.
+                            This is useful for calculating intermediate distributions, as it lets us analyze the
+                            attackers' positions at a specific point
+                            in the simulation, rather than only looking at their final positions.
+                        </p>
 
-                        <div class="image-description">
-                            <h3>Attack Simulation</h3>
-                            <p>
-                                This updated code from the previous homework (1) now includes the possibility for
-                                attackers to jump both up and down, making the simulation more flexible.
-                                At each step, attackers can either move up (+1) or down (-1) based on a random value
-                                compared to the probability <code>p</code>.
-                                If the random number is less than <code>p</code>, they move up; otherwise, they move
-                                down. The movement is restricted within a range,
-                                from a maximum of 20 to a minimum of -20, ensuring the attackers don’t go beyond these
-                                limits.
-                                This is different from the earlier version where attackers could only jump upward.
-                            </p>
-
-                            <p>
-                                The <code>positionAtNSteps</code> array stores the attackers' positions when they reach
-                                exactly <code>n_steps</code>.
-                                This is useful for calculating intermediate distributions, as it lets us analyze the
-                                attackers' positions at a specific point
-                                in the simulation, rather than only looking at their final positions.
-                            </p>
-
-                            <p>
-                                <code>totalSuccessfulJumps</code> tracks how many times attackers successfully jumped up
-                                at each server.
-                                This data is used to calculate the absolute and relative frequencies of upward jumps for
-                                each server, giving a clearer view of
-                                how many positive moves happened compared to the total number of attackers.
-                                These frequencies will later be plotted to show the overall distribution of successes,
-                                helping to visualize the results of the random walk simulation.
-                            </p>
-                        </div>
+                        <p>
+                            <code>totalSuccessfulJumps</code> tracks how many times attackers successfully jumped up
+                            at each server.
+                            This data is used to calculate the absolute and relative frequencies of upward jumps for
+                            each server, giving a clearer view of
+                            how many positive moves happened compared to the total number of attackers.
+                            These frequencies will later be plotted to show the overall distribution of successes,
+                            helping to visualize the results of the random walk simulation.
+                        </p>
                     </div>
 
 
