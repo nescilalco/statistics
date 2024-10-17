@@ -178,7 +178,7 @@
             <div class="wrapper">
                 <div class="inner">
                     <h2 class="major">Euler–Maruyama Simulator</h2>
-                    
+
                     <h3>Attack Simulation</h3>
                     <div class="image-description">
                         <p>
@@ -192,21 +192,23 @@
                             limits.
                             This is different from the earlier version where attackers could only jump upward.
                         </p>
-                        
+
                         <img src="images/HW2/attack_simulation_function2.png" alt="Simulate penetration">
-                        
+
                         <p>
                             The <code>positionAtNSteps</code> array stores the attackers' positions when they reach
                             exactly <code>n_steps</code>.
                             This is useful for calculating intermediate distributions, as it lets us analyze the
                             attackers' positions at a specific point
-                            in the simulation, rather than only looking at their final positions.
+                            in the simulation (after <code>n_steps</code>), rather than only looking at their final
+                            positions.
                         </p>
 
                         <p>
-                            <code>totalSuccessfulJumps</code> tracks how many times attackers successfully jumped up
+                            The <code>totalSuccessfulJumps</code> tracks how many times attackers successfully jumped up
                             at each server.
-                            This data is used to calculate the absolute and relative frequencies of upward jumps for
+                            This corresponds to the absolute and is used to compute the relative frequencies of upward
+                            jumps for
                             each server, giving a clearer view of
                             how many positive moves happened compared to the total number of attackers.
                             These frequencies will later be plotted to show the overall distribution of successes,
