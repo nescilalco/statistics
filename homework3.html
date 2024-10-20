@@ -99,203 +99,263 @@
                             \) and the central point \( c \).</li>
                     </ul>
                     </p>
-                </div>
-            </div>
-            <div class="wrapper">
-                <div class="inner">
-                    <h2 class="major">Example Calculation</h2>
 
-                    <p>Let's take a simple example with a sequence of data points: \( x_1 = 5 \), \( x_2 = 7 \), \( x_3
-                        = 9 \).</p>
+                    <p>The absolute deviation is the sum of the absolute differences between data points \( x_1, x_2,
+                        \dots, x_n \) and a central point \( c \):</p>
 
-                    <p><strong>Step 1: Initialization</strong></p>
-                    <p>
-                        \[
-                        \mu_0 = 0, \quad M_0 = 0
-                        \]
-                    </p>
+                    <p>\[
+                        f(c) = \sum_{i=1}^{n} |x_i - c|
+                        \]</p>
 
-                    <p><strong>Step 2: Update for each new data point</strong></p>
+                    <p>To understand why the median minimizes this function, let’s break it down step by step:</p>
 
-                    <p>For \( x_1 = 5 \):</p>
-                    <p>
-                        Mean update:
-                        \[
-                        \mu_1 = \mu_0 + \frac{x_1 - \mu_0}{1} = 0 + \frac{5 - 0}{1} = 5
-                        \]
-                    </p>
-                    <p>
-                        Sum of squares update:
-                        \[
-                        M_1 = M_0 + (x_1 - \mu_0)(x_1 - \mu_1) = 0 + (5 - 0)(5 - 5) = 0
-                        \]
-                    </p>
+                    <h3>Step 1: Absolute Deviation and Distance</h3>
 
-                    <p>For \( x_2 = 7 \):</p>
-                    <p>
-                        Mean update:
-                        \[
-                        \mu_2 = \mu_1 + \frac{x_2 - \mu_1}{2} = 5 + \frac{7 - 5}{2} = 6
-                        \]
-                    </p>
-                    <p>
-                        Sum of squares update:
-                        \[
-                        M_2 = M_1 + (x_2 - \mu_1)(x_2 - \mu_2) = 0 + (7 - 5)(7 - 6) = 2
-                        \]
-                    </p>
+                    <p>The absolute deviation measures the total "distance" between each point in the dataset and the
+                        chosen central value \( c \). The goal is to find the \( c \) that minimizes this total
+                        distance. Unlike squared differences (used in variance), absolute differences don’t exaggerate
+                        larger deviations, which makes this method less sensitive to outliers.</p>
 
-                    <p>For \( x_3 = 9 \):</p>
-                    <p>
-                        Mean update:
-                        \[
-                        \mu_3 = \mu_2 + \frac{x_3 - \mu_2}{3} = 6 + \frac{9 - 6}{3} = 7
-                        \]
-                    </p>
-                    <p>
-                        Sum of squares update:
-                        \[
-                        M_3 = M_2 + (x_3 - \mu_2)(x_3 - \mu_3) = 2 + (9 - 6)(9 - 7) = 8
-                        \]
-                    </p>
+                    <h3>Step 2: Behavior of \( f(c) \)</h3>
 
-                    <p><strong>Step 3: Variance Calculation</strong></p>
-                    <p>After processing all three data points, the variance is calculated as follows:</p>
-                    <p>
-                        \[
-                        \sigma_3^2 = \frac{M_3}{3} = \frac{8}{3} \approx 2.67
-                        \]
-                    </p>
+                    <p>If you were to move \( c \) either left or right from a central position (e.g., the median), the
+                        sum of absolute deviations would either increase or decrease depending on the number of points
+                        on either side of \( c \). </p>
 
-                    <p><strong>Final result:</strong></p>
-                    <ul>
-                        <li>Mean: \( \mu_3 = 7 \)</li>
-                        <li>Variance: \( \sigma_3^2 \approx 2.67 \)</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="wrapper">
-                <div class="inner">
-                    <h2 class="major">Computational Problems with Floating Point Representation</h2>
-                    <p>Computers store and manipulate numbers using a system called floating-point representation, which
-                        allows them to handle a wide range of numbers despite hardware limitations. It’s called
-                        "floating-point" because the decimal (or binary) point "floats" depending on the size of the
-                        number being represented. Floating-point numbers are expressed in a scientific notation form,
-                        but in base-2 (binary), instead of base-10 (decimal).</p>
+                    <p>If \( c \) is to the left of the median, there are more points on the right, and moving \( c \)
+                        slightly to the right will reduce the absolute deviations from these points. Similarly, if \( c
+                        \) is to the right of the median, there are more points on the left, and moving \( c \) to the
+                        left will reduce the absolute deviations from the points on the left.</p>
 
-                    <p>The number is written as:</p>
-                    <p>$$x = s \times m \times 2^e$$</p>
+                    <p>Thus, the total deviation will be minimized when \( c \) is positioned such that the number of
+                        points to the left and right of \( c \) are balanced—this occurs at the median.</p>
 
-                    <p>Where:</p>
-                    <ul>
-                        <li><strong>s</strong> is the sign bit (0 for positive, 1 for negative),</li>
-                        <li><strong>m</strong> is the mantissa or significand (which contains the precision of the
-                            number),</li>
-                        <li><strong>e</strong> is the exponent, determining how large or small the number is by
-                            adjusting its scale (the number of powers of 2 to multiply by).</li>
-                    </ul>
-
-                    <p>However, floating-point arithmetic isn’t perfect, and can lead to computational errors:</p>
-                    <ul>
-                        <li>The mantissa can only store a fixed number of digits, and some numbers cannot be represented
-                            exactly, leading to rounding errors. As most floating-point numbers are only approximations,
-                            most of the problems arise in long chains of computations, where these small errors can
-                            accumulate.</li>
-                        <li><strong>Catastrophic cancellation</strong> is a significant loss of precision that occurs
-                            when subtracting two nearly equal numbers. The subtraction causes the most significant
-                            digits (the leading digits) to cancel out, leaving behind only the smaller and less accurate
-                            trailing digits, resulting in a loss of meaningful precision.</li>
-                    </ul>
-
-                    <p>The renowned American computer scientist and mathematician Donald Knuth proposed various
-                        solutions to these problems in his work "The Art of Computer Programming", among them:</p>
+                    <h3>Step 3: The Median as the Minimizer</h3>
 
                     <ul>
-                        <li><strong>Compensated Summation Techniques:</strong> These techniques involve tracking small
-                            errors during summation processes using a compensating variable that accounts for the error
-                            in each step of the summation. This helps maintain accuracy in the results.</li>
-                        <li><strong>Reformulating Expressions:</strong> This approach aims to find algebraic
-                            transformations that reduce or eliminate the need to subtract nearly equal numbers. For
-                            example, $$a^2 - b^2$$ can be reformulated as $$(a - b) \times (a + b)$$ to avoid direct
-                            subtraction.</li>
-                        <li><strong>Using higher precision:</strong> This method consists of using higher precision
-                            arithmetic when possible, particularly when dealing with operations that are prone to
-                            significant cancellation. For example, switching from single-precision (32-bit) to
-                            double-precision (64-bit) or even higher precision can mitigate some of the effects of
-                            floating-point errors, though it won't eliminate them entirely.</li>
+                        <li>For an odd number of data points, the median is the middle value, so the number of points on
+                            either side of \( c \) is equal. Moving \( c \) in either direction from this point will
+                            increase the sum of absolute deviations.</li>
+                        <li>For an even number of data points, the median is typically defined as the average of the two
+                            middle values. Again, this point ensures that the total deviation is minimized because the
+                            number of points on either side is balanced.</li>
                     </ul>
 
-                </div>
-            </div>
+                    <p>In other words, the median is the point at which the sum of the distances between the data points
+                        and \( c \) is minimized because it splits the dataset into two equal halves, balancing the
+                        deviations on both sides.</p>
 
-            <div class="wrapper">
-                <div class="inner">
-                    <h2 class="major">Attack Simulation Exercise</h2>
-                    <p>The code represents an application that simulates the number of successful penetration attempts
-                        of
-                        hackers on servers. The application takes inputs from the user, simulates the penetration
-                        attempts
-                        using random probability, and visualizes the results both as a line graph and a histogram.</p>
+                    <h3>Step 4: Visual Intuition</h3>
 
-                    <p>Below is a step-by-step breakdown of the code with key snippets:</p>
+                    <p>Imagine lining up all data points on a number line. If you place \( c \) at any value other than
+                        the median, you’ll notice that the sum of the absolute distances from the points on one side
+                        will outweigh the distances on the other. Only at the median are these distances balanced, which
+                        minimizes the total absolute deviation.</p>
 
-                    <p><strong>Constructor:</strong> The constructor initializes the form and adds the necessary
-                        controls,
-                        including labels for the inputs, text boxes, a button, and a PictureBox for visualization.</p>
+                    <h3>Conclusion</h3>
 
-                    <img src="images/main_form.png" alt="Main form" />
+                    <p>Thus, the median is the value of \( c \) that minimizes the total absolute deviation, because it
+                        divides the data into two equal halves, making the deviations from the central point as small as
+                        possible on both sides. This property makes the median a robust and effective measure of central
+                        tendency when minimizing total deviation is important.</p>
+</body>
+</div>
+</div>
+<div class="wrapper">
+    <div class="inner">
+        <h2 class="major">Example Calculation</h2>
 
-                    <div class="image-text-container">
-                        <img src="images/simulate_pen.png" alt="Simulate penetration">
+        <p>Let's take a simple example with a sequence of data points: \( x_1 = 5 \), \( x_2 = 7 \), \( x_3
+            = 9 \).</p>
 
-                        <div class="image-description">
-                            <h3>Attack Simulation Diagram</h3>
-                            <p>This diagram represents an application that simulates the number of successful
-                                penetration attempts of hackers on servers. Below is a step-by-step breakdown of the
-                                code with key snippets.</p>
-                        </div>
-                    </div>
+        <p><strong>Step 1: Initialization</strong></p>
+        <p>
+            \[
+            \mu_0 = 0, \quad M_0 = 0
+            \]
+        </p>
 
-                    <div class="image-text-container">
-                        <div class="image-description">
-                            <h3>Graph Explanation</h3>
-                            <p>After calculating the results, the method draws the graph on the PictureBox. It plots the
-                                cumulative penetration successes for each attacker over multiple servers using different
-                                colors for each attacker. Grid lines and axis labels are also added to the graph.</p>
-                        </div>
+        <p><strong>Step 2: Update for each new data point</strong></p>
 
-                        <img src="images/draw_graph.png" alt="Graph Generation">
-                    </div>
+        <p>For \( x_1 = 5 \):</p>
+        <p>
+            Mean update:
+            \[
+            \mu_1 = \mu_0 + \frac{x_1 - \mu_0}{1} = 0 + \frac{5 - 0}{1} = 5
+            \]
+        </p>
+        <p>
+            Sum of squares update:
+            \[
+            M_1 = M_0 + (x_1 - \mu_0)(x_1 - \mu_1) = 0 + (5 - 0)(5 - 5) = 0
+            \]
+        </p>
 
-                    <div class="image-pair-container">
-                        <!-- First Image and Description -->
-                        <div class="image-item">
-                            <img src="images/graph.png" alt="Graph" />
-                            <p>This graph represents a simulation of penetration attempts by multiple hackers on a
-                                network of servers. The x-axis shows the number of servers (from 1 to 10), while the
-                                y-axis represents the cumulative number of successful penetrations by each hacker. Each
-                                colored line corresponds to a different hacker, and the height of the line indicates the
-                                total number of successful penetrations by that hacker up to each server. </p>
-                        </div>
+        <p>For \( x_2 = 7 \):</p>
+        <p>
+            Mean update:
+            \[
+            \mu_2 = \mu_1 + \frac{x_2 - \mu_1}{2} = 5 + \frac{7 - 5}{2} = 6
+            \]
+        </p>
+        <p>
+            Sum of squares update:
+            \[
+            M_2 = M_1 + (x_2 - \mu_1)(x_2 - \mu_2) = 0 + (7 - 5)(7 - 6) = 2
+            \]
+        </p>
 
-                        <!-- Second Image and Description -->
-                        <div class="image-item">
-                            <img src="images/histogram.png" alt="Histogram" />
-                            <p>After the line graph, a histogram form is opened in another window, that displays the
-                                distribution of the number of successful penetrations by attackers.</p>
-                            <p>It also shows the Arithmetic Average of the servers penetrated and the Variance.</p>
-                        </div>
-                    </div>
+        <p>For \( x_3 = 9 \):</p>
+        <p>
+            Mean update:
+            \[
+            \mu_3 = \mu_2 + \frac{x_3 - \mu_2}{3} = 6 + \frac{9 - 6}{3} = 7
+            \]
+        </p>
+        <p>
+            Sum of squares update:
+            \[
+            M_3 = M_2 + (x_3 - \mu_2)(x_3 - \mu_3) = 2 + (9 - 6)(9 - 7) = 8
+            \]
+        </p>
 
-                    <div class="link-container">
-                        <a href="assets/project.zip" class="underline-link">Link to the zip of the project</a>
-                    </div>
-                </div>
-            </div>
+        <p><strong>Step 3: Variance Calculation</strong></p>
+        <p>After processing all three data points, the variance is calculated as follows:</p>
+        <p>
+            \[
+            \sigma_3^2 = \frac{M_3}{3} = \frac{8}{3} \approx 2.67
+            \]
+        </p>
+
+        <p><strong>Final result:</strong></p>
+        <ul>
+            <li>Mean: \( \mu_3 = 7 \)</li>
+            <li>Variance: \( \sigma_3^2 \approx 2.67 \)</li>
+        </ul>
     </div>
-    </section>
+</div>
+<div class="wrapper">
+    <div class="inner">
+        <h2 class="major">Computational Problems with Floating Point Representation</h2>
+        <p>Computers store and manipulate numbers using a system called floating-point representation, which
+            allows them to handle a wide range of numbers despite hardware limitations. It’s called
+            "floating-point" because the decimal (or binary) point "floats" depending on the size of the
+            number being represented. Floating-point numbers are expressed in a scientific notation form,
+            but in base-2 (binary), instead of base-10 (decimal).</p>
 
-    <!-- Footer 
+        <p>The number is written as:</p>
+        <p>$$x = s \times m \times 2^e$$</p>
+
+        <p>Where:</p>
+        <ul>
+            <li><strong>s</strong> is the sign bit (0 for positive, 1 for negative),</li>
+            <li><strong>m</strong> is the mantissa or significand (which contains the precision of the
+                number),</li>
+            <li><strong>e</strong> is the exponent, determining how large or small the number is by
+                adjusting its scale (the number of powers of 2 to multiply by).</li>
+        </ul>
+
+        <p>However, floating-point arithmetic isn’t perfect, and can lead to computational errors:</p>
+        <ul>
+            <li>The mantissa can only store a fixed number of digits, and some numbers cannot be represented
+                exactly, leading to rounding errors. As most floating-point numbers are only approximations,
+                most of the problems arise in long chains of computations, where these small errors can
+                accumulate.</li>
+            <li><strong>Catastrophic cancellation</strong> is a significant loss of precision that occurs
+                when subtracting two nearly equal numbers. The subtraction causes the most significant
+                digits (the leading digits) to cancel out, leaving behind only the smaller and less accurate
+                trailing digits, resulting in a loss of meaningful precision.</li>
+        </ul>
+
+        <p>The renowned American computer scientist and mathematician Donald Knuth proposed various
+            solutions to these problems in his work "The Art of Computer Programming", among them:</p>
+
+        <ul>
+            <li><strong>Compensated Summation Techniques:</strong> These techniques involve tracking small
+                errors during summation processes using a compensating variable that accounts for the error
+                in each step of the summation. This helps maintain accuracy in the results.</li>
+            <li><strong>Reformulating Expressions:</strong> This approach aims to find algebraic
+                transformations that reduce or eliminate the need to subtract nearly equal numbers. For
+                example, $$a^2 - b^2$$ can be reformulated as $$(a - b) \times (a + b)$$ to avoid direct
+                subtraction.</li>
+            <li><strong>Using higher precision:</strong> This method consists of using higher precision
+                arithmetic when possible, particularly when dealing with operations that are prone to
+                significant cancellation. For example, switching from single-precision (32-bit) to
+                double-precision (64-bit) or even higher precision can mitigate some of the effects of
+                floating-point errors, though it won't eliminate them entirely.</li>
+        </ul>
+
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="inner">
+        <h2 class="major">Attack Simulation Exercise</h2>
+        <p>The code represents an application that simulates the number of successful penetration attempts
+            of
+            hackers on servers. The application takes inputs from the user, simulates the penetration
+            attempts
+            using random probability, and visualizes the results both as a line graph and a histogram.</p>
+
+        <p>Below is a step-by-step breakdown of the code with key snippets:</p>
+
+        <p><strong>Constructor:</strong> The constructor initializes the form and adds the necessary
+            controls,
+            including labels for the inputs, text boxes, a button, and a PictureBox for visualization.</p>
+
+        <img src="images/main_form.png" alt="Main form" />
+
+        <div class="image-text-container">
+            <img src="images/simulate_pen.png" alt="Simulate penetration">
+
+            <div class="image-description">
+                <h3>Attack Simulation Diagram</h3>
+                <p>This diagram represents an application that simulates the number of successful
+                    penetration attempts of hackers on servers. Below is a step-by-step breakdown of the
+                    code with key snippets.</p>
+            </div>
+        </div>
+
+        <div class="image-text-container">
+            <div class="image-description">
+                <h3>Graph Explanation</h3>
+                <p>After calculating the results, the method draws the graph on the PictureBox. It plots the
+                    cumulative penetration successes for each attacker over multiple servers using different
+                    colors for each attacker. Grid lines and axis labels are also added to the graph.</p>
+            </div>
+
+            <img src="images/draw_graph.png" alt="Graph Generation">
+        </div>
+
+        <div class="image-pair-container">
+            <!-- First Image and Description -->
+            <div class="image-item">
+                <img src="images/graph.png" alt="Graph" />
+                <p>This graph represents a simulation of penetration attempts by multiple hackers on a
+                    network of servers. The x-axis shows the number of servers (from 1 to 10), while the
+                    y-axis represents the cumulative number of successful penetrations by each hacker. Each
+                    colored line corresponds to a different hacker, and the height of the line indicates the
+                    total number of successful penetrations by that hacker up to each server. </p>
+            </div>
+
+            <!-- Second Image and Description -->
+            <div class="image-item">
+                <img src="images/histogram.png" alt="Histogram" />
+                <p>After the line graph, a histogram form is opened in another window, that displays the
+                    distribution of the number of successful penetrations by attackers.</p>
+                <p>It also shows the Arithmetic Average of the servers penetrated and the Variance.</p>
+            </div>
+        </div>
+
+        <div class="link-container">
+            <a href="assets/project.zip" class="underline-link">Link to the zip of the project</a>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Footer 
     <section id="footer">
         <div class="inner">
             <h2 class="major">Get in touch</h2>
@@ -336,15 +396,15 @@
     </section>
     -->
 
-    </div>
+</div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.scrollex.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
 
 </body>
 
