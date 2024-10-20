@@ -60,7 +60,7 @@
 
                     <h2 class="major">Welford's Recursion</h2>
 
-                    <p>Welford's method provides an elegant and efficient way to compute the mean and variance
+                    <p>Welford's method provides an efficient way to compute the mean and variance
                         incrementally,
                         avoiding the need to store all the data points or recompute the entire dataset each time.
                         For a dataset \( x_1, x_2, \dots, x_n \), the recursion updates the mean \( \mu_n \) and the sum
@@ -177,122 +177,178 @@
             </div>
             <div class="wrapper">
                 <div class="inner">
-                    <h2 class="major">Computational Problems with Floating Point Representation</h2>
-                    <p>Computers store and manipulate numbers using a system called floating-point representation, which
-                        allows them to handle a wide range of numbers despite hardware limitations. It’s called
-                        "floating-point" because the decimal (or binary) point "floats" depending on the size of the
-                        number being represented. Floating-point numbers are expressed in a scientific notation form,
-                        but in base-2 (binary), instead of base-10 (decimal).</p>
+                    <h2 class="major">Euler–Maruyama Simulator</h2>
 
-                    <p>The number is written as:</p>
-                    <p>$$x = s \times m \times 2^e$$</p>
+                    <h3>Attack Simulation</h3>
+                    <div class="image-description">
+                        <p>
+                            This updated code from the previous homework (1) now includes the possibility for
+                            attackers to jump both up and down, making the simulation more flexible.
+                            At each step, attackers can either move up (+1) or down (-1) based on a random value
+                            compared to the probability <code>p</code>.
+                            If the random number is less than <code>p</code>, they move up; otherwise, they move
+                            down. The movement is restricted within a range,
+                            from a maximum of 20 to a minimum of -20, ensuring the attackers don’t go beyond these
+                            limits.
+                            This is different from the earlier version where attackers could only jump upward.
+                        </p>
 
-                    <p>Where:</p>
-                    <ul>
-                        <li><strong>s</strong> is the sign bit (0 for positive, 1 for negative),</li>
-                        <li><strong>m</strong> is the mantissa or significand (which contains the precision of the
-                            number),</li>
-                        <li><strong>e</strong> is the exponent, determining how large or small the number is by
-                            adjusting its scale (the number of powers of 2 to multiply by).</li>
-                    </ul>
+                        <img src="images/HW2/attack_simulation_function2.png" alt="Simulate penetration">
 
-                    <p>However, floating-point arithmetic isn’t perfect, and can lead to computational errors:</p>
-                    <ul>
-                        <li>The mantissa can only store a fixed number of digits, and some numbers cannot be represented
-                            exactly, leading to rounding errors. As most floating-point numbers are only approximations,
-                            most of the problems arise in long chains of computations, where these small errors can
-                            accumulate.</li>
-                        <li><strong>Catastrophic cancellation</strong> is a significant loss of precision that occurs
-                            when subtracting two nearly equal numbers. The subtraction causes the most significant
-                            digits (the leading digits) to cancel out, leaving behind only the smaller and less accurate
-                            trailing digits, resulting in a loss of meaningful precision.</li>
-                    </ul>
+                        <p>
+                            The <code>positionAtNSteps</code> array stores the attackers' positions when they reach
+                            exactly <code>n_steps</code>.
+                            This is useful for calculating intermediate distributions, as it lets us analyze the
+                            attackers' positions at a specific point
+                            in the simulation (after <code>n_steps</code>), rather than only looking at their final
+                            positions.
+                        </p>
 
-                    <p>The renowned American computer scientist and mathematician Donald Knuth proposed various
-                        solutions to these problems in his work "The Art of Computer Programming", among them:</p>
+                        <p>
+                            The <code>totalSuccessfulJumps</code> tracks how many times attackers successfully jumped up
+                            at each server.
+                            This corresponds to the absolute and is used to compute the relative frequencies
+                            (<code>relativeSuccessfulJumps</code>) of upward
+                            jumps for
+                            each server, giving a clearer view of
+                            how many positive moves happened compared to the total number of attackers.
+                            These frequencies will later be plotted to show the overall distribution of successes,
+                            helping to visualize the results of the random walk simulation.
+                        </p>
+                    </div>
 
-                    <ul>
-                        <li><strong>Compensated Summation Techniques:</strong> These techniques involve tracking small
-                            errors during summation processes using a compensating variable that accounts for the error
-                            in each step of the summation. This helps maintain accuracy in the results.</li>
-                        <li><strong>Reformulating Expressions:</strong> This approach aims to find algebraic
-                            transformations that reduce or eliminate the need to subtract nearly equal numbers. For
-                            example, $$a^2 - b^2$$ can be reformulated as $$(a - b) \times (a + b)$$ to avoid direct
-                            subtraction.</li>
-                        <li><strong>Using higher precision:</strong> This method consists of using higher precision
-                            arithmetic when possible, particularly when dealing with operations that are prone to
-                            significant cancellation. For example, switching from single-precision (32-bit) to
-                            double-precision (64-bit) or even higher precision can mitigate some of the effects of
-                            floating-point errors, though it won't eliminate them entirely.</li>
-                    </ul>
 
+
+                    <h3>Plotting Frequencies</h3>
+
+                    The computed absolute and relative frequencies are passed as arguments to a new function called
+                    <code>PlotFrequencies</code>.
+
+                    <div class="image-text-container">
+                        <img src="images/HW2/plot_freq.png" alt="Plotting">
+
+                        <div class="image-description">
+                            <p>This function plots the <strong>absolute frequencies</strong> (blue line) and
+                                <strong>relative
+                                    frequencies</strong> (green line) of successful upward jumps
+                                at each server.
+                            </p>
+
+                            <p>As already said, each value of the <strong>absolute frequencies</strong>
+                                line provides the number of successful penetration of attackers on each server, whereas
+                                the values of the line shown as <strong>relative frequencies</strong> provide a
+                                proportion of how many
+                                times attackers
+                                successfully moved up at each server, relatively to the total number of attackers.</p>
+
+                            <p>This allows
+                                us to understand, for each server, how likely it was for an attacker to make an upward
+                                jump, scaled relative to the total number of attempts.</p>
+                        </div>
+                    </div>
+
+                    <div class="image-item">
+                        <img src="images/HW2/all_app.png" alt="New Program">
+                    </div>
+
+                    <br>
+                    <h3>Histograms</h3>
+                    <div class="image-pair-container">
+                        <!-- First Image and Description -->
+                        <div class="image-item">
+                            <img src="images/HW2/interm_histo.png" alt="Intermediate Histogram" />
+                            <p>This new histogram represents the distribution of successfull penetration by attackers
+                                when the intermediate steps (given as input by the user) are reached.</p>
+                        </div>
+
+                        <!-- Second Image and Description -->
+                        <div class="image-item">
+                            <img src="images/HW2/final_histo.png" alt="Final Histogram" />
+                            <p>This histogram, as the first homework, displays the distribution of the number of
+                                successful penetrations by attackers.</p>
+                        </div>
+                    </div>
+                    <p style="text-align: center;">Both histograms also show the Arithmetic Average of the servers
+                        penetrated and the Variance at N steps and final step, respectively.</p>
+                </div>
+                <div class="link-container">
+                    <a href="https://drive.google.com/file/d/1ZHX3I5uTf--dhcFhxL4S6hFZVILezMMA/view?usp=sharing"
+                        class="underline-link">Link to the zip of the project</a>
                 </div>
             </div>
 
             <div class="wrapper">
                 <div class="inner">
-                    <h2 class="major">Attack Simulation Exercise</h2>
-                    <p>The code represents an application that simulates the number of successful penetration attempts
-                        of
-                        hackers on servers. The application takes inputs from the user, simulates the penetration
-                        attempts
-                        using random probability, and visualizes the results both as a line graph and a histogram.</p>
+                    <h2 class="major">Observations</h2>
+                    <p>In all four cases, the behavior of mean and variance over time reveals different dynamics
+                        depending on the type of process (Bernoulli vs. Random Walk) and the way we measure frequency
+                        (relative vs. absolute).</p>
 
-                    <p>Below is a step-by-step breakdown of the code with key snippets:</p>
+                    <ul>
+                        <li>
+                            <strong>Relative Frequencies in Bernoulli Trials:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean stabilizes towards the expected probability of
+                                    success as the number of trials increases. Initially, fluctuations are more
+                                    pronounced due to fewer trials, but over time the mean converges to the true
+                                    probability \(p\).</li>
+                                <li><strong>Variance:</strong> The variance decreases over time and stabilizes, as
+                                    results average out and the distribution centers around the mean.</li>
+                            </ul>
+                        </li>
 
-                    <p><strong>Constructor:</strong> The constructor initializes the form and adds the necessary
-                        controls,
-                        including labels for the inputs, text boxes, a button, and a PictureBox for visualization.</p>
+                        <li>
+                            <strong>Absolute Frequencies in Bernoulli Trials:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean increases continuously over time, reflecting the
+                                    accumulation of successes.</li>
+                                <li><strong>Variance:</strong> The variance grows with time, as the total number of
+                                    successes fluctuates more widely due to accumulated deviations from the expected
+                                    path.</li>
+                            </ul>
+                        </li>
 
-                    <img src="images/main_form.png" alt="Main form" />
+                        <li>
+                            <strong>Relative Frequencies in Random Walk Model:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean fluctuates around zero due to the random nature of
+                                    the walk. It does not stabilize toward a fixed value.</li>
+                                <li><strong>Variance:</strong> The variance increases indefinitely as the random walk
+                                    diverges over time, reflecting growing unpredictability in the results.</li>
+                            </ul>
+                        </li>
 
-                    <div class="image-text-container">
-                        <img src="images/simulate_pen.png" alt="Simulate penetration">
+                        <li>
+                            <strong>Absolute Frequencies in Random Walk Model:</strong>
+                            <ul>
+                                <li><strong>Mean:</strong> The mean represents the cumulative change in position and
+                                    fluctuates depending on the direction of the walk.</li>
+                                <li><strong>Variance:</strong> Variance grows more rapidly over time compared to
+                                    Bernoulli trials, showing increasing unpredictability as the random walk progresses.
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
 
-                        <div class="image-description">
-                            <h3>Attack Simulation Diagram</h3>
-                            <p>This diagram represents an application that simulates the number of successful
-                                penetration attempts of hackers on servers. Below is a step-by-step breakdown of the
-                                code with key snippets.</p>
-                        </div>
-                    </div>
-
-                    <div class="image-text-container">
-                        <div class="image-description">
-                            <h3>Graph Explanation</h3>
-                            <p>After calculating the results, the method draws the graph on the PictureBox. It plots the
-                                cumulative penetration successes for each attacker over multiple servers using different
-                                colors for each attacker. Grid lines and axis labels are also added to the graph.</p>
-                        </div>
-
-                        <img src="images/draw_graph.png" alt="Graph Generation">
-                    </div>
-
-                    <div class="image-pair-container">
-                        <!-- First Image and Description -->
-                        <div class="image-item">
-                            <img src="images/graph.png" alt="Graph" />
-                            <p>This graph represents a simulation of penetration attempts by multiple hackers on a
-                                network of servers. The x-axis shows the number of servers (from 1 to 10), while the
-                                y-axis represents the cumulative number of successful penetrations by each hacker. Each
-                                colored line corresponds to a different hacker, and the height of the line indicates the
-                                total number of successful penetrations by that hacker up to each server. </p>
-                        </div>
-
-                        <!-- Second Image and Description -->
-                        <div class="image-item">
-                            <img src="images/histogram.png" alt="Histogram" />
-                            <p>After the line graph, a histogram form is opened in another window, that displays the
-                                distribution of the number of successful penetrations by attackers.</p>
-                            <p>It also shows the Arithmetic Average of the servers penetrated and the Variance.</p>
-                        </div>
-                    </div>
-
-                    <div class="link-container">
-                        <a href="assets/project.zip" class="underline-link">Link to the zip of the project</a>
-                    </div>
+                    <p>We can see that the absolute number of successes refers to the total count of successful events
+                        (in this case, penetrations) achieved over a series of trials. It provides a direct count of the
+                        results.
+                        Relative frequencies instead express the proportion of successes relatively to the
+                        total number of trials. This provides a normalized view that accounts for the total attempts.
+                    </p>
+                    <p>The absolute frequency distribution increases linearly over time with increasing trials,
+                        reflecting a cumulative success count. However, its variance may increase, indicating potential
+                        deviations from the expected growth.
+                        The relative frequency distribution stabilises as the number of trials increases and its
+                        variance decreases over time, as results averaging around the true probability of success.</p>
+                    <p>Absolute frequency can be heavily influenced by the size of the sample. In smaller samples,
+                        variations can appear more pronounced due to the limited number of trials.
+                        Relative frequency normalizes these variations by putting them in the context of total trials,
+                        making it less sensitive to fluctuations in smaller sample sizes.</p>
                 </div>
             </div>
+
+
     </div>
     </section>
 
