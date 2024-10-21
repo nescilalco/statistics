@@ -158,6 +158,58 @@
                         divides the data into two equal halves, making the deviations from the central point as small as
                         possible on both sides. This property makes the median a robust and effective measure of central
                         tendency when minimizing total deviation is important.</p>
+
+                    <h2>Formal Proof</h2>
+
+                    <p><strong>Consider the Ordered Data:</strong> Let the data points be ordered such that:</p>
+                    <p>\[
+                        x_1 \leq x_2 \leq \dots \leq x_n
+                        \]</p>
+
+                    <p>Define \( m \) as the median of the data set. For simplicity, assume \( n \) is odd, so the
+                        median is:</p>
+                    <p>\[
+                        m = x_{\frac{n+1}{2}}
+                        \]</p>
+
+                    <h3>Derivative Analysis</h3>
+                    <p>To minimize the sum</p>
+                    <p>\[
+                        f(c) = \sum |x_i - c|
+                        \]</p>
+                    <p>we examine how the function behaves as \( c \) changes. The absolute value function \( |x_i - c|
+                        \) behaves differently depending on whether \( c \) is greater than, less than, or equal to each
+                        \( x_i \).</p>
+
+                    <p>Define the left and right derivatives of \( f(c) \):</p>
+                    <p>For \( c < x_i \), \( |x_i - c|=x_i - c \).</p>
+                            <p>For \( c > x_i \), \( |x_i - c| = c - x_i \).</p>
+
+                            <p>Summing over all data points, the derivative of \( f(c) \) with respect to \( c \) is:
+                            </p>
+                            <p>\[
+                                f'(c) = \sum_{i=1}^{n} \text{sign}(x_i - c)
+                                \]</p>
+
+                            <p>where \( \text{sign}(x_i - c) \) is +1 if \( c < x_i \), -1 if \( c> x_i \), and 0 if \(
+                                    c = x_i \).</p>
+
+                            <h3>At the Median</h3>
+                            <p>At the median \( m \), there are an equal number of data points on either side:</p>
+                            <p>For \( c = m \), half of the data points are less than or equal to \( m \) and half are
+                                greater than or equal to \( m \).</p>
+
+                            <p>The sum of signs for data points below the median cancels out with the sum of signs for
+                                data points above the median:</p>
+                            <p>\[
+                                f'(m) = 0
+                                \]</p>
+
+                            <h3>Conclusion</h3>
+                            <p>Therefore, the median is the value of \( c \) where the sum of absolute deviations
+                                reaches a minimum. Moving \( c \) to either side of the median increases the sum of
+                                deviations because there will be more points farther away, leading to a larger total
+                                distance.</p>
 </body>
 </div>
 </div>
