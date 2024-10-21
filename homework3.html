@@ -100,7 +100,7 @@
                     </ul>
                     </p> -->
 
-                    <p>The absolute deviation is the sum of the absolute differences between data points \( x_1, x_2,
+                    <p>The absolute deviation is the sum of the absolute differences between each data point \( x_1, x_2,
                         \dots, x_n \) and a central point \( c \):</p>
 
                     <p>\[
@@ -109,14 +109,14 @@
 
                     <p>To understand why the median minimizes this function, let’s break it down step by step:</p>
 
-                    <h3>Step 1: Absolute Deviation and Distance</h3>
+                    <h3>Absolute Deviation and Distance</h3>
 
                     <p>The absolute deviation measures the total "distance" between each point in the dataset and the
                         chosen central value \( c \). The goal is to find the \( c \) that minimizes this total
                         distance. Unlike squared differences (used in variance), absolute differences don’t exaggerate
                         larger deviations, which makes this method less sensitive to outliers.</p>
 
-                    <h3>Step 2: Behavior of \( f(c) \)</h3>
+                    <h3>Behavior of \( f(c) \)</h3>
 
                     <p>If you were to move \( c \) either left or right from a central position (e.g., the median), the
                         sum of absolute deviations would either increase or decrease depending on the number of points
@@ -130,7 +130,7 @@
                     <p>Thus, the total deviation will be minimized when \( c \) is positioned such that the number of
                         points to the left and right of \( c \) are balanced—this occurs at the median.</p>
 
-                    <h3>Step 3: The Median as the Minimizer</h3>
+                    <h3>The Median as the Minimizer</h3>
 
                     <ul>
                         <li>For an odd number of data points, the median is the middle value, so the number of points on
@@ -141,11 +141,11 @@
                             number of points on either side is balanced.</li>
                     </ul>
 
-                    <p>In other words, the median is the point at which the sum of the distances between the data points
+                    <p>In other words, the median is the point at which the sum of the distances between each data point
                         and \( c \) is minimized because it splits the dataset into two equal halves, balancing the
                         deviations on both sides.</p>
 
-                    <h3>Step 4: Visual Intuition</h3>
+                    <h3>Visual Intuition</h3>
 
                     <p>Imagine lining up all data points on a number line. If you place \( c \) at any value other than
                         the median, you’ll notice that the sum of the absolute distances from the points on one side
