@@ -238,23 +238,59 @@
                                 <li><strong>Weighted mean:</strong> variation of the simple arithmetic mean, where each
                                     data point contributes differently to the final average based on a corresponding
                                     weight.</li>
+                                <div class="formula">
+                                    <p>
+                                        The weighted mean \( \bar{x}_w \) of a set of values \( x_1, x_2, \dots, x_n \)
+                                        with corresponding weights \( w_1, w_2, \dots, w_n \) is given by:
+                                    </p>
+                                    <p>
+                                        \[
+                                        \bar{x}_w = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}
+                                        \]
+                                    </p>
+                                </div>
                                 <li>
                                     <strong>Geometric mean:</strong> used for proportional data (like growth rates), as
                                     it's more sensitive to small values. It is calculated by
                                     multiplying all the numbers in a dataset and then taking the n-th root (where n is
                                     the total number of data points).
+                                    <p>
+                                        The geometric mean \( G \) of a set of values \( x_1, x_2, \dots, x_n \) is
+                                        given by:
+                                    </p>
+                                    <div class="formula">
+                                        <p>
+                                            \[
+                                            G = \left( \prod_{i=1}^{n} x_i \right)^{\frac{1}{n}}
+                                            \]
+                                        </p>
+                                    </div>
                                 </li>
                                 <li>
                                     <strong>Harmonic mean:</strong> applicable for data that represents rates or ratios.
                                     It is based on the reciprocals of the values. It gives more weight to smaller
                                     values, making it a good measure when the data involves rates like speed,
                                     efficiency, or when averaging quantities measured per unit.
-
+                                    <p>
+                                        The harmonic mean \( H \) of a set of values \( x_1, x_2, \dots, x_n \) is given
+                                        by:
+                                    </p>
+                                    <div class="formula">
+                                        <p>
+                                            \[
+                                            H = \frac{n}{\sum_{i=1}^{n} \frac{1}{x_i}}
+                                            \]
+                                        </p>
+                                    </div>
                                 </li>
                                 <li>
                                     <strong>Quadratic mean:</strong> measure of the average magnitude of a set of
                                     values. It is particularly useful when dealing with quantities that can be both
                                     positive and negative, such as electrical signals or vibrations.
+                                    <p>
+                                        The quadratic mean \( \bar{x}_{\text{quad}} \) of a set of values \( x_1, x_2,
+                                        \dots, x_n \) is given by:
+                                    </p>
                                     <div class="formula">
                                         <p>\[
                                             \text{RMS} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} x_i^2}
