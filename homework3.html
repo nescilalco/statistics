@@ -59,7 +59,7 @@
             <div class="wrapper">
                 <div class="inner">
 
-                    <h1 class="major">Theory/Research</h1>
+                    <h1 class="major">Theory/Research - Median</h1>
 
                     <h2>Median</h2>
                     <p>The <strong>median</strong> of a data set is the value that divides the data into two equal
@@ -211,110 +211,113 @@
                                 reaches a minimum. Moving \( c \) to either side of the median increases the sum of
                                 deviations because there will be more points farther away, leading to a larger total
                                 distance.</p>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="inner">
+                    <h2 class="major">Theory/Research - Location</h2>
 
-                            <h2>Location</h2>
+                    <p>A "location" in statistics is also called "central tendency" and can be seen as a
+                        synthesis
+                        of a statistical distribution, as it "summarizes" or "condenses" the information
+                        provided by
+                        a distribution. It's fundamental to reduce the complexity of a dataset, and does it by
+                        extracting key characteristics. This type of statistic aims to identify a value that
+                        represents some sort of "center" or "summary" of the data.</p>
 
-                            <p>A "location" in statistics is also called "central tendency" and can be seen as a
-                                synthesis
-                                of a statistical distribution, as it "summarizes" or "condenses" the information
-                                provided by
-                                a distribution. It's fundamental to reduce the complexity of a dataset, and does it by
-                                extracting key characteristics. This type of statistic aims to identify a value that
-                                represents some sort of "center" or "summary" of the data.</p>
+                    <h3>Basic Concepts</h3>
 
-                            <h3>Basic Concepts</h3>
+                    <ul>
+                        <li><strong>Arithmetic Average (mean):</strong> the sum of all values divided by the
+                            number of values.</li>
+                        <li><strong>Median:</strong> the value that separates the lower half from the upper half
+                            of the ordered data.</li>
+                        <li><strong>Mode:</strong> the value that appears most frequently in a dataset.</li>
+                    </ul>
 
-                            <ul>
-                                <li><strong>Arithmetic Average (mean):</strong> the sum of all values divided by the
-                                    number of values.</li>
-                                <li><strong>Median:</strong> the value that separates the lower half from the upper half
-                                    of the ordered data.</li>
-                                <li><strong>Mode:</strong> the value that appears most frequently in a dataset.</li>
-                            </ul>
+                    <h3>Other Possible Definitions</h3>
 
-                            <h3>Other Possible Definitions</h3>
-
-                            <ul>
-                                <li><strong>Weighted mean:</strong> variation of the simple arithmetic mean, where each
-                                    data point contributes differently to the final average based on a corresponding
-                                    weight.</li>
-                                <div class="formula">
-                                    <p>
-                                        The weighted mean \( \bar{x}_w \) of a set of values \( x_1, x_2, \dots, x_n \)
-                                        with corresponding weights \( w_1, w_2, \dots, w_n \) is given by:
-                                    </p>
-                                    <p>
-                                        \[
-                                        \bar{x}_w = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}
-                                        \]
-                                    </p>
-                                </div>
-                                <li>
-                                    <strong>Geometric mean:</strong> used for proportional data (like growth rates), as
-                                    it's more sensitive to small values. It is calculated by
-                                    multiplying all the numbers in a dataset and then taking the n-th root (where n is
-                                    the total number of data points).
-                                    <p>
-                                        The geometric mean \( G \) of a set of values \( x_1, x_2, \dots, x_n \) is
-                                        given by:
-                                    </p>
-                                    <div class="formula">
-                                        <p>
-                                            \[
-                                            G = \left( \prod_{i=1}^{n} x_i \right)^{\frac{1}{n}}
-                                            \]
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <strong>Harmonic mean:</strong> applicable for data that represents rates or ratios.
-                                    It is based on the reciprocals of the values. It gives more weight to smaller
-                                    values, making it a good measure when the data involves rates like speed,
-                                    efficiency, or when averaging quantities measured per unit.
-                                    <p>
-                                        The harmonic mean \( H \) of a set of values \( x_1, x_2, \dots, x_n \) is given
-                                        by:
-                                    </p>
-                                    <div class="formula">
-                                        <p>
-                                            \[
-                                            H = \frac{n}{\sum_{i=1}^{n} \frac{1}{x_i}}
-                                            \]
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <strong>Quadratic mean:</strong> measure of the average magnitude of a set of
-                                    values. It is particularly useful when dealing with quantities that can be both
-                                    positive and negative, such as electrical signals or vibrations.
-                                    <p>
-                                        The quadratic mean \( \bar{x}_{\text{quad}} \) of a set of values \( x_1, x_2,
-                                        \dots, x_n \) is given by:
-                                    </p>
-                                    <div class="formula">
-                                        <p>\[
-                                            \text{RMS} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} x_i^2}
-                                            \]</p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <strong>Centroids or spatial mean:</strong> refers to the central point or the
-                                    "average" position of a set of points in space. Commonly used in geometry,
-                                    physics, and data analysis to build clusters.
-                                    <p>
-                                        The centroid \( C \) of a set of points \( (x_1, y_1), (x_2, y_2), \dots, (x_n,
-                                        y_n) \) is given by:
-                                    </p>
-                                    <div class="formula">
-                                        <p>
-                                            \[
-                                            C_x = \frac{1}{n} \sum_{i=1}^{n} x_i, \quad C_y = \frac{1}{n} \sum_{i=1}^{n}
-                                            y_i
-                                            \]
-                                        </p>
-                                    </div>
-                                </li>
-                            </ul>
+                    <ul>
+                        <li><strong>Weighted mean:</strong> variation of the simple arithmetic mean, where each
+                            data point contributes differently to the final average based on a corresponding
+                            weight.</li>
+                        <p>
+                            The weighted mean \( \bar{x}_w \) of a set of values \( x_1, x_2, \dots, x_n \)
+                            with corresponding weights \( w_1, w_2, \dots, w_n \) is given by:
+                        </p>
+                        <div class="formula">
+                            <p>
+                                \[
+                                \bar{x}_w = \frac{\sum_{i=1}^{n} w_i x_i}{\sum_{i=1}^{n} w_i}
+                                \]
+                            </p>
+                        </div>
+                        <li>
+                            <strong>Geometric mean:</strong> used for proportional data (like growth rates), as
+                            it's more sensitive to small values. It is calculated by
+                            multiplying all the numbers in a dataset and then taking the n-th root (where n is
+                            the total number of data points).
+                            <p>
+                                The geometric mean \( G \) of a set of values \( x_1, x_2, \dots, x_n \) is
+                                given by:
+                            </p>
+                            <div class="formula">
+                                <p>
+                                    \[
+                                    G = \left( \prod_{i=1}^{n} x_i \right)^{\frac{1}{n}}
+                                    \]
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Harmonic mean:</strong> applicable for data that represents rates or ratios.
+                            It is based on the reciprocals of the values. It gives more weight to smaller
+                            values, making it a good measure when the data involves rates like speed,
+                            efficiency, or when averaging quantities measured per unit.
+                            <p>
+                                The harmonic mean \( H \) of a set of values \( x_1, x_2, \dots, x_n \) is given
+                                by:
+                            </p>
+                            <div class="formula">
+                                <p>
+                                    \[
+                                    H = \frac{n}{\sum_{i=1}^{n} \frac{1}{x_i}}
+                                    \]
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Quadratic mean:</strong> measure of the average magnitude of a set of
+                            values. It is particularly useful when dealing with quantities that can be both
+                            positive and negative, such as electrical signals or vibrations.
+                            <p>
+                                The quadratic mean \( \bar{x}_{\text{quad}} \) of a set of values \( x_1, x_2,
+                                \dots, x_n \) is given by:
+                            </p>
+                            <div class="formula">
+                                <p>\[
+                                    \text{RMS} = \sqrt{\frac{1}{n} \sum_{i=1}^{n} x_i^2}
+                                    \]</p>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>Centroids or spatial mean:</strong> refers to the central point or the
+                            "average" position of a set of points in space. Commonly used in geometry,
+                            physics, and data analysis to build clusters.
+                            <p>
+                                The centroid \( C \) of a set of points \( (x_1, y_1), (x_2, y_2), \dots, (x_n,
+                                y_n) \) is given by:
+                            </p>
+                            <div class="formula">
+                                <p>
+                                    \[
+                                    C_x = \frac{1}{n} \sum_{i=1}^{n} x_i, \quad C_y = \frac{1}{n} \sum_{i=1}^{n}
+                                    y_i
+                                    \]
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
 </body>
 </div>
