@@ -447,7 +447,7 @@
                 <p>The vertical axis shows the number of successful penetrations (or attacks) achieved by each attacker
                 </p>
                 <p>The attacks occur randomly based on the rate of attacks, defined by the lambda parameter. In this
-                    case, the rate of attacks is set to 5, meaning that on average, 5 attacks are expected over the
+                    case, the rate of attacks is set to 20, meaning that on average, 20 attacks are expected over the
                     entire time window for each attacker. Not all lines follow the same pattern; some attackers achieve
                     more successful penetrations than others within the same time frame, reflecting the randomness of
                     success based on the simulation parameters.</p>
@@ -456,12 +456,19 @@
         </div>
         <br>
         <h3>Observations</h3>
+        <p>The graph represents a continuous process simulating attacks over time, where the distribution of attacks
+            follows a Poisson distribution, which is used to describe the number of rare
+            events (in this case, successful penetrations) occurring within a certain time or space interval.</p>
+
+        <p>In the Poisson process, attacks (jumps of +1) occur with an average frequency of <em>λ</em> attacks per reference
+            interval.
+            The parameter <em>λ</em> controls the frequency with which jumps occur. Thus, <em>λ</em> is the average number of jumps you
+            expect to make in the total interval.</p>
+
         <p>As the parameter <em>λ</em> increases, the number of successful penetrations also increases until it reaches
             the limit where <em>λ = N</em>. At this point, every penetration attempt is successful. This happens because
             the probability of success in each time interval becomes almost certain when <em>λ</em> is large enough.</p>
 
-        <p>This behavior can be modeled using the Poisson distribution, which is used to describe the number of rare
-            events (in this case, successful penetrations) occurring within a certain time or space interval.</p>
 
         In a Poisson distribution we have:
         <ol>
