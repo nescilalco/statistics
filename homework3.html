@@ -411,11 +411,11 @@
         </ul>
 
         <h3>Simulation Logic</h3>
+        <p>The <code>SimulatePenetration()</code> function is where the core of the simulation takes place. Here's
+            how
+            it works:</p>
         <div class="image-text-container">
             <img src="images/HW3/sim_pen.png" alt="Simulate Penetration Function" />
-            <p>The <code>SimulatePenetration()</code> function is where the core of the simulation takes place. Here's
-                how
-                it works:</p>
             <ul>
                 <li><strong>Initialization:</strong> A <code>Bitmap</code> object is created to visualize the results,
                     and a
@@ -434,24 +434,24 @@
             </ul>
         </div>
 
-
-        <img src="images/HW3/sim_graph.png" alt="Graph Simulation" />
         <h3>Attack Simulation Diagram</h3>
-        <p>This graph represents a simulation of multiple attackers attempting to penetrate a system over a
-            specified time period, with the results showing how many successful attacks (penetrations) occurred
-            for each attacker over time.</p>
-        <p>The horizontal axis shows the progression of time, divided into discrete steps. Each step represents
-            a
-            small interval of time within the total time (50 units in this case).</p>
-        <p>The vertical axis shows the number of successful penetrations (or attacks) achieved by each attacker
-        </p>
-        <p>The attacks occur randomly based on the rate of attacks, defined by the lambda parameter. In this
-            case, the rate of attacks is set to 5, meaning that on average, 5 attacks are expected over the
-            entire time window for each attacker. Not all lines follow the same pattern; some attackers achieve
-            more successful penetrations than others within the same time frame, reflecting the randomness of
-            success based on the simulation parameters.</p>
+        <div class="image-text-container">
 
-
+            <p>This graph represents a simulation of multiple attackers attempting to penetrate a system over a
+                specified time period, with the results showing how many successful attacks (penetrations) occurred
+                for each attacker over time.</p>
+            <p>The horizontal axis shows the progression of time, divided into discrete steps. Each step represents
+                a
+                small interval of time within the total time (50 units in this case).</p>
+            <p>The vertical axis shows the number of successful penetrations (or attacks) achieved by each attacker
+            </p>
+            <p>The attacks occur randomly based on the rate of attacks, defined by the lambda parameter. In this
+                case, the rate of attacks is set to 5, meaning that on average, 5 attacks are expected over the
+                entire time window for each attacker. Not all lines follow the same pattern; some attackers achieve
+                more successful penetrations than others within the same time frame, reflecting the randomness of
+                success based on the simulation parameters.</p>
+        </div>
+        <img src="images/HW3/sim_graph.png" alt="Graph Simulation" />
     </div>
 </div>
 </div>
