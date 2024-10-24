@@ -317,6 +317,48 @@
                                 </p>
                             </div>
                         </li>
+                        <li>
+                            <strong>Midrange:</strong> the average of the highest and lowest values in a data set. It
+                            gives a simple measure of central tendency but can be sensitive to outliers.
+                            <p>
+                                The midrange of a set of values \( x_1, x_2, \dots, x_n \) is given by:
+                            </p>
+                            <div class="formula">
+                                <p>\[
+                                    \text{Midrange} = \frac{x_{\text{max}} + x_{\text{min}}}{2}
+                                    \]</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <strong>Trimmed Mean:</strong> a robust measure of central tendency obtained by removing a
+                            fixed percentage of the smallest and largest values before calculating the arithmetic mean.
+                            This helps reduce the impact of outliers.
+                            <p>
+                                The trimmed mean of a set of values \( x_1, x_2, \dots, x_n \) is calculated after
+                                discarding the lowest \( p\% \) and highest \( p\% \) of the data:
+                            </p>
+                            <div class="formula">
+                                <p>\[
+                                    \text{Trimmed Mean} = \frac{1}{n-2k} \sum_{i=k+1}^{n-k} x_i
+                                    \]</p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <strong>Midhinge:</strong> the average of the first and third quartiles (Q1 and Q3) of a
+                            data set. It’s a measure of the center of the interquartile range and is less affected by
+                            outliers than the midrange.
+                            <p>
+                                The midhinge of a set of values is given by:
+                            </p>
+                            <div class="formula">
+                                <p>\[
+                                    \text{Midhinge} = \frac{Q_1 + Q_3}{2}
+                                    \]</p>
+                            </div>
+                        </li>
+
                     </ul>
                 </div>
 </body>
