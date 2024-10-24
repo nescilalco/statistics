@@ -402,13 +402,15 @@
         <h3>Input Fields and User Interface</h3>
         <p>The form contains three input fields to take values for time (<code>N</code>), number of attackers
             (<code>m</code>), and the attack rate (<code>lambda</code>).</p>
-        <p><ul>
+        <p>
+        <ul>
             <li><strong>Time (N)</strong> represents the number of time intervals, with N → ∞.</li>
             <li><strong>Number of Attackers (m)</strong> representing the number of entities trying to penetrate the
                 system.</li>
             <li><strong>Rate of Attacks (lambda)</strong> defines the probability of
                 success for each small time interval.</li>
-        </ul></p>
+        </ul>
+        </p>
 
         <h3>Simulation Logic</h3>
         <p>The <code>SimulatePenetration()</code> function is where the core of the simulation takes place. Here's
@@ -432,7 +434,7 @@
                     attacker is successful, and the cumulative success count is incremented.</li>
             </ul>
         </div>
-
+        <br>
         <h3>Attack Simulation Diagram</h3>
         <div class="image-text-container">
             <div class="image-description">
@@ -452,6 +454,31 @@
             </div>
             <img src="images/HW3/sim_graph.png" alt="Graph Simulation" />
         </div>
+        <br>
+        <h3>Observations</h3>
+        <p>As the parameter <em>λ</em> increases, the number of successful penetrations also increases until it reaches
+            the limit where <em>λ = N</em>. At this point, every penetration attempt is successful. This happens because
+            the probability of success in each time interval becomes almost certain when <em>λ</em> is large enough.</p>
+
+        <p>This behavior can be modeled using the Poisson distribution, which is used to describe the number of rare
+            events (in this case, successful penetrations) occurring within a certain time or space interval.</p>
+
+        In a Poisson distribution we have:
+        <ol>
+            <li><strong>Mean:</strong> <em>λ</em> represents the expected number of events in a given interval.</li>
+            <li><strong>Variance:</strong> In the Poisson distribution, the variance is equal to the mean. This means
+                that for a value of <em>λ</em>, we expect the number of events to fluctuate around <em>λ</em>, with the
+                spread of these events being equal to the mean.</li>
+        </ol>
+
+        <p>In our model, this means the average number of successful penetrations is always equal to <em>λ</em>, for any
+            value of <em>λ</em>. As <em>λ</em> increases, both the average number and the variability of successful
+            penetrations increase.</p>
+
+        <p>In the simulation, this is clear in the graph: with low <em>λ</em>, there are fewer successful penetrations,
+            which are scattered randomly. As <em>λ</em> increases, the number of successful penetrations increases
+            steadily, until reaching a point where nearly every attack is successful.</p>
+
     </div>
 </div>
 </div>
