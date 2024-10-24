@@ -426,53 +426,27 @@
                 attacker is successful, and the cumulative success count is incremented.</li>
         </ul>
 
-        <img src="images/HW3/sim_graph.png" alt="Graph Simulation" />
-
         <div class="image-text-container">
-            <img src="images/simulate_pen.png" alt="Simulate penetration">
-
+            <img src="images/HW3/sim_graph.png" alt="Graph Simulation" />
             <div class="image-description">
                 <h3>Attack Simulation Diagram</h3>
-                <p>This diagram represents an application that simulates the number of successful
-                    penetration attempts of hackers on servers. Below is a step-by-step breakdown of the
-                    code with key snippets.</p>
+                <p>This graph represents a simulation of multiple attackers attempting to penetrate a system over a
+                    specified time period, with the results showing how many successful attacks (penetrations) occurred
+                    for each attacker over time.</p>
+                <p>The horizontal axis shows the progression of time, divided into discrete steps. Each step represents
+                    a
+                    small interval of time within the total time (50 units in this case).</p>
+                <p>The vertical axis shows the number of successful penetrations (or attacks) achieved by each attacker
+                </p>
+                <p>The attacks occur randomly based on the rate of attacks, defined by the lambda parameter. In this
+                    case, the rate of attacks is set to 5, meaning that on average, 5 attacks are expected over the
+                    entire time window for each attacker. Not all lines follow the same pattern; some attackers achieve
+                    more successful penetrations than others within the same time frame, reflecting the randomness of
+                    success based on the simulation parameters.</p>
             </div>
         </div>
 
-        <div class="image-text-container">
-            <div class="image-description">
-                <h3>Graph Explanation</h3>
-                <p>After calculating the results, the method draws the graph on the PictureBox. It plots the
-                    cumulative penetration successes for each attacker over multiple servers using different
-                    colors for each attacker. Grid lines and axis labels are also added to the graph.</p>
-            </div>
-
-            <img src="images/draw_graph.png" alt="Graph Generation">
-        </div>
-
-        <div class="image-pair-container">
-            <!-- First Image and Description -->
-            <div class="image-item">
-                <img src="images/graph.png" alt="Graph" />
-                <p>This graph represents a simulation of penetration attempts by multiple hackers on a
-                    network of servers. The x-axis shows the number of servers (from 1 to 10), while the
-                    y-axis represents the cumulative number of successful penetrations by each hacker. Each
-                    colored line corresponds to a different hacker, and the height of the line indicates the
-                    total number of successful penetrations by that hacker up to each server. </p>
-            </div>
-
-            <!-- Second Image and Description -->
-            <div class="image-item">
-                <img src="images/histogram.png" alt="Histogram" />
-                <p>After the line graph, a histogram form is opened in another window, that displays the
-                    distribution of the number of successful penetrations by attackers.</p>
-                <p>It also shows the Arithmetic Average of the servers penetrated and the Variance.</p>
-            </div>
-        </div>
-
-        <div class="link-container">
-            <a href="assets/project.zip" class="underline-link">Link to the zip of the project</a>
-        </div>
+        
     </div>
 </div>
 </div>
