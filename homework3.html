@@ -400,10 +400,10 @@
         </p>
 
         <h3>Input Fields and User Interface</h3>
-        <p>The form contains three input fields to take values for time (<code>n</code>), number of attackers
+        <p>The form contains three input fields to take values for time (<code>N</code>), number of attackers
             (<code>m</code>), and the attack rate (<code>lambda</code>).</p>
         <ul>
-            <li><strong>Time (N)</strong> represents the number of time intervals and it should be very big.</li>
+            <li><strong>Time (N)</strong> represents the number of time intervals, with $N \to \infty$.</li>
             <li><strong>Number of Attackers (m)</strong> representing the number of entities trying to penetrate the
                 system.</li>
             <li><strong>Rate of Attacks (lambda)</strong> defines the probability of
@@ -420,13 +420,12 @@
                 <li><strong>Initialization:</strong> A <code>Bitmap</code> object is created to visualize the results,
                     and a
                     random number generator is initialized for probabilistic simulations.</li>
-                <li><strong>Time Step Size:</strong> The time window is divided into <code>N</code> small intervals,
+                <li><strong>Time Step Size:</strong> The time window is divided into <code>n</code> small intervals,
                     with
-                    each interval having a size <code>dt = 1/N</code>.</li>
+                    each interval having a size <code>dt = 1/n</code>.</li>
                 <li><strong>Probability of Attack Success:</strong> For each small interval, the probability of a
                     successful
-                    attack is <code>lambda_dt = lambda * dt</code>. This reflects the continuous-time approximation
-                    requested by the professor.</li>
+                    attack is <code>lambda_dt = lambda * dt</code>.</li>
                 <li><strong>Simulating Attacks:</strong> For each attacker, the program simulates whether an attack is
                     successful at each time step. If the random number generated is less than <code>lambda_dt</code>,
                     the
