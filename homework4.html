@@ -1,0 +1,264 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Homework 4</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">Statistics Blog - Cybersecurity</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="homework1.html">Homework 1</a></li>
+                    <li><a href="homework2.html">Homework 2</a></li>
+                    <li><a href="homework3.html">Homework 3</a></li>
+                    <li><a href="homework4.html">Homework 4</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <h1 class="large-title">Homework 3</h1>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
+
+                    <h1 class="major">Theory/Research</h1>
+
+                    <h2>Statistical Independence</h2>
+                    <p>Statistical independence describes situations where the occurrence of one event does not
+                        influence the probability of another. This concept is central in analyzing relationships between
+                        variables or events.</p>
+
+                    <h3>Formal Definition of Independence</h3>
+                    <p>For two events <i>A</i> and <i>B</i> to be <strong>independent</strong>, the probability of both
+                        <i>A</i> and <i>B</i> occurring together (denoted as \( P(A \cap B) \)) must equal the product
+                        of their individual probabilities:
+                    </p>
+                    <p class="formula">\[
+                        P(A \cap B) = P(A) \cdot P(B)
+                        \]</p>
+                    <p>If this condition holds, then knowing that <i>A</i> has occurred tells us nothing about the
+                        likelihood of <i>B</i>, and vice versa.</p>
+
+                    <h3>Example with Events</h3>
+                    <p>Suppose we roll two dice. Let:</p>
+                    <ul>
+                        <li><strong>A</strong>: the event that the first die shows a 4.</li>
+                        <li><strong>B</strong>: the event that the second die shows a 6.</li>
+                    </ul>
+                    <p>Since the outcome of one die does not affect the other, these events are independent. The
+                        probability of \( A \cap B \) (first die shows 4 and second die shows 6) is:</p>
+                    <p class="formula">\[
+                        P(A) = \frac{1}{6}, \quad P(B) = \frac{1}{6}, \quad P(A \cap B) = P(A) \cdot P(B) = \frac{1}{6}
+                        \times \frac{1}{6} = \frac{1}{36}
+                        \]</p>
+                    <p>Because \( P(A \cap B) = P(A) \cdot P(B) \), <i>A</i> and <i>B</i> are independent.</p>
+
+
+                    <h3>Analogy with Conditional Probability</h3>
+                    <p>Another way to express independence is through conditional probability: if <i>A</i> and <i>B</i>
+                        are independent, then:</p>
+                    <p class="formula">\[
+                        P(A | B) = P(A) \quad \text{and} \quad P(B | A) = P(B)
+                        \]</p>
+                    <p>This means that knowing <i>B</i> has occurred does not change the probability of <i>A</i>, and
+                        vice versa.</p>
+
+                    <h3>Statistical Independence for Random Variables</h3>
+                    <p>Two random variables <i>X</i> and <i>Y</i> are independent if, for any values <i>x</i> and
+                        <i>y</i>, the probability of \( X = x \) and \( Y = y \) occurring together is the product of
+                        their individual probabilities:</p>
+                    <p class="formula">\[
+                        P(X = x \text{ and } Y = y) = P(X = x) \cdot P(Y = y)
+                        \]</p>
+                    <p>Example: If <i>X</i> and <i>Y</i> represent the results of two independent coin tosses (heads =
+                        1, tails = 0), then:</p>
+                    <p class="formula">\[
+                        P(X = 1 \text{ and } Y = 1) = P(X = 1) \cdot P(Y = 1) = \frac{1}{2} \times \frac{1}{2} =
+                        \frac{1}{4}
+                        \]</p>
+                </div>
+</body>
+</div>
+</div>
+<div class="wrapper">
+    <div class="inner">
+        <h2 class="major">Attack Simulation Exercise</h2>
+        <p>This code implements a simulation of cyber attacks, where the cumulative number of successful penetrations by
+            a certain number of attackers (defined by the user) is tracked over a time interval, tending to infinite and
+            divided into very small
+            subintervals. The graphical output shows the temporal evolution of the attacks as time progresses and
+            visualizes the trajectories of each attacker.
+        </p>
+
+        <h3>Input Fields and User Interface</h3>
+        <p>The form contains three input fields to take values for time (<code>n</code>), number of attackers
+            (<code>m</code>), and the attack rate (<code>lambda</code>).</p>
+        <ul>
+            <li><strong>Time (t)</strong> represents the number of time intervals and it should be very big.</li>
+            <li><strong>Number of Attackers (m)</strong> representing the number of entities trying to penetrate the
+                system.</li>
+            <li><strong>Rate of Attacks (lambda)</strong> defines the probability of
+                success for each small time interval.</li>
+        </ul>
+
+        <h3>Simulation Logic</h3>
+        <p>The <code>SimulatePenetration()</code> function is where the core of the simulation takes place. Here's how
+            it works:</p>
+        <ul>
+            <li><strong>Initialization:</strong> A <code>Bitmap</code> object is created to visualize the results, and a
+                random number generator is initialized for probabilistic simulations.</li>
+            <li><strong>Time Step Size:</strong> The time window is divided into <code>n</code> small intervals, with
+                each interval having a size <code>dt = 1/n</code>.</li>
+            <li><strong>Probability of Attack Success:</strong> For each small interval, the probability of a successful
+                attack is <code>lambda_dt = lambda * dt</code>. This reflects the continuous-time approximation
+                requested by the professor.</li>
+            <li><strong>Simulating Attacks:</strong> For each attacker, the program simulates whether an attack is
+                successful at each time step. If the random number generated is less than <code>lambda_dt</code>, the
+                attacker is successful, and the cumulative success count is incremented.</li>
+        </ul>
+
+        <img src="images/main_form.png" alt="Main form" />
+
+        <div class="image-text-container">
+            <img src="images/simulate_pen.png" alt="Simulate penetration">
+
+            <div class="image-description">
+                <h3>Attack Simulation Diagram</h3>
+                <p>This diagram represents an application that simulates the number of successful
+                    penetration attempts of hackers on servers. Below is a step-by-step breakdown of the
+                    code with key snippets.</p>
+            </div>
+        </div>
+
+        <div class="image-text-container">
+            <div class="image-description">
+                <h3>Graph Explanation</h3>
+                <p>After calculating the results, the method draws the graph on the PictureBox. It plots the
+                    cumulative penetration successes for each attacker over multiple servers using different
+                    colors for each attacker. Grid lines and axis labels are also added to the graph.</p>
+            </div>
+
+            <img src="images/draw_graph.png" alt="Graph Generation">
+        </div>
+
+        <div class="image-pair-container">
+            <!-- First Image and Description -->
+            <div class="image-item">
+                <img src="images/graph.png" alt="Graph" />
+                <p>This graph represents a simulation of penetration attempts by multiple hackers on a
+                    network of servers. The x-axis shows the number of servers (from 1 to 10), while the
+                    y-axis represents the cumulative number of successful penetrations by each hacker. Each
+                    colored line corresponds to a different hacker, and the height of the line indicates the
+                    total number of successful penetrations by that hacker up to each server. </p>
+            </div>
+
+            <!-- Second Image and Description -->
+            <div class="image-item">
+                <img src="images/histogram.png" alt="Histogram" />
+                <p>After the line graph, a histogram form is opened in another window, that displays the
+                    distribution of the number of successful penetrations by attackers.</p>
+                <p>It also shows the Arithmetic Average of the servers penetrated and the Variance.</p>
+            </div>
+        </div>
+
+        <div class="link-container">
+            <a href="assets/project.zip" class="underline-link">Link to the zip of the project</a>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Footer 
+    <section id="footer">
+        <div class="inner">
+            <h2 class="major">Get in touch</h2>
+            <p>Se hai domande o dubbi riguardanti il compito, sentiti libero di contattarmi.</p>
+            <form method="post" action="#">
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="4"></textarea>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" /></li>
+                </ul>
+            </form>
+            <ul class="contact">
+                <li class="icon solid fa-home">
+                    Untitled Inc<br />
+                    1234 Somewhere Road Suite #2894<br />
+                    Nashville, TN 00000-0000
+                </li>
+                <li class="icon solid fa-phone">(000) 000-0000</li>
+                <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled Inc. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+    -->
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
