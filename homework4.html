@@ -105,7 +105,8 @@
                     <h3>Statistical Independence for Random Variables</h3>
                     <p>Two random variables <i>X</i> and <i>Y</i> are independent if, for any values <i>x</i> and
                         <i>y</i>, the probability of \( X = x \) and \( Y = y \) occurring together is the product of
-                        their individual probabilities:</p>
+                        their individual probabilities:
+                    </p>
                     <p class="formula">\[
                         P(X = x \text{ and } Y = y) = P(X = x) \cdot P(Y = y)
                         \]</p>
@@ -122,39 +123,50 @@
 <div class="wrapper">
     <div class="inner">
         <h2 class="major">Attack Simulation Exercise</h2>
-        <p>This code implements a simulation of cyber attacks, where the cumulative number of successful penetrations by
-            a certain number of attackers (defined by the user) is tracked over a time interval, tending to infinite and
-            divided into very small
-            subintervals. The graphical output shows the temporal evolution of the attacks as time progresses and
-            visualizes the trajectories of each attacker.
-        </p>
+        <h2>Refining the Stochastic SDE Simulator for Continuous Time</h2>
+        <p>This task refines the stochastic simulator by transitioning from a discrete random walk process to a
+            continuous-time process. This approach approximates the <strong>scaling limit of the random walk</strong>.
+            By dividing time into increasingly smaller intervals and applying a probability-based step at each interval,
+            we move toward a representation of <strong>Brownian Motion</strong>, or the <em>Wiener Process</em>.</p>
 
-        <h3>Input Fields and User Interface</h3>
-        <p>The form contains three input fields to take values for time (<code>n</code>), number of attackers
-            (<code>m</code>), and the attack rate (<code>lambda</code>).</p>
+        <h3>1. Continuous Approximation in the SDE Simulation</h3>
+        <p>To approximate continuous time, the temporal window is divided into very small intervals, <code>dt</code>,
+            that approach zero. At each interval:</p>
         <ul>
-            <li><strong>Time (t)</strong> represents the number of time intervals and it should be very big.</li>
-            <li><strong>Number of Attackers (m)</strong> representing the number of entities trying to penetrate the
-                system.</li>
-            <li><strong>Rate of Attacks (lambda)</strong> defines the probability of
-                success for each small time interval.</li>
+            <li>With a probability <code>p</code>, the process takes a step up by <code>+√dt</code>.</li>
+            <li>With probability <code>1 - p</code>, it steps down by <code>-√dt</code>.</li>
         </ul>
 
-        <h3>Simulation Logic</h3>
-        <p>The <code>SimulatePenetration()</code> function is where the core of the simulation takes place. Here's how
-            it works:</p>
+        <h3>2. Significance of the Donsker Invariance Principle</h3>
+        <p>The <strong>Donsker Invariance Principle</strong>, also known as the <em>Functional Central Limit
+                Theorem</em>, underpins why this refinement leads to Brownian Motion. As the time intervals
+            <code>dt</code> shrink and the number of steps increases, the discrete random walk (the cumulative sum of
+            random steps) converges to a <strong>Wiener Process</strong>. This principle validates that a suitably
+            rescaled random walk can approximate continuous Brownian Motion.</p>
+        <p>This principle ensures that the discrete model’s <strong>independent increments</strong> and
+            <strong>stationary steps</strong> are preserved in the continuous approximation, both of which are essential
+            characteristics of Brownian Motion.</p>
+
+        <h3>3. Brownian Motion in the Simulation</h3>
+        <p>As the discrete walk becomes continuous, the resulting stochastic process aligns with <strong>Brownian
+                Motion</strong>. Key characteristics include:</p>
         <ul>
-            <li><strong>Initialization:</strong> A <code>Bitmap</code> object is created to visualize the results, and a
-                random number generator is initialized for probabilistic simulations.</li>
-            <li><strong>Time Step Size:</strong> The time window is divided into <code>n</code> small intervals, with
-                each interval having a size <code>dt = 1/n</code>.</li>
-            <li><strong>Probability of Attack Success:</strong> For each small interval, the probability of a successful
-                attack is <code>lambda_dt = lambda * dt</code>. This reflects the continuous-time approximation
-                requested by the professor.</li>
-            <li><strong>Simulating Attacks:</strong> For each attacker, the program simulates whether an attack is
-                successful at each time step. If the random number generated is less than <code>lambda_dt</code>, the
-                attacker is successful, and the cumulative success count is incremented.</li>
+            <li><strong>Continuous Paths</strong>: Paths are continuous without jumps, with each position dependent on
+                accumulated, infinitesimal, random changes over time.</li>
+            <li><strong>Mean and Variance</strong>: The expected change is zero, while variance grows linearly with
+                time, similar to a scaled random walk with step sizes adjusted by <code>√dt</code>.</li>
+            <li><strong>Applications</strong>: Brownian Motion is commonly used in fields such as physics and finance,
+                modeling random, continuous behavior over time.</li>
         </ul>
+
+        <h3>Simulation Implications</h3>
+        <p>By subdividing the timeline and scaling steps by <code>√dt</code>, the simulator aligns the discrete random
+            walk closely with Brownian Motion dynamics. This adaptation not only demonstrates a Brownian path but also
+            shows <strong>how the random walk process scales and approximates the properties of Brownian
+                Motion</strong>, making it suitable for analyzing systems with random, continuous fluctuations.</p>
+        <p>This approach also showcases the simulator’s relevance in modeling <strong>stochastic differential equations
+                (SDEs)</strong>, where such approximations are critical for accurately simulating real-world continuous
+            processes.</p>
 
         <img src="images/main_form.png" alt="Main form" />
 
