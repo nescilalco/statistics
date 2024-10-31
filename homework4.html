@@ -124,25 +124,16 @@
     <div class="inner">
         <h2 class="major">Attack Simulation Exercise</h2>
         <h2>Refining the Stochastic SDE Simulator for Continuous Time</h2>
-        <p> This new code simulates a continuous random walk process by dividing time into small intervals (∆t) and
+        <p> This new code simulates a continuous random walk process by dividing time into infinitesimally small intervals (∆t) and
             using
             a
             defined probability at each step to approximate Brownian motion. Each attacker performs a series of
             <em>n</em> steps, allowing to observe how the discrete random walk approximates a
             continuous Wiener process, or Brownian motion. This simulation comply to the Donsker Invariance Principle,
-            which states that a sufficiently rescaled random walk process will tend towards Brownian motion.
-        </p>
-        
-        <h3>Donsker Invariance Principle and Transition to Brownian Motion</h3>
-        <p>
-            The Donsker Invariance Principle, also known as the Functional Central Limit Theorem, underpins this process
-            by explaining how the discrete random walk model transitions into Brownian Motion as the intervals
-            <em>∆t</em> become infinitesimally small and the number of steps grows. This principle establishes that a
-            sufficiently rescaled random walk converges to a Wiener Process (Brownian Motion), a phenomenon
-            characterized by independent and stationary increments &mdash; both essential features of the Wiener
+            which states that a sufficiently rescaled random walk process will tend towards Brownian motion, a phenomenon
+            characterized by independent and stationary increments, both essential features of the Wiener
             Process.
         </p>
-        
         <div class="image-text-container">
             <img src="images/HW4/sim_code.png" alt="Simulate penetration">
 
