@@ -52,7 +52,7 @@
         <section id="wrapper">
             <header>
                 <div class="inner">
-                    <h1 class="large-title">Homework 3</h1>
+                    <h1 class="large-title">Homework 4</h1>
                 </div>
             </header>
 
@@ -122,120 +122,51 @@
 </div>
 <div class="wrapper">
     <div class="inner">
-        <h2 class="major">Attack Simulation Exercise</h2>
-        <h2>Refining the Stochastic SDE Simulator for Continuous Time</h2>
-        <p>This new code simulates a continuous random walk process by dividing time into small intervals (∆t) and using
-            a
-            defined probability at each step to approximate Brownian motion. Each attacker (hacker) performs a series of
-            <em>n</em> steps on a graphical "field," allowing us to observe how the discrete random walk approximates a
-            continuous Wiener process, or Brownian motion. This simulation comply to the Donsker Invariance Principle,
-            which states that a sufficiently rescaled random walk process will tend towards Brownian motion.
-        </p>
+        <h1>Donsker's Invariance Principle and Brownian Motion</h1>
 
-        <h3>Continuous Approximation in the SDE Simulation</h3>
-        <p>To approximate continuous time, the temporal window is divided into very small <em>n</em> intervals, each
-            represented by ∆t = 1/n. At each interval:</p>
-        <ul>
-            <li>With a probability <code>p</code>, the process takes a step up by <code>+√dt</code>.</li>
-            <li>With probability <code>1 - p</code>, it steps down by <code>-√dt</code>.</li>
-            <li>The final position of each attacker after <em>n</em> steps is stored in the <code>successCounts</code>
-                array, where each continuous position is rounded to a discrete "success" value.</li>
-        </ul>
-        <br>
-        <img src="images/HW4/sim_graph.png" alt="Simulation Graph" width="1200" />
-        <br>
-
-        <h3>Donsker Invariance Principle and Transition to Brownian Motion</h3>
-        <p>
-            The Donsker Invariance Principle, also known as the Functional Central Limit Theorem, underpins this process
-            by explaining how the discrete random walk model transitions into Brownian Motion as the intervals
-            <em>dt</em> become infinitesimally small and the number of steps grows. This principle establishes that a
-            sufficiently rescaled random walk converges to a Wiener Process (Brownian Motion), a phenomenon
-            characterized by independent and stationary increments &mdash; both essential features of the Wiener
-            Process.
-        </p>
-
-        <h3>Brownian Motion in the Simulation</h3>
-        <p>In the context of this simulation, Brownian Motion describes the result of this refined process, with key
-            properties that reflect real-world random fluctuations:</p>
-        <ul>
-            <li><strong>Continuous Paths:</strong> Each path evolves without jumps, and each position depends on an
-                accumulation of tiny, random changes.</li>
-            <li><strong>Mean and Variance:</strong> The expected change over time remains zero, while variance grows
-                linearly with time. This corresponds to the scaled random walk, where steps fluctuate by
-                <em>&pm;&radic;dt</em> in both directions to align with continuous Brownian dynamics.
-            </li>
-        </ul>
-
-        <p>
-            Brownian Motion is widely used to model random fluctuations in fields like physics and finance, representing
-            random yet continuous changes over time. By scaling each step by <em>&radic;dt</em> in this simulation, the
-            model approximates Brownian Motion effectively, providing valuable insights into systems that exhibit
-            random, continuous behaviors.
-        </p>
-
-        <p>
-            This simulator highlights its potential for modeling stochastic differential equations (SDEs). Through
-            continuous approximations of random processes, it provides a realistic framework for simulating complex,
-            real-world systems where fluctuations evolve over time in a continuous, unpredictable manner.
-        </p>
-
-        <p>The process assigns the direction of the step (positive or negative) randomly and uniformly, with no specific
-            bias toward one direction. This ensures the simulation remains symmetrical, with no tendency toward positive
-            or negative values, replicating the Brownian motion property of oscillating around zero with random
-            deviations over time.</p>
-
-        <p>The choice of step size Δt√Δt ensures that over a sufficiently long period, the total variance grows
-            proportionally to time, as in a Wiener process or Brownian motion.</p>
-        <p>In short, the combination of random jumps ±Δt√Δt at each infinitesimal interval Δt provides an excellent
-            approximation for the continuous random walk limit, producing behavior similar to Brownian motion according
-            to the required theoretical principles.</p>
-
-
-        <div class="image-text-container">
-            <img src="images/HW4/sim_code.png" alt="Simulate penetration">
-
-            <div class="image-description">
-                <h3>Attack Simulation Diagram</h3>
-                <p>This diagram represents an application that simulates the number of successful
-                    penetration attempts of hackers on servers. Below is a step-by-step breakdown of the
-                    code with key snippets.</p>
-            </div>
+        <div class="section">
+            <h2>Overview of the Donsker’s Invariance Principle</h2>
+            <p>According to the Donsker's Invariance Principle, a sequence of random processes converges in distribution
+                to Brownian motion. This allows us to analyze the mean and variance properties of the limiting process
+                \( W(t) \).</p>
         </div>
 
-        <div class="image-text-container">
-            <div class="image-description">
-                <h3>Graph Explanation</h3>
-                <p>After calculating the results, the method draws the graph on the PictureBox. It plots the
-                    cumulative penetration successes for each attacker over multiple servers using different
-                    colors for each attacker. Grid lines and axis labels are also added to the graph.</p>
-            </div>
-
-            <img src="images/draw_graph.png" alt="Graph Generation">
+        <div class="section">
+            <h2>Mean of Brownian Motion</h2>
+            <p>Under the Donsker principle, the random process \( W^{(n)}(t) \) converges in distribution to a standard
+                Brownian motion \( W(t) \) as \( n \to \infty \). The mean of standard Brownian motion \( W(t) \) is
+                defined as:</p>
+            <p class="formula">\( \mathbb{E}[W(t)] = 0 \)</p>
+            <p>This means that the mean of the limiting process is zero for all \( t \in [0, 1] \).</p>
         </div>
 
-        <div class="image-pair-container">
-            <!-- First Image and Description -->
-            <div class="image-item">
-                <img src="images/graph.png" alt="Graph" />
-                <p>This graph represents a simulation of penetration attempts by multiple hackers on a
-                    network of servers. The x-axis shows the number of servers (from 1 to 10), while the
-                    y-axis represents the cumulative number of successful penetrations by each hacker. Each
-                    colored line corresponds to a different hacker, and the height of the line indicates the
-                    total number of successful penetrations by that hacker up to each server. </p>
-            </div>
-
-            <!-- Second Image and Description -->
-            <div class="image-item">
-                <img src="images/histogram.png" alt="Histogram" />
-                <p>After the line graph, a histogram form is opened in another window, that displays the
-                    distribution of the number of successful penetrations by attackers.</p>
-                <p>It also shows the Arithmetic Average of the servers penetrated and the Variance.</p>
-            </div>
+        <div class="section">
+            <h2>Variance of Brownian Motion</h2>
+            <p>The variance of standard Brownian motion \( W(t) \) is given by:</p>
+            <p class="formula">\( \text{Var}(W(t)) = t \)</p>
+            <p>This implies that for each \( t \in [0, 1] \), the variance increases linearly over time. Therefore, the
+                dispersion of Brownian motion around the mean (which is zero) grows as \( t \) increases.</p>
         </div>
 
-        <div class="link-container">
-            <a href="assets/project.zip" class="underline-link">Link to the zip of the project</a>
+        <div class="section highlight">
+            <h3>Summary</h3>
+            <ul>
+                <li><strong>Mean:</strong> For \( W(t) \), we have \( \mathbb{E}[W(t)] = 0 \) for every \( t \in [0, 1]
+                    \).</li>
+                <li><strong>Variance:</strong> For \( W(t) \), we have \( \text{Var}(W(t)) = t \) for every \( t \in [0,
+                    1] \).</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Interpretation in the Context of Donsker</h2>
+            <p>When we say that \( W^{(n)}(t) \) converges in distribution to \( W(t) \), we mean that the mean and
+                variance properties of the limiting process are typical of standard Brownian motion. Specifically, not
+                only does the distribution converge, but also the fundamental structure of the process remains unchanged
+                in the limit: it maintains a zero mean and a variance that grows linearly with time.</p>
+            <p>This is significant because, despite differences among the processes \( W^{(n)} \) for finite values of
+                \( n \), their “shape” and statistical behavior increasingly resemble those of true Brownian motion as
+                \( n \) grows.</p>
         </div>
     </div>
 </div>
