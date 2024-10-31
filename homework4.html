@@ -123,18 +123,26 @@
 <div class="wrapper">
     <div class="inner">
         <h2 class="major">Attack Simulation Exercise</h2>
+        <br>
+        <img src="images/HW4/sim_graph.png" alt="Simulation Graph" />
+        <br>
         <h2>Refining the Stochastic SDE Simulator for Continuous Time</h2>
-        <p>This task refines the stochastic simulator by transitioning from a discrete random walk process to a
-            continuous-time process. This approach approximates the <strong>scaling limit of the random walk</strong>.
-            By dividing time into increasingly smaller intervals and applying a probability-based step at each interval,
-            we move toward a representation of <strong>Brownian Motion</strong>, or the <em>Wiener Process</em>.</p>
+        <p>This new code simulates a continuous random walk process by dividing time into small intervals (∆t) and using
+            a
+            defined probability at each step to approximate Brownian motion. Each attacker (hacker) performs a series of
+            <em>n</em> steps on a graphical "field," allowing us to observe how the discrete random walk approximates a
+            continuous Wiener process, or Brownian motion. This simulation comply to the Donsker Invariance Principle,
+            which states that a sufficiently rescaled random walk process will tend towards Brownian motion.
+        </p>
 
-        <h3>1. Continuous Approximation in the SDE Simulation</h3>
-        <p>To approximate continuous time, the temporal window is divided into very small intervals, <code>dt</code>,
-            that approach zero. At each interval:</p>
+        <h3>Continuous Approximation in the SDE Simulation</h3>
+        <p>To approximate continuous time, the temporal window is divided into very small <em>n</em> intervals, each
+            represented by ∆t = 1/n. At each interval:</p>
         <ul>
             <li>With a probability <code>p</code>, the process takes a step up by <code>+√dt</code>.</li>
             <li>With probability <code>1 - p</code>, it steps down by <code>-√dt</code>.</li>
+            <li>The final position of each attacker after <em>n</em> steps is stored in the <code>successCounts</code>
+                array, where each continuous position is rounded to a discrete "success" value.</li>
         </ul>
 
         <h3>2. Significance of the Donsker Invariance Principle</h3>
@@ -142,10 +150,12 @@
                 Theorem</em>, underpins why this refinement leads to Brownian Motion. As the time intervals
             <code>dt</code> shrink and the number of steps increases, the discrete random walk (the cumulative sum of
             random steps) converges to a <strong>Wiener Process</strong>. This principle validates that a suitably
-            rescaled random walk can approximate continuous Brownian Motion.</p>
+            rescaled random walk can approximate continuous Brownian Motion.
+        </p>
         <p>This principle ensures that the discrete model’s <strong>independent increments</strong> and
             <strong>stationary steps</strong> are preserved in the continuous approximation, both of which are essential
-            characteristics of Brownian Motion.</p>
+            characteristics of Brownian Motion.
+        </p>
 
         <h3>3. Brownian Motion in the Simulation</h3>
         <p>As the discrete walk becomes continuous, the resulting stochastic process aligns with <strong>Brownian
@@ -168,7 +178,6 @@
                 (SDEs)</strong>, where such approximations are critical for accurately simulating real-world continuous
             processes.</p>
 
-        <img src="images/HW4/sim_graph.png" alt="Simulation Graph" />
 
         <div class="image-text-container">
             <img src="images/HW4/sim_code.png" alt="Simulate penetration">
