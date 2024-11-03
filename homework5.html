@@ -77,7 +77,7 @@
                         \|\mathbf{a}\| = \sqrt{\sum_{i=1}^n a_i^2} \) and \( \|\mathbf{b}\| = \sqrt{\sum_{i=1}^n b_i^2}
                         \) are the magnitudes (Euclidean norms) of \( \mathbf{a} \) and \( \mathbf{b} \).</p>
 
-                    <h3>Proof (Using Normalization)</h3>
+                    <h2>Proof (Using Normalization)</h2>
                     <p>Define the function \( f(t) \) based on a linear combination of \( \mathbf{a} \) and \(
                         \mathbf{b} \):</p>
                     <p>
@@ -86,7 +86,7 @@
                         \]
                     </p>
 
-                    <h4>Step 1: Expand \( f(t) \)</h4>
+                    <h3>Step 1: Expand \( f(t) \)</h3>
                     <p>Expanding this expression:</p>
                     <p>
                         \[
@@ -94,7 +94,7 @@
                         \]
                     </p>
 
-                    <h4>Step 2: Use the Distributive Property of the Dot Product</h4>
+                    <h3>Step 2: Use the Distributive Property of the Dot Product</h3>
                     <p>Expanding the terms:</p>
                     <p>
                         \[
@@ -109,7 +109,7 @@
                         \]
                     </p>
 
-                    <h4>Step 3: Complete the Square</h4>
+                    <h3>Step 3: Complete the Square</h3>
                     <p>Since \( f(t) \geq 0 \) (as it is a square of a norm), the discriminant of this quadratic must
                         satisfy:</p>
                     <p>
@@ -118,7 +118,7 @@
                         \]
                     </p>
 
-                    <h4>Step 4: Rearrange Terms</h4>
+                    <h3>Step 4: Rearrange Terms</h3>
                     <p>This implies:</p>
                     <p>
                         \[
@@ -133,13 +133,89 @@
                     </p>
                     <p>This completes the proof of the Cauchy-Schwarz inequality.</p>
                 </div>
+                <div class="inner">
+                    <h2>Independence vs. Uncorrelation</h2>
+
+                    <p>The concepts of <strong>independence</strong> and <strong>uncorrelation</strong> in probability
+                        and statistics have distinct definitions and implications, even though they both address
+                        relationships between random variables.</p>
+
+                    <h3>Independence</h3>
+                    <p><strong>Independence</strong> of two random variables, \( X \) and \( Y \), means that knowing
+                        the value of one variable provides no information about the other. Formally, \( X \) and \( Y \)
+                        are independent if:</p>
+
+                    <p>
+                        \[
+                        P(X = x \text{ and } Y = y) = P(X = x) \cdot P(Y = y)
+                        \]
+                    </p>
+
+                    <p>for all possible values of \( x \) and \( y \). In other words, the joint probability of \( X \)
+                        and \( Y \) occurring together is simply the product of their marginal probabilities.</p>
+
+                    <h4>Independence Characteristics</h4>
+                    <ul>
+                        <li>Independence implies that all statistical moments (mean, variance, higher moments) are
+                            unaffected by the other variable.</li>
+                        <li>Independent variables have no dependency in any direction, meaning one variable does not
+                            influence the probability distribution of the other.</li>
+                        <li>Independence is a stricter condition than uncorrelation, and it leads to stronger
+                            conclusions about the structure of the data.</li>
+                    </ul>
+
+                    <h3>Uncorrelation</h3>
+                    <p><strong>Uncorrelation</strong>, on the other hand, is a weaker form of relationship and only
+                        concerns the linear relationship between two variables. Two random variables \( X \) and \( Y \)
+                        are uncorrelated if their covariance is zero:</p>
+
+                    <p>
+                        \[
+                        \text{Cov}(X, Y) = E[(X - E[X])(Y - E[Y])] = 0
+                        \]
+                    </p>
+
+                    <p>This means there is no linear relationship between \( X \) and \( Y \). However, it does not rule
+                        out non-linear relationships. For instance, two variables could be uncorrelated but still
+                        dependent in a non-linear way.</p>
+
+                    <h4>Uncorrelation Characteristics</h4>
+                    <ul>
+                        <li>Uncorrelation only considers the first two moments (mean and variance).</li>
+                        <li>Uncorrelated variables can still be related in complex, non-linear ways.</li>
+                        <li>Uncorrelation does not imply independence unless both variables are normally distributed, in
+                            which case independence and uncorrelation are equivalent.</li>
+                    </ul>
+
+                    <h3>Conceptual Differences</h3>
+                    <ol>
+                        <li><strong>Strength of Condition</strong>: Independence is a stronger condition than
+                            uncorrelation. While independence implies uncorrelation, uncorrelation does not imply
+                            independence.</li>
+                        <li><strong>Implications</strong>: Independence affects all moments and distributional
+                            properties, while uncorrelation only affects linear relationships.</li>
+                        <li><strong>Measures</strong>:
+                            <ul>
+                                <li><strong>For independence</strong>: Probabilities or information-based measures, such
+                                    as mutual information, are often used.</li>
+                                <li><strong>For uncorrelation</strong>: Covariance and the correlation coefficient are
+                                    typically used to measure uncorrelation.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                    
+                    <p>Independence and uncorrelation help in understanding different layers of relationships between
+                        random variables. Independence provides complete separation between the variables'
+                        distributions, while uncorrelation focuses only on linear separation, allowing for potential
+                        non-linear relationships.</p>
+                </div>
 </body>
 </div>
 </div>
 <div class="wrapper">
     <div class="inner">
         <h2 class="major">Attack Simulation Exercise</h2>
-        
+
 
         <div class="link-container">
             <a href="https://drive.google.com/file/d/1_UyY3YFkTc0efDsSGsZUOhEii0s-G-YO/view?usp=sharing"
