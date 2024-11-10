@@ -1,0 +1,205 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Homework 6</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">Statistics Blog - Cybersecurity</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="homework1.html">Homework 1</a></li>
+                    <li><a href="homework2.html">Homework 2</a></li>
+                    <li><a href="homework3.html">Homework 3</a></li>
+                    <li><a href="homework4.html">Homework 4</a></li>
+                    <li><a href="homework5.html">Homework 5</a></li>
+                    <li><a href="homework6.html">Homework 6</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <h1 class="large-title">Homework 6</h1>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
+
+                    <h1 class="major">Theory/Research</h1>
+
+                    <h2>Fundamental Theorem of Calculus</h2>
+
+                    <p>The <strong>Fundamental Theorem of Calculus (FTC)</strong> connects differentiation and
+                        integration, showing
+                        that integration can be reversed by differentiation and vice versa. The FTC states:</p>
+
+                    <p>
+                        \[
+                        \int_a^b f(x) \, dx = F(b) - F(a)
+                        \]
+                    </p>
+
+                    <br>
+                    <h3>CDFs and PDFs</h3>
+
+                    <ol>
+                        <li><strong>Cumulative Distribution Function (CDF)</strong> \( F(x) \): For a random variable \(
+                            X \) with
+                            a probability density function (PDF) \( f(x) \), the cumulative distribution function \(
+                            F(x) \) is defined
+                            as the probability that \( X \) takes a value less than or equal to \( x \):
+                            <p>
+                                \[
+                                F(x) = P(X \leq x) = \int_{-\infty}^x f(t) \, dt
+                                \]
+                            </p>
+                            This means that the CDF \( F(x) \) is the integral of the PDF \( f(x) \) from \(-\infty\) to
+                            \( x \).
+                        </li>
+
+                        <li><strong>Probability Density Function (PDF)</strong> \( f(x) \): The density function \( f(x)
+                            \) gives the likelihood of
+                            a specific value or interval of values for \( X \). It is the derivative of the CDF \( F(x)
+                            \) if \( F(x) \) is
+                            continuous and differentiable:
+                            <p>
+                                \[
+                                f(x) = \frac{d}{dx} F(x)
+                                \]
+                            </p>
+                        </li>
+                    </ol>
+
+                    <br>
+                    <h3>Fundamental Theorem of Calculus</h3>
+
+                    <p>By the <strong>FTC</strong>, the process of integration and differentiation shows that:</p>
+                    <p>
+                        \[
+                        F(x) = \int_{-\infty}^x f(t) \, dt \Rightarrow f(x) = \frac{d}{dx} F(x)
+                        \]
+                    </p>
+
+                    <p>This means that the PDF is the "rate of change" of the CDF, indicating how quickly the cumulative
+                        probability
+                        accumulates at each value of \( x \).</p>
+
+                    <h3>Example: Application to Probability Intervals</h3>
+
+                    <p>If we want to find the probability that \( X \) lies between two values \( a \) and \( b \), we
+                        use the CDF as follows:</p>
+                    <p>
+                        \[
+                        P(a \leq X \leq b) = F(b) - F(a) = \int_a^b f(x) \, dx
+                        \]
+                    </p>
+                </div>
+                <div class="inner">
+                    
+                </div>
+</body>
+</div>
+</div>
+<div class="wrapper">
+    <div class="inner">
+        
+        <div class="link-container">
+            <a href="https://drive.google.com/file/d/1se6v3Pnm2GwEhVB1H9Zg3XXOMhvGp0aH/view?usp=sharing"
+                class="underline-link">Link to the zip of the project</a>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Footer 
+    <section id="footer">
+        <div class="inner">
+            <h2 class="major">Get in touch</h2>
+            <p>Se hai domande o dubbi riguardanti il compito, sentiti libero di contattarmi.</p>
+            <form method="post" action="#">
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="4"></textarea>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" /></li>
+                </ul>
+            </form>
+            <ul class="contact">
+                <li class="icon solid fa-home">
+                    Untitled Inc<br />
+                    1234 Somewhere Road Suite #2894<br />
+                    Nashville, TN 00000-0000
+                </li>
+                <li class="icon solid fa-phone">(000) 000-0000</li>
+                <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled Inc. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+    -->
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
