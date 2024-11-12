@@ -158,7 +158,7 @@
                             alt="Simulate Empirical Distribution Part 2" />
                         <p>In the same function, lists are defined to store values related to various samples (with a
                             growing size up to a maximum of 500) and their respective empirical means and variances,
-                            calculated using Welford's algorithm. Samples are generated using the GenerateSample method.
+                            calculated using Welford's algorithm. Samples are generated using the <code>GenerateSample</code> method.
                         </p>
                     </p>
                         <p>
@@ -168,7 +168,7 @@
                             <!-- First Image and Description -->
                             <div class="image-item">
                                 <img src="images/HW6/generate_sample.png" alt="Generate Sample" />
-                                <p>The GenerateSample method selects a value from a discrete distribution using a random
+                                <p>The <code>GenerateSample</code> method selects a value from a discrete distribution using a random
                                     number
                                     and cumulative probabilities for each value, returning the first value whose
                                     cumulative sum
@@ -178,14 +178,14 @@
                             <!-- Second Image and Description -->
                             <div class="image-item">
                                 <img src="images/HW6/update_mean_variance.png" alt="Update Mean Variance" />
-                                <p>Next, mean and variance are calculated through the UpdateMeanVariance method. This
+                                <p>Next, mean and variance are calculated through the <code>UpdateMeanVariance</code> method. This
                                     uses Walford's algorithm.</p>
                             </div>
                         </div>
                         Then the values of the empirical mean and variance are saved at intervals of 25 samples, in
                         order to show the graph of convergence of mean and
                         variance, and of 125 in order to show the 4 histograms related to n = 125, 250, 375, 500.
-                        These graphs are created using the ViewConvergence and ViewHistogram methods.
+                        These graphs are created using the <code>ViewConvergence</code> and <code>ViewHistogram</code> methods.
 
                         </p>
                         <P>
