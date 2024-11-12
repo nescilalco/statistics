@@ -143,7 +143,7 @@
                             simulation. There is also the PictureBox where the generated graphs will be displayed.</p>
                         </p>
                         <p>
-                            <img src="images/HW6/simulate_empirical_distribution.png" alt="Main Form" width="1200" />
+                            <img src="images/HW6/simulate_empirical_distribution.png" alt="Simulate Empirical Distribution" width="1200" />
                             The simulation button triggers this function, where the theoretical distribution of a loaded
                             dice simulation is defined by assigning each face a different probability. It then
                             calculates the mean and variance of the theoretical distribution using functions
@@ -151,31 +151,27 @@
                             defines variables for the empirical mean and variance, which are updated in subsequent
                             functions. It also sets the maximum sample size to 500.
                         </p>
+                        <img src="images/HW6/simulate_empirical_distribution_part2.png" alt="Simulate Empirical Distribution Part 2" />
+                                    <p>In the same function, lists are defined to store values related to various samples (with a
+                                        growing size up to a maximum of 500) and their respective empirical means and variances,
+                                        calculated using Welford's algorithm. Samples are generated using the GenerateSample method.</p>
                         <p>
                             
                             
                             <div class="image-pair-container">
                                 <!-- First Image and Description -->
                                 <div class="image-item">
-                                    <img src="images/HW6/simulate_empirical_distribution_part2.png" alt="Simulate Empirical Distribution" />
-                                    <p>In the same function, lists are defined to store values related to various samples (with a
-                                        growing size up to a maximum of 500) and their respective empirical means and variances,
-                                        calculated using Welford's algorithm. Samples are generated using the GenerateSample method.</p>
-                                </div>
-        
-                                <!-- Second Image and Description -->
-                                <div class="image-item">
                                     <img src="images/HW6/generate_sample.png" alt="Generate Sample" />
                                     <p>The GenerateSample method selects a value from a discrete distribution using a random number
                                         and cumulative probabilities for each value, returning the first value whose cumulative sum
                                         exceeds the random threshold r. If no threshold is exceeded, it returns the last value.</p>
                                 </div>
+                                <!-- Second Image and Description -->
+                                <div class="image-item">
+                                    <img src="images/HW6/update_mean_variance.png" alt="Update Mean Variance" />
+                                    <p>Next, mean and variance are calculated through the UpdateMeanVariance method. This uses Walford's algorithm.</p>
+                                </div>
                             </div>
-
-                            Next, mean and variance are calculated through the UpdateMeanVariance method.
-                            <img src="images/HW6/update_mean_variance.png" alt="Update Mean Variance" />
-                            This uses Walford's algorithm.
-
                             Then the values of the empirical mean and variance are saved at intervals of 25 samples in
                             order to show the graph of convergence of mean and
                             variance, and of 125 in order to show the 4 histograms related to n = 125, 250, 375, 500.
