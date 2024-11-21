@@ -73,13 +73,17 @@
 
                     <h3>Central Limit Theorem (CLT)</h3>
                     <p>
-                        What we can see is that with \(n\) sufficiently large, the distribution of the computed mean for each sample 
-                        will approximate a normal distribution, regardless of the shape of the original distribution, as the CLT states 
+                        What we can see is that with \(n\) sufficiently large, the distribution of the computed mean for
+                        each sample
+                        will approximate a normal distribution, regardless of the shape of the original distribution, as
+                        the CLT states
                         (given an initial distribution with finite mean \(\mu\) and finite variance \(\sigma^2\)).
                     </p>
                     <p>
-                        The mean of the distribution of sample means is approximately equal to the mean of the theoretical distribution, 
-                        \(\mu\), whereas the variance of the sample means should be approximately \(\frac{\sigma^2}{n}\), where 
+                        The mean of the distribution of sample means is approximately equal to the mean of the
+                        theoretical distribution,
+                        \(\mu\), whereas the variance of the sample means should be approximately
+                        \(\frac{\sigma^2}{n}\), where
                         \(\sigma^2\) is the variance of the original distribution.
                     </p>
 
@@ -87,7 +91,8 @@
                         So the simulation confirms that the mean of the empirical means tends to the theoretical mean
                         (calculated as a weighted average of the possible values according to their probability). With
                         small sample sizes (e.g., size 20), the variance of the empirical means is more evident, but
-                        decreases significantly as the number of \(n\) increases, following the relationship \(\frac{\sigma^2}{n}\).
+                        decreases significantly as the number of \(n\) increases, following the relationship
+                        \(\frac{\sigma^2}{n}\).
                     </p>
 
                     <h3>Sample Dimension Effects</h3>
@@ -107,6 +112,59 @@
                         sufficiently large samples.
                     </p>
 
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="inner">
+                    <h2 class="major">Optional Simulation Exercise</h2>
+                    <h3>Shape of the distributions</h3>
+                    <p>
+                        Plots are generated using n = 19 and g = {2, 3, 10, 17} (Case A), and n = 15 and g = {3, 6, 9,
+                        12} (Case B).
+                    </p>
+                    <h3>Entropy</h3>
+                    <p>
+                        Once the program is run, we'll see the entropy values printed for each combination of n and g.
+                    </p>
+                    <p>
+                        Here's how the result are to be interpreted:
+                    </p>
+                    <p>
+                        <strong>Case A:</strong>
+                        <br>
+                        n = 19, g = {2, 3, 10, 17}
+                        <br>
+                        Since 19 is a prime number, the values of g that are coprime with 19 (2, 3, 10 , 17) will
+                        generate more uniform distributions. These values of g will cover the entire range of [0, 18],
+                        and thus, the distribution should be more uniform.
+                        We expect higher entropy values (close to log2(19) ≈ 4.25).
+                        <br>
+                        <br>
+                        <strong>Case B:</strong>
+                        n = 15, g = {3, 6, 9, 12}
+                        <br>
+                        15 is not prime, and some of the values of g (9 and 12) are divisibile by factors of 15 (3, 5),
+                        which will lead to repeated values in the distribution. This will result in lower entropy
+                        compared to Case A, since the values of Y will be concentrated in fewer numbers (lower
+                        diversity).
+                    </p>
+                    <h3>Comparison and Cryptographic Implications</h3>
+                    <p>
+                        Why Case A is better for Cryptography?
+                        <br>
+                        <strong>Uniformity:</strong>
+                        <br>
+                        A uniform distribution means Y is unpredictable, making it ideal for cryptographic keys or
+                        random
+                        numbers.
+                        For 𝑛 = 19 and 𝑔 ∈ {2,3,10,17}, the resulting values of Y are likely to be more evenly
+                        distributed.
+                        This uniformity provides higher entropy and better resistance to cryptanalysis attacks.
+                        <br>
+                        <strong>Higher Entropy:</strong>
+                        Case A, with n = 19 and coprime values of g, generates distributions where the values of Y are
+                        more evenly spread across the range. This makes it harder for an attacker to predict the values.
+                    </p>
                 </div>
             </div>
 </body>
