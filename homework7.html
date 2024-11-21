@@ -117,54 +117,84 @@
             <div class="wrapper">
                 <div class="inner">
                     <h2 class="major">Optional Simulation Exercise</h2>
-                    <h3>Shape of the distributions</h3>
+                    <h3>Shape of the Distributions</h3>
                     <p>
-                        Plots are generated using n = 19 and g = {2, 3, 10, 17} (Case A), and n = 15 and g = {3, 6, 9,
-                        12} (Case B).
+                        Plots are generated using \( n = 19 \) and \( g = \{2, 3, 10, 17\} \) (Case A), and \( n = 15 \)
+                        and \( g = \{3, 6, 9, 12\} \) (Case B).
                     </p>
                     <h3>Entropy</h3>
                     <p>
-                        Once the program is run, we'll see the entropy values printed for each combination of n and g.
+                        Once the program is run, we'll see the entropy values printed for each combination of \( n \)
+                        and \( g \).
                     </p>
                     <p>
-                        Here's how the result are to be interpreted:
+                        Here's how the results are to be interpreted:
                     </p>
                     <p>
                         <strong>Case A:</strong>
                         <br>
-                        n = 19, g = {2, 3, 10, 17}
+                        \( n = 19, g = \{2, 3, 10, 17\} \)
                         <br>
-                        Since 19 is a prime number, the values of g that are coprime with 19 (2, 3, 10 , 17) will
-                        generate more uniform distributions. These values of g will cover the entire range of [0, 18],
-                        and thus, the distribution should be more uniform.
-                        We expect higher entropy values (close to log2(19) ≈ 4.25).
+                        Since \( 19 \) is a prime number, the values of \( g \) that are coprime with \( 19 \) (\( 2, 3,
+                        10, 17 \)) will generate more uniform distributions. These values of \( g \) will cover the
+                        entire range of \([0, 18]\), and thus, the distribution should be more uniform.
+                        We expect higher entropy values (close to \( \log_2(19) \approx 4.25 \)).
                         <br>
                         <br>
                         <strong>Case B:</strong>
-                        n = 15, g = {3, 6, 9, 12}
                         <br>
-                        15 is not prime, and some of the values of g (9 and 12) are divisibile by factors of 15 (3, 5),
-                        which will lead to repeated values in the distribution. This will result in lower entropy
-                        compared to Case A, since the values of Y will be concentrated in fewer numbers (lower
-                        diversity).
+                        \( n = 15, g = \{3, 6, 9, 12\} \)
+                        <br>
+                        \( 15 \) is not prime, and some of the values of \( g \) (\( 9 \) and \( 12 \)) are divisible by
+                        factors of \( 15 \) (\( 3, 5 \)), which will lead to repeated values in the distribution. This
+                        will result in lower entropy compared to Case A, since the values of \( Y \) will be
+                        concentrated in fewer numbers (lower diversity).
                     </p>
                     <h3>Comparison and Cryptographic Implications</h3>
                     <p>
-                        Why Case A is better for Cryptography?
+                        Why is Case A better for Cryptography?
                         <br>
                         <strong>Uniformity:</strong>
                         <br>
-                        A uniform distribution means Y is unpredictable, making it ideal for cryptographic keys or
-                        random
-                        numbers.
-                        For 𝑛 = 19 and 𝑔 ∈ {2,3,10,17}, the resulting values of Y are likely to be more evenly
-                        distributed.
+                        A uniform distribution means \( Y \) is unpredictable, making it ideal for cryptographic keys or
+                        random numbers.
+                        For \( n = 19 \) and \( g \in \{2, 3, 10, 17\} \), the resulting values of \( Y \) are likely to
+                        be more evenly distributed.
                         This uniformity provides higher entropy and better resistance to cryptanalysis attacks.
                         <br>
                         <strong>Higher Entropy:</strong>
-                        Case A, with n = 19 and coprime values of g, generates distributions where the values of Y are
-                        more evenly spread across the range. This makes it harder for an attacker to predict the values.
+                        <br>
+                        Case A, with \( n = 19 \) and coprime values of \( g \), generates distributions where the
+                        values of \( Y \) are more evenly spread across the range. This makes it harder for an attacker
+                        to predict the values.
+                        <br>
+                        Why does Case B illustrate vulnerabilities?
+                        <br>
+                        <strong>Lower Entropy:</strong>
+                        <br>
+                        For \( n = 15 \) (non-prime modulus), the behavior of \( g \) depends heavily on its factors.
+                        \( g = 9 \) and \( g = 12 \) are not coprime with \( n = 15 \), leading to repeated patterns in
+                        \( Y \).
+                        Such patterns reduce unpredictability, which lowers entropy and increases susceptibility to
+                        attacks.
+                        <br>
+                        <strong>Predictability:</strong>
+                        <br>
+                        Non-uniform or incomplete distributions make \( Y \) predictable, which is dangerous in
+                        cryptographic applications.
+                        If an attacker knows \( g \), \( n \), and the reduced range of \( Y \), they can guess keys or
+                        plaintexts more effectively.
                     </p>
+                    <h3>Possible Errors in the Exercise</h3>
+                    <p>
+                        Choice of \( g \) in Case B:
+                        <br>
+                        \( g = 9 \) and \( g = 12 \) are not valid generators modulo \( 15 \) (they are divisible by \(
+                        3 \)).
+                        Better choices would be \( g = \{2, 4, 7, 8, 11, 13, 14\} \), which are coprime with \( n = 15
+                        \).
+                    </p>
+
                 </div>
             </div>
 </body>
