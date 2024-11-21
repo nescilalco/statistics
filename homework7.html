@@ -67,27 +67,27 @@
                         <img src="images/HW7/graphs.png" alt="Simulation Graphs" width="1200" />
                         <br>
                     <h3>Observed Behaviour</h3>
-                    <p>In the simulation, the behaviour of the empirical mean and variance converges to the theoretical
-                        values as we increase the number of samples.
-                        As we increase the number of samples. The approach taken generates 1000 samples with
-                        sizes 20, 30 and 100, calculating the empirical mean and variance for each group.</p>
+                    <p>In this new simulation, the approach taken generates 1000 samples (m) with sizes (n) 20, 30 and
+                        100, calculating the empirical mean and variance for each group.</p>
                     </p>
 
-                    <h3>Mean Convergence</h3>
+                    <h3>Central Limit Theorem (CLT)</h3>
                     <p>
-                        The empirical mean tends to the theoretical mean (calculated as a weighted average of the
-                        possible values according to their probability).
-                        With small samples (e.g. size 20), the variance of the empirical mean is more evident, but
-                        decreases significantly as the number of samples increases.
-                        The variance around the theoretical value decreases rapidly with larger samples.
+                        What we can see is that with \(n\) sufficiently large, the distribution of the computed mean for each sample 
+                        will approximate a normal distribution, regardless of the shape of the original distribution, as the CLT states 
+                        (given an initial distribution with finite mean \(\mu\) and finite variance \(\sigma^2\)).
+                    </p>
+                    <p>
+                        The mean of the distribution of sample means is approximately equal to the mean of the theoretical distribution, 
+                        \(\mu\), whereas the variance of the sample means should be approximately \(\frac{\sigma^2}{n}\), where 
+                        \(\sigma^2\) is the variance of the original distribution.
                     </p>
 
-                    <h3>Variance Convergence</h3>
                     <p>
-                        The empirical variance shows a more noisy behaviour initially, especially for
-                        small sample sizes.
-                        The empirical variance also gradually converges to the theoretical value as the total number of
-                        total number of samples.
+                        So the simulation confirms that the mean of the empirical means tends to the theoretical mean
+                        (calculated as a weighted average of the possible values according to their probability). With
+                        small sample sizes (e.g., size 20), the variance of the empirical means is more evident, but
+                        decreases significantly as the number of \(n\) increases, following the relationship \(\frac{\sigma^2}{n}\).
                     </p>
 
                     <h3>Sample Dimension Effects</h3>
@@ -101,12 +101,11 @@
                     <p>
                         This simulation highlights the link between sample size, precision of estimates and
                         convergence of empirical statistics to theoretical ones. The graphs show how, by increasing the
-                        samples, the empirical values approach the theoretical ones, with a reduction in variability.
-                        The demonstration is particularly useful for understanding the basics of probability theory
-                        applied to discrete distributions.
+                        samples size, the empirical values approach the theoretical ones, with a reduction in the
+                        variability of the samples means. This behavior aligns with the Central Limit Theorem, which
+                        guarantees that the distribution of sample means approximates a normal distribution for
+                        sufficiently large samples.
                     </p>
-                    
-
 
                 </div>
             </div>
