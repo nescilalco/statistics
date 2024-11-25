@@ -79,6 +79,11 @@
                         H(X) = -\sum_i p_i \log_2(p_i)
                         \]
                     </p>
+                    <p><strong>Where:</strong></p>
+                    <ul>
+                        <li>\( p_i \) is the probability of the \( i \)-th outcome.</li>
+                        <li>The logarithm base 2 (\( \log_2 \)) is used to measure entropy in bits.</li>
+                    </ul>
                     <p>
                         A high entropy value means the outcomes are more unpredictable or uncertain. <br>
                         For example, a fair coin toss \(( p(H)= p(T) = 0.5 )\) has maximum entropy because both outcomes
@@ -89,7 +94,33 @@
                         (all outcomes equally likely) maximizes entropy, whereas a skewed distribution (one outcome
                         dominating) reduces entropy.
                     </p>
-                    
+
+                    <p><strong>Properties:</strong></p>
+                    <ul>
+                        <li>\( H(X) \geq 0 \): Entropy is non-negative.</li>
+                        <li>Maximum entropy occurs when all outcomes are equally likely (\( p_i = \frac{1}{n} \)).</li>
+                        <li>Entropy decreases as the distribution becomes more concentrated or predictable.</li>
+                    </ul>
+
+                    <h2>Other Diversity Measures</h2>
+
+                    <h3>Gini-Simpson Index</h3>
+                    <p>
+                        The Gini-Simpson Index measures the probability that two randomly chosen elements from the
+                        distribution
+                        are different. It is given by:
+                    </p>
+                    <p>
+                        \[
+                        D = 1 - \sum_i p_i^2
+                        \]
+                    </p>
+                    <p><strong>Properties:</strong></p>
+                    <ul>
+                        <li>\( D = 0 \) when all outcomes have the same probability.</li>
+                        <li>\( D \) increases with the diversity of the distribution.</li>
+                    </ul>
+
 </body>
 </div>
 </div>
