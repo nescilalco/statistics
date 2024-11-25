@@ -148,6 +148,58 @@
                         \]
                     </p>
                     <p><strong>Where:</strong> \( n \) is the number of possible outcomes.</p>
+
+                </div>
+                <div class="inner">
+                    <h2>Primitive Root</h2>
+                    <p>
+                        A <strong>primitive root modulo \( p \)</strong>, where \( p \) is a prime number, is an integer
+                        \( g \) such that the powers of \( g \) modulo \( p \) generate all integers coprime to \( p \).
+                        In other words, for every integer \( a \) that is coprime to \( p \), there exists an integer \(
+                        k \) such that:
+                    </p>
+                    <p>
+                        \[
+                        g^k \mod p = a
+                        \]
+                    </p>
+
+                    <h3>Properties</h3>
+                    <ul>
+                        <li>
+                            <strong>Generation of Residues:</strong> If \( g \) is a primitive root modulo \( p \), then
+                            the set of integers \( g^1, g^2, \ldots, g^{p-1} \mod p \) forms a complete set of residues
+                            modulo \( p \), excluding 0.
+                        </li>
+                        <li>
+                            <strong>Order:</strong> The smallest \( k \) such that \( g^k \equiv 1 \mod p \) is called
+                            the <em>order</em> of \( g \). For \( g \) to be a primitive root, its order must equal \(
+                            \phi(p) = p-1 \), where \( \phi \) is Euler's totient function.
+                        </li>
+                        <li>
+                            <strong>Existence:</strong> A prime number \( p \) always has a primitive root modulo \( p
+                            \). In fact, there are exactly \( \phi(p-1) \) primitive roots modulo \( p \).
+                        </li>
+                    </ul>
+
+                    <h3>Example</h3>
+                    <p>For \( p = 7 \):</p>
+                    <ul>
+                        <li>\( g = 3 \) is a primitive root modulo 7.</li>
+                        <li>
+                            The powers of \( g = 3 \) modulo 7 are:
+                            \[
+                            3^1 \mod 7 = 3, \quad 3^2 \mod 7 = 2, \quad 3^3 \mod 7 = 6, \quad 3^4 \mod 7 = 4, \quad 3^5
+                            \mod 7 = 5, \quad 3^6 \mod 7 = 1
+                            \]
+                        </li>
+                        <li>
+                            The sequence \( 3, 2, 6, 4, 5, 1 \) covers all integers coprime to 7. Hence, \( g = 3 \) is
+                            a primitive root modulo 7.
+                        </li>
+                    </ul>
+
+                </div>
 </body>
 </div>
 </div>
