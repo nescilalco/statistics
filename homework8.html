@@ -121,6 +121,33 @@
                         <li>\( D \) increases with the diversity of the distribution.</li>
                     </ul>
 
+                    <h3>Renyi Entropy</h3>
+                    <p>
+                        Renyi entropy generalizes Shannon entropy with a parameter \( \alpha \) that controls the
+                        sensitivity to different probabilities:
+                    </p>
+                    <p>
+                        \[
+                        H_\alpha(X) = \frac{1}{1-\alpha} \log_2\left(\sum_i p_i^\alpha\right)
+                        \]
+                    </p>
+                    <p><strong>Special Cases:</strong></p>
+                    <ul>
+                        <li>When \( \alpha = 1 \), it reduces to Shannon entropy.</li>
+                        <li>When \( \alpha = 2 \), it becomes related to the Gini-Simpson Index.</li>
+                    </ul>
+
+                    <h3>Evenness Measures</h3>
+                    <p>
+                        Evenness measures quantify how equally distributed the probabilities are. For example, Pielou's
+                        evenness is given by:
+                    </p>
+                    <p>
+                        \[
+                        J = \frac{H(X)}{\log_2(n)}
+                        \]
+                    </p>
+                    <p><strong>Where:</strong> \( n \) is the number of possible outcomes.</p>
 </body>
 </div>
 </div>
