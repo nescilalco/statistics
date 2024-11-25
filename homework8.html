@@ -46,6 +46,7 @@
                     <li><a href="homework5.html">Homework 5</a></li>
                     <li><a href="homework6.html">Homework 6</a></li>
                     <li><a href="homework7.html">Homework 7</a></li>
+                    <li><a href="homework8.html">Homework 8</a></li>
                 </ul>
                 <a href="#" class="close">Close</a>
             </div>
@@ -55,7 +56,7 @@
         <section id="wrapper">
             <header>
                 <div class="inner">
-                    <h1 class="large-title">Homework 5</h1>
+                    <h1 class="large-title">Homework 8</h1>
                 </div>
             </header>
 
@@ -65,152 +66,30 @@
 
                     <h1 class="major">Theory/Research</h1>
 
-                    <h2>Cauchy-Schwarz Inequality</h2>
-
-                    <p>The Cauchy-Schwarz inequality states that for any two vectors \( \mathbf{a} = (a_1, a_2, \dots,
-                        a_n) \) and \( \mathbf{b} = (b_1, b_2, \dots, b_n) \) in \( \mathbb{R}^n \), the following
-                        inequality holds:</p>
-                    <p>
-                        \[
-                        |\mathbf{a} \cdot \mathbf{b}| \leq \|\mathbf{a}\| \|\mathbf{b}\|
-                        \]
-                    </p>
-                    <p>where \( \mathbf{a} \cdot \mathbf{b} = \sum_{i=1}^n a_i b_i \) is the dot product, and \(
-                        \|\mathbf{a}\| = \sqrt{\sum_{i=1}^n a_i^2} \) and \( \|\mathbf{b}\| = \sqrt{\sum_{i=1}^n b_i^2}
-                        \) are the magnitudes (Euclidean norms) of \( \mathbf{a} \) and \( \mathbf{b} \).</p>
-
-                    <h2>Proof (Using Normalization)</h2>
-                    <p>Define the function \( f(t) \) based on a linear combination of \( \mathbf{a} \) and \(
-                        \mathbf{b} \):</p>
-                    <p>
-                        \[
-                        f(t) = \|\mathbf{a} + t\mathbf{b}\|^2
-                        \]
-                    </p>
-
-                    <h3>Step 1: Expand \( f(t) \)</h3>
-                    <p>Expanding this expression:</p>
-                    <p>
-                        \[
-                        f(t) = (\mathbf{a} + t\mathbf{b}) \cdot (\mathbf{a} + t\mathbf{b})
-                        \]
-                    </p>
-
-                    <h3>Step 2: Use the Distributive Property of the Dot Product</h3>
-                    <p>Expanding the terms:</p>
-                    <p>
-                        \[
-                        f(t) = \mathbf{a} \cdot \mathbf{a} + 2t (\mathbf{a} \cdot \mathbf{b}) + t^2 (\mathbf{b} \cdot
-                        \mathbf{b})
-                        \]
-                    </p>
-                    <p>This simplifies to:</p>
-                    <p>
-                        \[
-                        f(t) = \|\mathbf{a}\|^2 + 2t (\mathbf{a} \cdot \mathbf{b}) + t^2 \|\mathbf{b}\|^2
-                        \]
-                    </p>
-
-                    <h3>Step 3: Complete the Square</h3>
-                    <p>Since \( f(t) \geq 0 \) (as it is a square of a norm), the discriminant of this quadratic must
-                        satisfy:</p>
-                    <p>
-                        \[
-                        (2 (\mathbf{a} \cdot \mathbf{b}))^2 - 4 \|\mathbf{a}\|^2 \|\mathbf{b}\|^2 \leq 0
-                        \]
-                    </p>
-
-                    <h3>Step 4: Rearrange Terms</h3>
-                    <p>This implies:</p>
-                    <p>
-                        \[
-                        (\mathbf{a} \cdot \mathbf{b})^2 \leq \|\mathbf{a}\|^2 \|\mathbf{b}\|^2
-                        \]
-                    </p>
-                    <p>Taking square roots on both sides gives:</p>
-                    <p>
-                        \[
-                        |\mathbf{a} \cdot \mathbf{b}| \leq \|\mathbf{a}\| \|\mathbf{b}\|
-                        \]
-                    </p>
-                    <p>This completes the proof of the Cauchy-Schwarz inequality.</p>
-                </div>
-                <div class="inner">
-                    <h2>Independence vs. Uncorrelation</h2>
-
-                    <p>The concepts of <strong>independence</strong> and <strong>uncorrelation</strong> in probability
-                        and statistics have distinct definitions and implications, even though they both address
-                        relationships between random variables.</p>
-
-                    <h3>Independence</h3>
-                    <p><strong>Independence</strong> of two random variables, \( X \) and \( Y \), means that knowing
-                        the value of one variable provides no information about the other. Formally, \( X \) and \( Y \)
-                        are independent if:</p>
+                    <h2>Shannon Entropy and other diversity measures of distributions</h2>
 
                     <p>
-                        \[
-                        P(X = x \text{ and } Y = y) = P(X = x) \cdot P(Y = y)
-                        \]
+                        Shannon entropy is a quantitative measure of the unpredictability (or randomness) in a
+                        probability
+                        distribution. It reflects the average amount of information required to describe an outcome from
+                        the distribution, assuming optimal encoding.
                     </p>
-
-                    <p>for all possible values of \( x \) and \( y \). In other words, the joint probability of \( X \)
-                        and \( Y \) occurring together is simply the product of their marginal probabilities.</p>
-
-                    <h4>Independence Characteristics</h4>
-                    <ul>
-                        <li>Independence implies that all statistical moments (mean, variance, higher moments) are
-                            unaffected by the other variable.</li>
-                        <li>Independent variables have no dependency in any direction, meaning one variable does not
-                            influence the probability distribution of the other.</li>
-                        <li>Independence is a stricter condition than uncorrelation, and it leads to stronger
-                            conclusions about the structure of the data.</li>
-                    </ul>
-
-                    <h3>Uncorrelation</h3>
-                    <p><strong>Uncorrelation</strong>, on the other hand, is a weaker form of relationship and only
-                        concerns the linear relationship between two variables. Two random variables \( X \) and \( Y \)
-                        are uncorrelated if their covariance is zero:</p>
-
                     <p>
                         \[
-                        \text{Cov}(X, Y) = E[(X - E[X])(Y - E[Y])] = 0
+                        H(X) = -\sum_i p_i \log_2(p_i)
                         \]
                     </p>
-
-                    <p>This means there is no linear relationship between \( X \) and \( Y \). However, it does not rule
-                        out non-linear relationships. For instance, two variables could be uncorrelated but still
-                        dependent in a non-linear way.</p>
-
-                    <h4>Uncorrelation Characteristics</h4>
-                    <ul>
-                        <li>Uncorrelation only considers the first two moments (mean and variance).</li>
-                        <li>Uncorrelated variables can still be related in complex, non-linear ways.</li>
-                        <li>Uncorrelation does not imply independence unless both variables are normally distributed, in
-                            which case independence and uncorrelation are equivalent.</li>
-                    </ul>
-
-                    <h3>Conceptual Differences</h3>
-                    <ol>
-                        <li><strong>Strength of Condition</strong>: Independence is a stronger condition than
-                            uncorrelation. While independence implies uncorrelation, uncorrelation does not imply
-                            independence.</li>
-                        <li><strong>Implications</strong>: Independence affects all moments and distributional
-                            properties, while uncorrelation only affects linear relationships.</li>
-                        <li><strong>Measures</strong>:
-                            <ul>
-                                <li><strong>For independence</strong>: Probabilities or information-based measures, such
-                                    as mutual information, are often used.</li>
-                                <li><strong>For uncorrelation</strong>: Covariance and the correlation coefficient are
-                                    typically used to measure uncorrelation.</li>
-                            </ul>
-                        </li>
-                    </ol>
-
-                    <p>Independence and uncorrelation help in understanding different layers of relationships between
-                        random variables. Independence provides complete separation between the variables'
-                        distributions, while uncorrelation focuses only on linear separation, allowing for potential
-                        non-linear relationships.</p>
-                </div>
+                    <p>
+                        A high entropy value means the outcomes are more unpredictable or uncertain. <br>
+                        For example, a fair coin toss \(( p(H)= p(T) = 0.5 )\) has maximum entropy because both outcomes
+                        are equally likely and carry maximum surprise.
+                    </p>
+                    <p>
+                        It also captures the spread of probabilities across possible outcomes. A uniform distribution
+                        (all outcomes equally likely) maximizes entropy, whereas a skewed distribution (one outcome
+                        dominating) reduces entropy.
+                    </p>
+                    
 </body>
 </div>
 </div>
