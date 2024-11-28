@@ -279,15 +279,15 @@
         </ul>
         <br>
         <br>
-        After the encoding, the <code>TryFindParameters</code> method tries to determine \( e \) and \( P \) basing on encoded values.
+        The <code>TryFindParameters</code> method allows to determine the \( e \) and \( P \) values basing on encoded values, in case these are not known.
         <br>
         <br>
         <img src="images/HW8/TryFindParameters.png" alt="TryFindParameters" />
         <br>
         The <code>possibleEs</code> list contains candidate values for \( e = 3 \) and \( e = 65537 \), which are common choices in
         cryptography, the loops are done for P values in the range of 2 to 100 and for each combination of P and e,
-        the method tries to decode all values in <code>encodedValues</code>.
-        <br>
+        the method tries to decode all values in <code>encodedValues</code>. We can see that retrieved values near the "Optional Simulation" button correspond to the values assigned in the <code>ModularExponentiation</code> method and showed in the legend.
+        <br> 
         The method then proceeds to calculate the distribution of encoded values and the <strong>Shannon entropy</strong>, that
         measures the uncertainty (or randomness) of the distribution, and to plot the results.
         <br>
