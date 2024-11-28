@@ -220,7 +220,7 @@
             <br>
             If the resulting text is not empty, the AnalyzeAndPlotText method is called.
             <img src="images/HW8/AnalyzeAndPlotText.png" alt="AnalyzeAndPlotText" />
-            
+
         <div class="image-pair-container">
             <!-- First Image and Description -->
             <div class="image-item">
@@ -250,8 +250,9 @@
         <br>
         <img src="images/HW8/FindShiftByFrequencyAnalysis.png" alt="FindShiftByFrequencyAnalysis" width="1200" />
         <br>
-        Another method to find the shift would be to bruteforce the ciphertext by trying various shifts until the plaintext makes sense.
-        
+        Another method to find the shift would be to bruteforce the ciphertext by trying various shifts until the
+        plaintext makes sense.
+
         </p>
 
         <h3>Part 2</h3>
@@ -262,7 +263,20 @@
             <img src="images/HW8/OptionalAnalysis.png" alt="OptionalAnalysis" />
             <br>
             This method converts letters to corresponding numbers and encodes the text using the modular exponentiation
-            with the formula E = L^e mod P, where where L is the numeric representation of the letter.
+            with the formula E = L^e mod P, where L is the numeric representation of the letter.
+            <br>
+            After the encoding, the TryFindParameters method tries to determine e and P basing on encoded values.
+            <br>
+            <img src="images/HW8/TryFindParameters.png" alt="TryFindParameters" />
+            <br>
+            The possibleEs list contains candidate values for e = 3 and e=65537, which are common choices in
+            cryptography, the loops are done for P values in the range of 2 to 100 and for each combination of P and e,
+            the method tries to decode all values in encodedValues.
+            <br>
+            The method then proceeds to calculate the distribution of encoded values and the Shannon entropy, that
+            measures the uncertainty (or randomness) of the distribution, and to plot the results.
+            <br>
+            <img src="images/HW8/OptionalSimulationPlot.png" alt="Optional Simulation Plot" width="1200"/>
         </p>
     </div>
 </div>
