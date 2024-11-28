@@ -205,8 +205,23 @@
 </div>
 <div class="wrapper">
     <div class="inner">
-        <h2 class="major">Attack Simulation Exercise</h2>
-
+        <h2 class="major">Simulation Exercise</h2>
+        <h3>Part 1</h3>
+        <p>
+            For the first part of the practical part I chose to use the web pages of my previous homeworks.
+            <br>
+            I started by listing the various URLs, then passed them to the GetCombinedTextFromUrls method.
+            <img src="images/HW8/simulate_click.png" alt="Simulate Click"/>
+            <br>
+            This method cycles through the list of URLs passed as a input parameter and extracts all the text of the corresponding web pages, concatenating the text.
+            <img src="images/HW8/GetCombinedTextFromUrls.png" alt="GetCombinedTextFromUrls"/>
+            If the resulting text is not empty, the AnalyzeAndPlotText method is called, which first analyses the frequency of the various letters within the text.
+            <img src="images/HW8/AnalyzeFrequency.png" alt="AnalyzeFrequency"/>
+            Then, after extracting a random value between 1 and 25, it ciphers the text using Caesar's cipher.
+            <img src="images/HW8/CaesarCipher.png" alt="CaesarCipher"/>
+            Once again the method analyzes the frequency of the encrypted text and then plots the results on the graph, giving this result (in this case with a shift of 11 letters):
+            <img src="images/HW8/plot_example.png" alt="Plot Example"/>
+        </p>
     </div>
 </div>
 </div>
