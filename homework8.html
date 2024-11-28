@@ -215,10 +215,20 @@
             <br>
             This method cycles through the list of URLs passed as a input parameter and extracts all the text of the corresponding web pages, concatenating the text.
             <img src="images/HW8/GetCombinedTextFromUrls.png" alt="GetCombinedTextFromUrls"/>
-            If the resulting text is not empty, the AnalyzeAndPlotText method is called, which first analyses the frequency of the various letters within the text.
-            <img src="images/HW8/AnalyzeFrequency.png" alt="AnalyzeFrequency"/>
-            Then, after extracting a random value between 1 and 25, it ciphers the text using Caesar's cipher.
-            <img src="images/HW8/CaesarCipher.png" alt="CaesarCipher"/>
+            <div class="image-pair-container">
+                <!-- First Image and Description -->
+                <div class="image-item">
+                    <img src="images/HW8/AnalyzeFrequency.png" alt="AnalyzeFrequency"/>
+                    <p>If the resulting text is not empty, the AnalyzeAndPlotText method is called, which first analyses the frequency of the various letters within the text.</p>
+                </div>
+
+                <!-- Second Image and Description -->
+                <div class="image-item">
+                    <img src="images/HW8/CaesarCipher.png" alt="CaesarCipher"/>
+                    <p>Then, after extracting a random value between 1 and 25, it ciphers the text using Caesar's cipher.</p>
+                </div>
+            </div>
+            
             Once again the method analyzes the frequency of the encrypted text and then plots the results on the graph, giving this result (in this case with a shift of 11 letters):
             <img src="images/HW8/plot_example.png" alt="Plot Example"/>
         </p>
