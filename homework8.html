@@ -206,54 +206,107 @@
 <div class="wrapper">
     <div class="inner">
         <h2 class="major">Simulation Exercise</h2>
+
         <h3>Part 1</h3>
+
         <p>
-            For the first part of the practical part I chose to use the web pages of my previous homeworks.
+            For the first part of the practical exercise, I chose to use the web pages of my previous homework
+            assignments.
             <br>
-            I started by listing the various URLs, then passed them to the GetCombinedTextFromUrls method.
+            I started by listing the various URLs and then passed them to the <code>GetCombinedTextFromUrls</code>
+            method.
+        </p>
+
+        <div class="image-item">
             <img src="images/HW8/simulate_click.png" alt="Simulate Click" />
-            <br>
-            This method cycles through the list of URLs passed as a input parameter and extracts all the text of the
-            corresponding web pages, concatenating the text.
-            <br>
+        </div>
+
+        <p>
+            This method cycles through the list of URLs passed as an input parameter and extracts all the text from the
+            corresponding web pages, concatenating it into a single text.
+        </p>
+
+        <div class="image-item">
             <img src="images/HW8/GetCombinedTextFromUrls.png" alt="GetCombinedTextFromUrls" />
-            <br>
-            If the resulting text is not empty, the AnalyzeAndPlotText method is called.
+        </div>
+
+        <p>
+            If the resulting text is not empty, the <code>AnalyzeAndPlotText</code> method is called:
+        </p>
+
+        <div class="image-item">
             <img src="images/HW8/AnalyzeAndPlotText.png" alt="AnalyzeAndPlotText" />
+        </div>
 
         <div class="image-pair-container">
             <!-- First Image and Description -->
             <div class="image-item">
                 <img src="images/HW8/AnalyzeFrequency.png" alt="AnalyzeFrequency" />
-                <p>Here the AnalyzeFrequency method first analyses the
-                    frequency of the various letters within the text.</p>
+                <p>
+                    The <code>AnalyzeFrequency</code> method analyzes the frequency of the various letters within the
+                    text.
+                </p>
             </div>
 
             <!-- Second Image and Description -->
             <div class="image-item">
                 <img src="images/HW8/CaesarCipher.png" alt="CaesarCipher" />
-                <p>Then, after extracting a random value between 1 and 25, it ciphers the text using Caesar's cipher.
+                <p>
+                    Then, after extracting a random value between 1 and 25, it ciphers the text using **Caesar's
+                    cipher**,
+                    defined mathematically as:
+                    \[
+                    C(i) = (P(i) + k) \mod 26
+                    \]
+                    where:
+                <ul>
+                    <li>\( C(i) \): Encoded letter</li>
+                    <li>\( P(i) \): Plaintext letter</li>
+                    <li>\( k \): Shift (randomly chosen between 1 and 25)</li>
+                </ul>
                 </p>
             </div>
         </div>
 
-        Once again the method analyzes the frequency of the encrypted text and then plots the results on the graph,
-        giving this result (in this case with a shift of 11 letters):
-        <img src="images/HW8/plot_example.png" alt="Plot Example" width="1200" />
-        <br>
-        We can see that the legend shows the shift used in Caesar's cipher, while next to the ‘Simulate’ button is the
-        Retrieved Shift. This Retrieved Shift is the result of the FindShiftByFrequencyAnalysis method, which does a
-        frequency analysis. In fact, it attempts to guess the shift applied to the plaintext by analysing the most
-        frequent letter within the ciphertext. Once it has found the most frequent letter in the ciphertext, it
-        subtracts from this the number corresponding to the letter ‘E’, the most commonly used letter in the English
-        language, and in this way finds the shift applied.
-        <br>
-        <img src="images/HW8/FindShiftByFrequencyAnalysis.png" alt="FindShiftByFrequencyAnalysis" width="1200" />
-        <br>
-        Another method to find the shift would be to bruteforce the ciphertext by trying various shifts until the
-        plaintext makes sense.
-
+        <p>
+            The method then re-analyzes the frequency of the encrypted text and plots the results on a graph.
+            Here is an example result (in this case with a shift of 11 letters):
         </p>
+
+        <div class="image-item">
+            <img src="images/HW8/plot_example.png" alt="Plot Example" width="1200" />
+        </div>
+
+        <p>
+            The **legend** shows the shift used in Caesar's cipher, while next to the "Simulate" button is the
+            **Retrieved Shift**. This retrieved shift is calculated by the <code>FindShiftByFrequencyAnalysis</code>
+            method,
+            which performs **frequency analysis**.
+            <br>
+            The method works as follows:
+        </p>
+
+        <p>
+            It guesses the shift applied to the plaintext by analyzing the most frequent letter within the ciphertext.
+            Specifically:
+        <ol>
+            <li>Find the most frequent letter in the ciphertext, denoted as \( C_{\text{max}} \).</li>
+            <li>Subtract the position of the letter **'E'** (most common in English, at position \( E = 4 \)):</li>
+            \[
+            \text{Shift} = (C_{\text{max}} - E) \mod 26
+            \]
+        </ol>
+        </p>
+
+        <div class="image-item">
+            <img src="images/HW8/FindShiftByFrequencyAnalysis.png" alt="FindShiftByFrequencyAnalysis" width="1200" />
+        </div>
+
+        <p>
+            Another method to find the shift would be to **brute force** the ciphertext, trying all possible shifts
+            (\( k = 1, 2, \dots, 25 \)) until the plaintext makes sense.
+        </p>
+
 
         <h3>Part 2</h3>
         <p>
@@ -278,7 +331,7 @@
             The method then proceeds to calculate the distribution of encoded values and the Shannon entropy, that
             measures the uncertainty (or randomness) of the distribution, and to plot the results.
             <br>
-            <img src="images/HW8/OptionalSimulationPlot.png" alt="Optional Simulation Plot" width="1200"/>
+            <img src="images/HW8/OptionalSimulationPlot.png" alt="Optional Simulation Plot" width="1200" />
         </p>
     </div>
     <div class="link-container">
