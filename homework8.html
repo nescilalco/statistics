@@ -211,28 +211,51 @@
             For the first part of the practical part I chose to use the web pages of my previous homeworks.
             <br>
             I started by listing the various URLs, then passed them to the GetCombinedTextFromUrls method.
-            <img src="images/HW8/simulate_click.png" alt="Simulate Click"/>
+            <img src="images/HW8/simulate_click.png" alt="Simulate Click" />
             <br>
-            This method cycles through the list of URLs passed as a input parameter and extracts all the text of the corresponding web pages, concatenating the text.
+            This method cycles through the list of URLs passed as a input parameter and extracts all the text of the
+            corresponding web pages, concatenating the text.
             <br>
-            <img src="images/HW8/GetCombinedTextFromUrls.png" alt="GetCombinedTextFromUrls"/>
+            <img src="images/HW8/GetCombinedTextFromUrls.png" alt="GetCombinedTextFromUrls" />
             <br>
-            <div class="image-pair-container">
-                <!-- First Image and Description -->
-                <div class="image-item">
-                    <img src="images/HW8/AnalyzeFrequency.png" alt="AnalyzeFrequency"/>
-                    <p>If the resulting text is not empty, the AnalyzeAndPlotText method is called, which first analyses the frequency of the various letters within the text.</p>
-                </div>
-
-                <!-- Second Image and Description -->
-                <div class="image-item">
-                    <img src="images/HW8/CaesarCipher.png" alt="CaesarCipher"/>
-                    <p>Then, after extracting a random value between 1 and 25, it ciphers the text using Caesar's cipher.</p>
-                </div>
+        <div class="image-pair-container">
+            <!-- First Image and Description -->
+            <div class="image-item">
+                <img src="images/HW8/AnalyzeFrequency.png" alt="AnalyzeFrequency" />
+                <p>If the resulting text is not empty, the AnalyzeAndPlotText method is called, which first analyses the
+                    frequency of the various letters within the text.</p>
             </div>
-            
-            Once again the method analyzes the frequency of the encrypted text and then plots the results on the graph, giving this result (in this case with a shift of 11 letters):
-            <img src="images/HW8/plot_example.png" alt="Plot Example"/>
+
+            <!-- Second Image and Description -->
+            <div class="image-item">
+                <img src="images/HW8/CaesarCipher.png" alt="CaesarCipher" />
+                <p>Then, after extracting a random value between 1 and 25, it ciphers the text using Caesar's cipher.
+                </p>
+            </div>
+        </div>
+
+        Once again the method analyzes the frequency of the encrypted text and then plots the results on the graph,
+        giving this result (in this case with a shift of 11 letters):
+        <img src="images/HW8/plot_example.png" alt="Plot Example" width="1200" />
+        <br>
+        We can see that the legend shows the shift used in Caesar's cipher, while next to the ‘Simulate’ button is the
+        Retrieved Shift. This Retrieved Shift is the result of the FindShiftByFrequencyAnalysis method, which does a
+        frequency analysis. In fact, it attempts to guess the shift applied to the plaintext by analysing the most
+        frequent letter within the ciphertext. Once it has found the most frequent letter in the ciphertext, it
+        subtracts from this the number corresponding to the letter ‘E’, the most commonly used letter in the English
+        language, and in this way finds the shift applied.
+        <img src="images/HW8/FindShiftByFrequencyAnalysis.png" alt="FindShiftByFrequencyAnalysis" width="1200" />
+
+        </p>
+
+        <h3>Part 2</h3>
+        <p>
+            The ‘Optional Simulation’ button triggers the BtnSimulate_optional_Click method, which also extracts the
+            text from the web pages and calls the OptionalAnalysis method.
+            <br>
+            <img src="images/HW8/OptionalAnalysis.png" alt="OptionalAnalysis" />
+            This method converts letters to corresponding numbers and encodes the text using the modular exponentiation
+            with the formula E = L^e mod P, where where L is the numeric representation of the letter.
         </p>
     </div>
 </div>
