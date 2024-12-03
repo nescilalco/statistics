@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Homework 9</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">Statistics Blog - Cybersecurity</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="homework1.html">Homework 1</a></li>
+                    <li><a href="homework2.html">Homework 2</a></li>
+                    <li><a href="homework3.html">Homework 3</a></li>
+                    <li><a href="homework4.html">Homework 4</a></li>
+                    <li><a href="homework5.html">Homework 5</a></li>
+                    <li><a href="homework6.html">Homework 6</a></li>
+                    <li><a href="homework7.html">Homework 7</a></li>
+                    <li><a href="homework8.html">Homework 8</a></li>
+                    <li><a href="homework9.html">Homework 9</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <h1 class="large-title">Homework 9</h1>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
+
+                    <h1 class="major">Theory/Research</h1>
+
+                    <h2>Main Properties of the Sampling Mean and Variance</h2>
+
+                    <h3>Sampling Mean (\( \bar{X} \))</h3>
+                    <p>
+                        The sampling mean is the average of \( n \) observations from a population.
+                    </p>
+
+                    <h4>Unbiasedness:</h4>
+                    <p>
+                        The expected value of the sampling mean equals the population mean (\( \mu \)):
+                        \[
+                        E[\bar{X}] = \mu
+                        \]
+                    </p>
+
+                    <h4>Variance:</h4>
+                    <p>
+                        The variance of the sampling mean decreases with the sample size \( n \):
+                        \[
+                        \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+                        \]
+                        where \( \sigma^2 \) is the variance of the population.
+                    </p>
+
+                    <h4>Distribution (Central Limit Theorem):</h4>
+                    <p>
+                        For sufficiently large \( n \), the distribution of \( \bar{X} \) approximates a normal
+                        distribution, even if the population distribution is not normal:
+                        \[
+                        \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+                        \]
+                    </p>
+
+                    <h3>Sampling Variance (\( S^2 \))</h3>
+                    <p>
+                        The sampling variance is an estimate of the population variance based on the sample.
+                    </p>
+
+                    <h4>Unbiasedness:</h4>
+                    <p>
+                        The expected value of the sample variance equals the population variance:
+                        \[
+                        E[S^2] = \sigma^2
+                        \]
+                    </p>
+
+                    <h4>Formula:</h4>
+                    <p>
+                        For a sample of size \( n \), the sample variance is computed as:
+                        \[
+                        S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2
+                        \]
+                        The divisor \( n-1 \) (instead of \( n \)) ensures the unbiasedness of the estimate.
+                    </p>
+
+                    <h3>Relationship Between Sampling Mean and Variance</h3>
+                    <p>
+                        The sampling mean and variance are related, but they measure different aspects of the data:
+                    </p>
+                    <ul>
+                        <li>The sampling mean quantifies the central tendency.</li>
+                        <li>The sampling variance quantifies the spread of the data around the mean.</li>
+                    </ul>
+
+                    <h4>Independence (Normal Populations):</h4>
+                    <p>
+                        For normally distributed populations, the sample mean and sample variance are independent.
+                    </p>
+
+                    <p>
+                        These properties ensure that the sampling mean and variance provide accurate and reliable
+                        estimates of the population parameters when the sample size is sufficiently large.
+                    </p>
+
+                </div>
+                <div class="inner">
+                    <h2>Primitive Root</h2>
+                    <p>
+                        A <strong>primitive root modulo \( p \)</strong>, where \( p \) is a prime number, is an integer
+                        \( g \) such that the powers of \( g \) modulo \( p \) generate all integers coprime to \( p \).
+                        In other words, for every integer \( a \) that is coprime to \( p \), there exists an integer \(
+                        k \) such that:
+                    </p>
+                    <p>
+                        \[
+                        g^k \mod p = a
+                        \]
+                    </p>
+
+                    <h3>Properties</h3>
+                    <ul>
+                        <li>
+                            <strong>Generation of Residues:</strong> If \( g \) is a primitive root modulo \( p \), then
+                            the set of integers \( g^1, g^2, \ldots, g^{p-1} \mod p \) forms a complete set of residues
+                            modulo \( p \), excluding 0.
+                        </li>
+                        <li>
+                            <strong>Order:</strong> The smallest \( k \) such that \( g^k \equiv 1 \mod p \) is called
+                            the <em>order</em> of \( g \). For \( g \) to be a primitive root, its order must equal \(
+                            \phi(p) = p-1 \), where \( \phi \) is Euler's totient function.
+                        </li>
+                        <li>
+                            <strong>Existence:</strong> A prime number \( p \) always has a primitive root modulo \( p
+                            \). In fact, there are exactly \( \phi(p-1) \) primitive roots modulo \( p \).
+                        </li>
+                    </ul>
+
+                    <h3>Example</h3>
+                    <p>For \( p = 7 \):</p>
+                    <ul>
+                        <li>\( g = 3 \) is a primitive root modulo 7.</li>
+                        <li>
+                            The powers of \( g = 3 \) modulo 7 are:
+                            \[
+                            3^1 \mod 7 = 3, \quad 3^2 \mod 7 = 2, \quad 3^3 \mod 7 = 6, \quad 3^4 \mod 7 = 4, \quad 3^5
+                            \mod 7 = 5, \quad 3^6 \mod 7 = 1
+                            \]
+                        </li>
+                        <li>
+                            The sequence \( 3, 2, 6, 4, 5, 1 \) covers all integers coprime to 7. Hence, \( g = 3 \) is
+                            a primitive root modulo 7.
+                        </li>
+                    </ul>
+
+                </div>
+</body>
+</div>
+</div>
+<div class="wrapper">
+    <div class="inner">
+        <h2 class="major">Simulation Exercise</h2>
+        <h3>Part 1</h3>
+        <p>
+            For the first part of the practical part I chose to use the web pages of my previous homeworks.
+            <br>
+            I started by listing the various URLs, then passed them to the <code>GetCombinedTextFromUrls</code> method.
+            <img src="images/HW8/simulate_click.png" alt="Simulate Click" />
+            <br>
+            This method cycles through the list of URLs passed as a input parameter and extracts all the text of the
+            corresponding web pages, concatenating the text.
+            <br>
+            <img src="images/HW8/GetCombinedTextFromUrls.png" alt="GetCombinedTextFromUrls" />
+            <br>
+            If the resulting text is not empty, the <code>AnalyzeAndPlotText</code> method is called.
+            <img src="images/HW8/AnalyzeAndPlotText.png" alt="AnalyzeAndPlotText" />
+
+        <div class="image-pair-container">
+            <!-- First Image and Description -->
+            <div class="image-item">
+                <img src="images/HW8/AnalyzeFrequency.png" alt="AnalyzeFrequency" />
+                <p>Here the <code>AnalyzeFrequency</code> method first analyses the
+                    frequency of the various letters within the text.</p>
+            </div>
+
+            <!-- Second Image and Description -->
+            <div class="image-item">
+                <img src="images/HW8/CaesarCipher.png" alt="CaesarCipher" />
+                <p>Then, after extracting a random value between 1 and 25, it ciphers the text using <strong>Caesar's
+                        cipher</strong>.
+                </p>
+            </div>
+        </div>
+
+        Once again the method analyzes the frequency of the encrypted text and then plots the results on the graph,
+        giving this result (in this case with a shift of 11 letters):
+        <img src="images/HW8/plot_example.png" alt="Plot Example" width="1200" />
+        <br>
+        We can see that the legend shows the shift used in Caesar's cipher, while next to the ‘Simulate’ button is the
+        Retrieved Shift. This Retrieved Shift is the result of the <code>FindShiftByFrequencyAnalysis</code> method,
+        which does a
+        frequency analysis. In fact, it attempts to guess the shift applied to the plaintext by analysing the most
+        frequent letter within the ciphertext. Once it has found the most frequent letter in the ciphertext, it
+        subtracts from this the number corresponding to the letter ‘E’, the most commonly used letter in the English
+        language, and in this way finds the shift applied.
+        <br>
+        <img src="images/HW8/FindShiftByFrequencyAnalysis.png" alt="FindShiftByFrequencyAnalysis" width="1200" />
+        <br>
+        Another method to find the shift would be to <strong>brute force</strong> the ciphertext by trying various
+        shifts until the
+        plaintext makes sense.
+
+        </p>
+
+        <h3>Part 2</h3>
+        <p>
+            The <strong>‘Optional Simulation’</strong> button triggers the <code>BtnSimulate_optional_Click</code>
+            method, which also extracts the
+            text from the web pages and calls the <code>OptionalAnalysis</code> method.
+            <br>
+            <br>
+            <img src="images/HW8/OptionalAnalysis.png" alt="OptionalAnalysis" />
+            <br>
+            This method converts letters to corresponding numbers and encodes the text using the <strong>modular
+                exponentiation</strong>
+            with the formula \[
+            E = L^e \mod P
+            \], where:
+        <ul>
+            <li>\( E \): Encoded value</li>
+            <li>\( L \): Numeric representation of the letter</li>
+            <li>\( e \): Exponent (public key parameter)</li>
+            <li>\( P \): Modulus (prime number)</li>
+        </ul>
+        <br>
+        <br>
+        The <code>TryFindParameters</code> method allows to determine the \( e \) and \( P \) values basing on encoded
+        values, in case these are not known.
+        <br>
+        <br>
+        <img src="images/HW8/TryFindParameters.png" alt="TryFindParameters" />
+        <br>
+        The <code>possibleEs</code> list contains candidate values for \( e = 3 \) and \( e = 65537 \), which are common
+        choices in
+        cryptography, the loops are done for P values in the range of 2 to 100 and for each combination of P and e,
+        the method tries to decode all values in <code>encodedValues</code>. We can see that retrieved values near the
+        "Optional Simulation" button correspond to the values assigned in the <code>ModularExponentiation</code> method
+        and showed in the legend.
+        <br>
+        The method then proceeds to calculate the distribution of encoded values and the <strong>Shannon
+            entropy</strong>, that
+        measures the uncertainty (or randomness) of the distribution, and to plot the results.
+        <br>
+        <img src="images/HW8/OptionalSimulationPlot.png" alt="Optional Simulation Plot" width="1200" />
+        </p>
+    </div>
+    <div class="link-container">
+        <a href="https://drive.google.com/file/d/1d15RGKWQl2VMiIVplsXe3A1LG-Zatoyn/view?usp=sharing"
+            class="underline-link">Link to the zip of the project</a>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Footer 
+    <section id="footer">
+        <div class="inner">
+            <h2 class="major">Get in touch</h2>
+            <p>Se hai domande o dubbi riguardanti il compito, sentiti libero di contattarmi.</p>
+            <form method="post" action="#">
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="4"></textarea>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" /></li>
+                </ul>
+            </form>
+            <ul class="contact">
+                <li class="icon solid fa-home">
+                    Untitled Inc<br />
+                    1234 Somewhere Road Suite #2894<br />
+                    Nashville, TN 00000-0000
+                </li>
+                <li class="icon solid fa-phone">(000) 000-0000</li>
+                <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled Inc. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+    -->
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
