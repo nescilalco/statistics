@@ -153,16 +153,34 @@
             Taking the basis of homework 7, graphs of the averages and variances of the empirical variance were
             calculated and generated for the 1000 samples of 20, 30 and 100 throws of the same rigged die.
             <br>
-            Graphs of the frequency distribution and empirical variance were also generated for the 3 sizes 20, 30 and 100.
+            Graphs of the frequency distribution and empirical variance were also generated for the 3 sizes 20, 30 and
+            100.
             <img src="images/HW9/SimulateEmpiricalDistribution.png" alt="Empirical Distribution" />
             <br>
             This code generates the following graphs:
             <br>
+            <br>
             <img src="images/HW9/simulation1.png" alt="Simulation" />
             <br>
-            If the resulting text is not empty, the <code>AnalyzeAndPlotText</code> method is called.
-            <img src="images/HW8/AnalyzeAndPlotText.png" alt="AnalyzeAndPlotText" />
-
+        </p>
+        <h4>How the variance distribution changes with size</h4>
+        <p>
+            The distribution has a non-uniform probability. The variance of this distribution is determined by the
+            distance between the values of the numbers (1-6) and their mean weighted according to the given probability.
+            <br>
+            <strong>Mean of the distribution of variances:</strong> as the sample size increases, the mean of the
+            variance distribution moves closer to the theoretical variance.
+            <br>
+            <strong>Variance of the variance distribution:</strong> For a rigged die, the variance of the variance
+            distribution will depend on the sample size. The larger the sample, the smaller the variance of the
+            variances will be.
+            <br>
+            With small samples, the variance of samples can be very spread out, so it may vary a lot from one sample to
+            another.
+            <br>
+            With large samples, the distribution of variances will stabilise, and the variance of the samples will be
+            more concentrated around the theoretical value of the variance.
+            
         <div class="image-pair-container">
             <!-- First Image and Description -->
             <div class="image-item">
