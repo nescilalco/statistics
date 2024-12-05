@@ -296,14 +296,19 @@
         <p>
             Taking the basis of homework 7, the mean and variance of the empirical variances were
             calculated for the 1000 samples of 20, 30 and 100 throws of the same rigged die. Two lines graphs are
-            generated
-            showing these means and variances values of the 1000 samples for the three sizes, letting us see how the
+            generated showing these values and their behaviour, letting us see how the
             distributions change increasing the sample size. The frequency
             distribution of empirical variance were also generated for the 3 sizes of 20, 30 and
             100 throws of the rigged die.
+        </p>
+
+        <p>Let's see the code and the generated plots:
             <img src="images/HW9/SimulateEmpiricalDistribution.png" alt="Empirical Distribution" />
             <br>
-            This code generates the following graphs:
+            The ‘Simulate’ button triggers the same function of Hmw7, where what has changed is shown in the code: we
+            generate 1000 samples of sizes 20, 30 and 100 and for each of these we computed the empirical corrected
+            variance and we add it to the <code>empiricalVariances</code> list. Then we compute the means and variances
+            of the increasing list of empirical variances and we plot in the two convergence graphs shown below.
             <br>
             <br>
             <img src="images/HW9/simulation1.png" alt="Simulation" />
