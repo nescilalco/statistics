@@ -354,8 +354,40 @@
             function calculates the
             frequency distribution of its characters, showing how often each character appears. The most
             frequent letters here are "I", "A", and "L", since "I" appears twice, "A" appears twice, etc..
+            <br>
+            This distribution is then used to compute Shannon entropy through the <code>CalculateShannonEntropy</code>
+            function.
             <hr>
-            
+            Next, the method applies a substitution cipher to encrypt the message. The cipher uses a substitutionKey to
+            map each character to another, obscuring the original content.
+            <br>
+            Once encrypted, the frequency distribution of the message is analyzed again. Since encryption disrupts
+            recognizable patterns, the resulting distribution is expected to be less predictable.
+            <hr>
+            <img src="images/HW9/optionalsimulation.png" alt="Optional Simulation" width="1200" />
+            <hr>
+        <h4>Impact of Substitution Cipher on the Distribution</h4>
+        In the original message, the way letters are distributed shows the typical patterns of the language used.
+        For example, in English, some letters like E, T, A, O, and I are used more often than others like Q, X,
+        and Z. This natural distribution gives clues about the language and structure of the message before any
+        encryption is applied.
+        <hr>
+        When the message is encrypted using a substitution cipher, each letter in the original message is replaced
+        with a different letter based on a random key. This means the original letters are swapped for new ones,
+        following a specific mapping decided by the key. For instance, if "E" was the most frequent letter in the
+        original message,
+        after substitution, it might be mapped to a completely different letter (say "X"). Similarly, "X" in the
+        original message could become "M", and so on.
+        <br>
+        The result is that the familiar frequency patterns of the language
+        disappear. Instead, the letters in the encrypted message are spread out more evenly. This uniformity makes it
+        harder to guess the original message just by
+        analyzing the frequencies of the letters.
+        <hr>
+
+        </p>
+
+
         </p>
     </div>
     <div class="link-container">
