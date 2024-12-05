@@ -67,6 +67,8 @@
 
                     <h1 class="major">Theory/Research</h1>
 
+                    <h2>Part 1</h2>
+                    <hr>
                     <h2>Main Properties of the Sampling Mean and Variance</h2>
 
                     <h3>Sampling Mean (\( \bar{X} \))</h3>
@@ -150,7 +152,9 @@
             </div>
             <div class="wrapper">
                 <div class="inner">
-                    <h3>Fundamental Ideas of Main Encryption Methods and Their Statistical Properties</h3>
+                    <h2>Part 2</h2>
+                    <hr>
+                    <h2>Fundamental Ideas of Main Encryption Methods and Their Statistical Properties</h2>
 
                     <p>
                         Encryption methods are broadly categorized into <strong>symmetric-key</strong> and
@@ -159,7 +163,7 @@
 
                     <hr>
 
-                    <h4>Symmetric-Key Encryption</h4>
+                    <h3>Symmetric-Key Encryption</h3>
                     <ul>
                         <li><strong>Definition</strong>: The same key is used for both encryption and decryption.</li>
                         <li><strong>Examples</strong>: AES (Advanced Encryption Standard), DES (Data Encryption
@@ -182,7 +186,7 @@
 
                     <hr>
 
-                    <h4>Asymmetric-Key Encryption</h4>
+                    <h3>Asymmetric-Key Encryption</h3>
                     <ul>
                         <li><strong>Definition</strong>: Uses a pair of keys—a public key for encryption and a private
                             key for decryption.</li>
@@ -205,7 +209,7 @@
 
                     <hr>
 
-                    <h4>Hash-Based Methods</h4>
+                    <h3>Hash-Based Methods</h3>
                     <ul>
                         <li><strong>Definition</strong>: Uses cryptographic hash functions to ensure data integrity and
                             authenticity.</li>
@@ -227,7 +231,7 @@
 
                     <hr>
 
-                    <h4>Stream Ciphers</h4>
+                    <h3>Stream Ciphers</h3>
                     <ul>
                         <li><strong>Definition</strong>: Encrypts plaintext one bit or byte at a time, using a
                             pseudorandom key stream.</li>
@@ -246,7 +250,7 @@
 
                     <hr>
 
-                    <h4>Block Ciphers</h4>
+                    <h3>Block Ciphers</h3>
                     <ul>
                         <li><strong>Definition</strong>: Encrypts data in fixed-size blocks (e.g., 128 bits) using a
                             symmetric key.</li>
@@ -267,7 +271,7 @@
 
                     <hr>
 
-                    <h4>Statistical Security Goals of Encryption Methods</h4>
+                    <h3>Statistical Security Goals of Encryption Methods</h3>
 
                     <ul>
                         <li><strong>Confusion</strong>: Ensures that the relationship between the plaintext, key, and
@@ -305,7 +309,8 @@
         <p>Let's see the code and the generated plots:
             <img src="images/HW9/SimulateEmpiricalDistribution.png" alt="Empirical Distribution" />
             <br>
-            The <strong>‘Simulate’</strong> button triggers the same function of Hwk7, where what has changed is shown in the code: we
+            The <strong>‘Simulate’</strong> button triggers the same function of Hwk7, where what has changed is shown
+            in the code: we
             generate 1000 samples of sizes 20, 30 and 100 and for each of these we computed the empirical corrected
             variance and we add it to the <code>empiricalVariances</code> list. Then we compute the means and variances
             of the increasing list of empirical variances and we plot in the two convergence graphs shown below.
@@ -317,7 +322,8 @@
         <h4>How the variance distribution changes with size</h4>
         <p>
             <strong>Mean of the empirical variances:</strong> as the sample size increases, the mean of the empirical
-            variance moves closer to the theoretical variance (red line in the variance' mean convergence graph). Indeed,
+            variance moves closer to the theoretical variance (red line in the variance' mean convergence graph).
+            Indeed,
             the yellow line shown for the 100 size samples is almost overlapping the theoretical variance red line.
             <br>
             <strong>Variance of the empirical variances:</strong> For a rigged die, the variance of the empirical
@@ -340,42 +346,16 @@
         <h3>Part 2</h3>
         <p>
             The <strong>‘Optional Simulation’</strong> button triggers the <code>BtnSimulate_optional_Click</code>
-            method, which also extracts the text from the web pages and calls the <code>OptionalAnalysis</code> method.
+            method, which calls the <code>SubstitutionCipher</code> method.
+            <hr>
+            <img src="images/HW9/SubstitutionCipher.png" alt="SubstitutionCipher" />
             <br>
-            <br>
-            <img src="images/HW8/OptionalAnalysis.png" alt="OptionalAnalysis" />
-            <br>
-            This method converts letters to corresponding numbers and encodes the text using the <strong>modular
-                exponentiation</strong>
-            with the formula \[
-            E = L^e \mod P
-            \], where:
-        <ul>
-            <li>\( E \): Encoded value</li>
-            <li>\( L \): Numeric representation of the letter</li>
-            <li>\( e \): Exponent (public key parameter)</li>
-            <li>\( P \): Modulus (prime number)</li>
-        </ul>
-        <br>
-        <br>
-        The <code>TryFindParameters</code> method allows to determine the \( e \) and \( P \) values basing on encoded
-        values, in case these are not known.
-        <br>
-        <br>
-        <img src="images/HW8/TryFindParameters.png" alt="TryFindParameters" />
-        <br>
-        The <code>possibleEs</code> list contains candidate values for \( e = 3 \) and \( e = 65537 \), which are common
-        choices in
-        cryptography, the loops are done for P values in the range of 2 to 100 and for each combination of P and e,
-        the method tries to decode all values in <code>encodedValues</code>. We can see that retrieved values near the
-        "Optional Simulation" button correspond to the values assigned in the <code>ModularExponentiation</code> method
-        and showed in the legend.
-        <br>
-        The method then proceeds to calculate the distribution of encoded values and the <strong>Shannon
-            entropy</strong>, that
-        measures the uncertainty (or randomness) of the distribution, and to plot the results.
-        <br>
-        <img src="images/HW8/OptionalSimulationPlot.png" alt="Optional Simulation Plot" width="1200" />
+            The method starts by analyzing the plain message "I AM NESCILALCO". The <code>AnalyzeFrequency</code>
+            function calculates the
+            frequency distribution of its characters, showing how often each character appears. The most
+            frequent letters here are "I", "A", and "L", since "I" appears twice, "A" appears twice, etc..
+            <hr>
+            
         </p>
     </div>
     <div class="link-container">
