@@ -76,26 +76,29 @@
 
                     <p>
                         Its main properties are:
-                        <ul>
-                            <li><strong>Unbiasedness:</strong> The expected value of the sampling mean equals the population mean (\( \mu
-                                \)):
-                                \[
-                                E[\bar{X}] = \mu
-                                \] 
-                            </li>
-                            <li><strong>Variance:</strong> The variance of the sampling mean decreases with the sample size \( n \):
-                                \[
-                                \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
-                                \]
-                                where \( \sigma^2 \) is the variance of the population.
-                            </li>
-                            <li><strong>Distribution (Central Limit Theorem): </strong> For sufficiently large \( n \), the distribution of \( \bar{X} \) approximates a normal
-                                distribution, even if the population distribution is not normal:
-                                \[
-                                \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
-                                \]
-                            </li>
-                        </ul>
+                    <ul>
+                        <li><strong>Unbiasedness:</strong> The expected value of the sampling mean equals the population
+                            mean (\( \mu
+                            \)):
+                            \[
+                            E[\bar{X}] = \mu
+                            \]
+                        </li>
+                        <li><strong>Variance:</strong> The variance of the sampling mean decreases with the sample size
+                            \( n \):
+                            \[
+                            \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+                            \]
+                            where \( \sigma^2 \) is the variance of the population.
+                        </li>
+                        <li><strong>Distribution (Central Limit Theorem): </strong> For sufficiently large \( n \), the
+                            distribution of \( \bar{X} \) approximates a normal
+                            distribution, even if the population distribution is not normal:
+                            \[
+                            \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+                            \]
+                        </li>
+                    </ul>
                     </p>
 
 
@@ -106,23 +109,24 @@
 
                     <p>
                         The main properties are:
-                        <ul>
-                            <li><strong>Unbiasedness:</strong> The expected value of the sample variance equals the population variance:
-                                \[
-                                E[S^2] = \sigma^2
-                                \]
-                                where, for a sample of size \( n \), the sample variance is computed as:
-                                \[
-                                S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2
-                                \]
-                                The divisor \( n-1 \) (instead of \( n \)) ensures the unbiasedness of the estimate.
-                            </li>
-                            <li><strong>Variance: FILL ME</strong>
-                            </li>
-                        </ul>
+                    <ul>
+                        <li><strong>Unbiasedness:</strong> The expected value of the sample variance equals the
+                            population variance:
+                            \[
+                            E[S^2] = \sigma^2
+                            \]
+                            where, for a sample of size \( n \), the sample variance is computed as:
+                            \[
+                            S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2
+                            \]
+                            The divisor \( n-1 \) (instead of \( n \)) ensures the unbiasedness of the estimate.
+                        </li>
+                        <li><strong>Variance: FILL ME</strong>
+                        </li>
+                    </ul>
                     </p>
 
-                    
+
                     <h3>Relationship Between Sampling Mean and Variance</h3>
                     <p>
                         The sampling mean and variance are related, but they measure different aspects of the data:
@@ -290,11 +294,12 @@
         <h2 class="major">Simulation Exercise</h2>
         <h3>Part 1</h3>
         <p>
-            Taking the basis of homework 7, graphs of the averages and variances of the empirical variance were
-            calculated and generated for the 1000 samples of 20, 30 and 100 throws of the same rigged die.
-            <br>
-            Graphs of the frequency distribution and empirical variance were also generated for the 3 sizes 20, 30 and
-            100.
+            Taking the basis of homework 7, the mean and variance of the empirical variances were
+            calculated for the 1000 samples of 20, 30 and 100 throws of the same rigged die. Graphs are also generated
+            showing these means and variances values of the 1000 samples for the three sizes, letting us see how the
+            distributions change increasing the sample size. The frequency
+            distribution of empirical variance were also generated for the 3 sizes of 20, 30 and
+            100 throws of the rigged die.
             <img src="images/HW9/SimulateEmpiricalDistribution.png" alt="Empirical Distribution" />
             <br>
             This code generates the following graphs:
