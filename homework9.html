@@ -126,16 +126,16 @@
                         <li><strong>Variance:</strong>
                             <p>
                                 The variance of the sampling variance quantifies how much the sample variance (
-                                <math>
-                                    S^2
-                                </math>
+                                \(
+                                S^2
+                                \)
                                 ) fluctuates across different samples of the same size, taken from the same population.
                                 For a normal distribution, the variance of the sample variance can be expressed as:
                             </p>
                             <p style="text-align: center;">
-                                <math>
+                                \[
                                     \text{Var}(S^2) = \frac{2\sigma^4}{n-1}
-                                </math>
+                                \]
                             </p>
                         </li>
                     </ul>
@@ -161,6 +161,50 @@
                         estimates of the population parameters when the sample size is sufficiently large.
                     </p>
 
+                    <hr>
+                    <h2>Law of Large Numbers</h2>
+
+                    <p>The <strong>Law of Large Numbers</strong> states that as the size of a sample increases, the
+                        sample mean will converge to the population mean. This fundamental principle underpins much of
+                        statistical inference and probability theory. It highlights how, with enough trials or data
+                        points, randomness diminishes, revealing the underlying trends of a dataset.</p>
+
+                    <h2>Mathematical Expression:</h2>
+                    <p>Let \( X_1, X_2, \dots, X_n \) be a sequence of independent and identically distributed random
+                        variables with mean \( \mu \). The sample mean is:</p>
+
+                    <p>
+                        \( \bar{X}_n = \frac{1}{n} \sum_{i=1}^n X_i \)
+                    </p>
+
+                    <p>According to LLN:</p>
+
+                    <p>
+                        \( \lim_{n \to \infty} \bar{X}_n = \mu \quad \text{(almost surely)}.
+                    </p>
+
+                    <h2>Applications in Cybersecurity</h2>
+                    <p><strong>Anomaly Detection:</strong></p>
+                    <p>In network traffic analysis, LLN is used to identify unusual behavior.
+                        For instance, if the average packet size over time converges to a certain value under normal
+                        operation, sudden deviations may indicate an attack, such as a DDoS (Distributed
+                        Denial-of-Service) attack.</p>
+
+                    <p><strong>Risk Assessment:</strong></p>
+                    <p>In cybersecurity risk modeling, LLN helps assess the likelihood of
+                        certain types of attacks over time. As more data is collected about incidents, the probability
+                        of specific events can be estimated more accurately.</p>
+
+                    <p><strong>Encryption Key Strength Analysis:</strong></p>
+                    <p>LLN can be applied to analyze the strength of cryptographic algorithms.
+                        As more attempts are made to break an encryption key, the observed probability of success (for
+                        brute-force attacks) converges to the theoretical success rate based on key length and algorithm
+                        strength.</p>
+
+                    <p><strong>Machine Learning in Cybersecurity:</strong></p>
+                    <p>LLN supports training robust machine learning models for threat
+                        detection. As more labeled data becomes available, the model's performance on unseen data
+                        approaches its true generalization ability.</p>
                 </div>
             </div>
             <div class="wrapper">
@@ -395,9 +439,9 @@
             with a different letter based on a random key. This means the original letters are swapped for new ones,
             following a specific mapping decided by the key. For instance, if "E" was the most frequent letter in the
             original message,
-            after substitution, it might be mapped to a completely different letter ("X", for example). Similarly, "X"
+            after substitution, it might be mapped to a completely different letter ("B", for example). Similarly, "B"
             in the
-            original message could become "M", and so on.
+            original message could become "S", and so on.
         </p>
         <p>
             The result is that the familiar frequency patterns of the language
@@ -444,7 +488,7 @@
         </p>
     </div>
     <div class="link-container">
-        <a href="https://drive.google.com/file/d/1d15RGKWQl2VMiIVplsXe3A1LG-Zatoyn/view?usp=sharing"
+        <a href="https://drive.google.com/file/d/19M02EZULij1T-pOp2qwS8XZv4eGSKQ7u/view?usp=sharing"
             class="underline-link">Link to the zip of the project</a>
     </div>
 </div>
