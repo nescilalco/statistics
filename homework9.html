@@ -123,7 +123,20 @@
                             \]
                             The divisor \( n-1 \) (instead of \( n \)) ensures the unbiasedness of the estimate.
                         </li>
-                        <li><strong>Variance: FILL ME</strong>
+                        <li><strong>Variance:</strong>
+                            <p>
+                                The variance of the sampling variance quantifies how much the sample variance (
+                                <math>
+                                    S^2
+                                </math>
+                                ) fluctuates across different samples of the same size, taken from the same population.
+                                For a normal distribution, the variance of the sample variance can be expressed as:
+                            </p>
+                            <p style="text-align: center;">
+                                <math>
+                                    \text{Var}(S^2) = \frac{2\sigma^4}{n-1}
+                                </math>
+                            </p>
                         </li>
                     </ul>
                     </p>
@@ -309,7 +322,7 @@
         <p>Let's see the code and the generated plots:
             <img src="images/HW9/SimulateEmpiricalDistribution.png" alt="Empirical Distribution" />
             <br>
-            The <strong>‘Simulate’</strong> button triggers the same function of Hwk7, where what has changed is shown
+            The <strong>"Simulate"</strong> button triggers the same function of Hwk7, where what has changed is shown
             in the code: we
             generate 1000 samples of sizes 20, 30 and 100 and for each of these we computed the empirical corrected
             variance and we add it to the <code>empiricalVariances</code> list. Then we compute the means and variances
@@ -345,7 +358,7 @@
 
         <h3>Part 2</h3>
         <p>
-            The <strong>‘Optional Simulation’</strong> button triggers the <code>BtnSimulate_optional_Click</code>
+            The <strong>"Optional Simulation"</strong> button triggers the <code>BtnSimulate_optional_Click</code>
             method, which calls the <code>SubstitutionCipher</code> method.
             <hr>
             <img src="images/HW9/SubstitutionCipher.png" alt="SubstitutionCipher" />
@@ -360,20 +373,21 @@
         </p>
         <p>
             Next, the method applies a substitution cipher to encrypt the message. The cipher uses a substitutionKey to
-            map each character to another, obscuring the original content.
+            map each character to another (unique), obscuring the original content.
             <br>
-            Once encrypted, the frequency distribution of the message is analyzed again. Since encryption disrupts
-            recognizable patterns, the resulting distribution is expected to be less predictable.
+            Once encrypted, the frequency distribution of the message is analyzed again.
+        </p>
+        <p>
+            Finally, the method reverses the encrypted message and analyses it again.
         </p>
         <img src="images/HW9/optionalsimulation.png" alt="Optional Simulation" width="1200" />
         <br>
-        <img src="images/HW9/console_optionalSimulation.png" alt="Optional Simulation Console"/>
+        <img src="images/HW9/console_optionalSimulation.png" alt="Optional Simulation Console" />
         <hr>
         <h4>Impact of Substitution Cipher on the Distribution</h4>
         <p>
             In the original message, the way letters are distributed shows the typical patterns of the language used.
-            For example, in English, some letters like E, T, A, O, and I are used more often than others like Q, X,
-            and Z. This natural distribution gives clues about the language and structure of the message before any
+            This natural distribution gives clues about the language and structure of the message before any
             encryption is applied.
         </p>
         <p>
@@ -381,18 +395,52 @@
             with a different letter based on a random key. This means the original letters are swapped for new ones,
             following a specific mapping decided by the key. For instance, if "E" was the most frequent letter in the
             original message,
-            after substitution, it might be mapped to a completely different letter (say "X"). Similarly, "X" in the
+            after substitution, it might be mapped to a completely different letter ("X", for example). Similarly, "X"
+            in the
             original message could become "M", and so on.
         </p>
         <p>
             The result is that the familiar frequency patterns of the language
-            disappear. Instead, the letters in the encrypted message are spread out more evenly. This uniformity makes
-            it
-            harder to guess the original message just by
+            disappear. Instead, the frequency of the letters is "randomized", making it
+            harder for an hypothetical attacker to guess the original message just by
             analyzing the frequencies of the letters.
         </p>
 
-
+        <p>
+            We can see in the graph that in the case of a monoalphabetic substitution cipher, frequency distribution and
+            entropy do not change compared to the original text. Each letter of the original message is replaced by a
+            single
+            letter, but the relative frequency of each letter does not change.
+            <br>
+            Therefore, the frequency distribution of each letter in the encrypted message will be identical to that of
+            the original message, simply with an alteration of the letters (for example, the letter "A" could become
+            "X", but the frequency of "A" in the encrypted message will be the same as that of "X" in the original
+            message).
+        </p>
+        <h4>Entropy</h4>
+        <p>
+            The entropy of a message measures the amount of uncertainty or "randomness" in the probabilities of
+            occurrence of symbols in the message. In the case of a monoalphabetic substitution cipher, the entropy of
+            the ciphered message will be the same as that of the original message, because the probabilities of
+            occurrence of the letters do not change.
+        </p>
+        <p>
+            If, on the other hand, I used a polyalphabetic substitution cipher (such as the Vigenère cipher) or a block
+            cipher (such as AES), the effect would be different. The frequency distribution would be altered, as in
+            these ciphers the letters are replaced in a more complex way, taking more variables into account. Entropy
+            would increase, because in a more complex cipher each letter would be less predictable and the frequency
+            distribution would be more uniform.
+        </p>
+        <h4>Reverse</h4>
+        <p>
+            Reversing the encrypted message does not change the letter frequencies or entropy in terms of distribution,
+            as discussed previously. The frequencies and entropy will remain the same, but the order of the letters will
+            be different.
+        </p>
+        <p>
+            Reversing the message does not introduce additional randomness, though it might obscure the structure and
+            patterns related to the position of the letters in the message.
+        </p>
         </p>
     </div>
     <div class="link-container">
