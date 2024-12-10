@@ -1,0 +1,567 @@
+<!DOCTYPE HTML>
+<!--
+	Solid State by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Homework 10</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <noscript>
+        <link rel="stylesheet" href="assets/css/noscript.css" />
+    </noscript>
+
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="is-preload">
+
+    <!-- Page Wrapper -->
+    <div id="page-wrapper">
+
+        <!-- Header -->
+        <header id="header">
+            <h1><a href="index.html">Statistics Blog - Cybersecurity</a></h1>
+            <nav>
+                <a href="#menu">Menu</a>
+            </nav>
+        </header>
+
+        <!-- Menu -->
+        <nav id="menu">
+            <div class="inner">
+                <h2>Menu</h2>
+                <ul class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="homework1.html">Homework 1</a></li>
+                    <li><a href="homework2.html">Homework 2</a></li>
+                    <li><a href="homework3.html">Homework 3</a></li>
+                    <li><a href="homework4.html">Homework 4</a></li>
+                    <li><a href="homework5.html">Homework 5</a></li>
+                    <li><a href="homework6.html">Homework 6</a></li>
+                    <li><a href="homework7.html">Homework 7</a></li>
+                    <li><a href="homework8.html">Homework 8</a></li>
+                    <li><a href="homework9.html">Homework 9</a></li>
+                    <li><a href="homework10.html">Homework 10</a></li>
+                </ul>
+                <a href="#" class="close">Close</a>
+            </div>
+        </nav>
+
+        <!-- Wrapper -->
+        <section id="wrapper">
+            <header>
+                <div class="inner">
+                    <h1 class="large-title">Homework 10</h1>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="wrapper">
+                <div class="inner">
+
+                    <h1 class="major">Theory/Research</h1>
+
+                    <h2>Part 1</h2>
+                    <br>
+                    <h2>Sampling Mean and Variance</h2>
+
+                    <h3>Sampling Mean (\( \bar{X} \))</h3>
+                    <p>
+                        The sampling mean is the average of \( n \) observations from a population.
+                    </p>
+
+                    <p>
+                        Its main properties are:
+                    <ul>
+                        <li><strong>Unbiasedness:</strong> The expected value of the sampling mean equals the population
+                            mean (\( \mu
+                            \)):
+                            \[
+                            E[\bar{X}] = \mu
+                            \]
+                        </li>
+                        <li><strong>Variance:</strong> The variance of the sampling mean decreases with the sample size
+                            \( n \):
+                            \[
+                            \text{Var}(\bar{X}) = \frac{\sigma^2}{n}
+                            \]
+                            where \( \sigma^2 \) is the variance of the population.
+                        </li>
+                        <li><strong>Distribution (Central Limit Theorem): </strong> For sufficiently large \( n \), the
+                            distribution of \( \bar{X} \) approximates a normal
+                            distribution, even if the population distribution is not normal:
+                            \[
+                            \bar{X} \sim N\left(\mu, \frac{\sigma^2}{n}\right)
+                            \]
+                        </li>
+                    </ul>
+                    </p>
+
+
+                    <h3>Sampling Variance (\( S^2 \))</h3>
+                    <p>
+                        The sampling variance is an estimate of the population variance based on the sample.
+                    </p>
+
+                    <p>
+                        The main properties are:
+                    <ul>
+                        <li><strong>Unbiasedness:</strong> The expected value of the sample variance equals the
+                            population variance:
+                            \[
+                            E[S^2] = \sigma^2
+                            \]
+                            where, for a sample of size \( n \), the sample variance is computed as:
+                            \[
+                            S^2 = \frac{1}{n-1} \sum_{i=1}^n (X_i - \bar{X})^2
+                            \]
+                            The divisor \( n-1 \) (instead of \( n \)) ensures the unbiasedness of the estimate.
+                        </li>
+                        <li><strong>Variance:</strong>
+                            <p>
+                                The variance of the sampling variance quantifies how much the sample variance (
+                                \(
+                                S^2
+                                \)
+                                ) fluctuates across different samples of the same size, taken from the same population.
+                                For a normal distribution, the variance of the sample variance can be expressed as:
+                            </p>
+                            <p style="text-align: center;">
+                                \[
+                                \text{Var}(S^2) = \frac{2\sigma^4}{n-1}
+                                \]
+                            </p>
+                        </li>
+                    </ul>
+                    </p>
+
+
+                    <h3>Relationship Between Sampling Mean and Variance</h3>
+                    <p>
+                        The sampling mean and variance are related, but they measure different aspects of the data:
+                    </p>
+                    <ul>
+                        <li>The sampling mean quantifies the central tendency.</li>
+                        <li>The sampling variance quantifies the spread of the data around the mean.</li>
+                    </ul>
+
+                    <h4>Independence (Normal Populations):</h4>
+                    <p>
+                        For normally distributed populations, the sample mean and sample variance are independent.
+                    </p>
+
+                    <p>
+                        These properties ensure that the sampling mean and variance provide accurate and reliable
+                        estimates of the population parameters when the sample size is sufficiently large.
+                    </p>
+
+                    <hr>
+                    <h2>Lebesgue–Stieltjes Integration</h2>
+
+                    <p>The <strong>Lebesgue–Stieltjes integral</strong> generalizes the classical Riemann and Lebesgue
+                        integrals. It is defined with respect to a non-decreasing function \( F(x) \) (called a
+                        <em>Stieltjes measure function</em>).
+                    </p>
+                    <p>The integral of a function \( f(x) \) with respect to \( F(x) \) is denoted as:</p>
+                    <p style="text-align: center;">\[
+                        \int_a^b f(x) \, dF(x)
+                        \]</p>
+                    <p>This integral allows to take into account discontinuities or weighting schemes in the function \(
+                        F(x) \).</p>
+                    <p>A function has discontinuities if it contains jumps, that represent point masses like these:</p>
+                    <p>
+                        \[
+                        F(x) =
+                        \begin{cases}
+                        0 & \text{if } x < 0, \\ 0.5 & \text{if } 0 \leq x < 1, \\ 1 & \text{if } x \geq 1. \end{cases}
+                            \] </p>
+                            <p>
+                                Also, the function \( F(x) \) can assign different weights to different regions of the
+                                integration, so some parts of the domain contribute more to the integral than others.
+                            </p>
+
+                            <h2>Applications to Probability Theory</h2>
+                            <p><strong>Cumulative Distribution Function (CDF):</strong></p>
+                            <p>If \( F(x) \) is the CDF of a random variable \( X \), the expected value of a function
+                                \( g(X) \) is given by:
+                            <p>\[
+                                \mathbb{E}[g(X)] = \int_{-\infty}^\infty g(x) \, dF(x)
+                                \]
+                            </p>
+                    </p>
+
+                    <p><strong>Discrete, Continuous, or Mixed Distributions:</strong></p>
+                    <p>The framework handles distributions that are not purely discrete or continuous. For example, if
+                        \( F(x) \) has jumps, those jumps correspond to point masses in the distribution of \( X \).</p>
+
+                    <p><strong>Change of Variables:</strong></p>
+                    <p>The Stieltjes formulation simplifies transformations involving random variables, as the
+                        integration accounts for the underlying distribution structure.</p>
+
+                    <h2>Applications to Measure Theory</h2>
+                    <p>In Measure Theory, the Lebesgue–Stieltjes integral connects integration with abstract measures
+                    </p>
+
+                    <p><strong>Construction of Measures:</strong></p>
+                    <p>The function \( F(x) \) can generate a measure \( \mu \) such that \( \mu((a, b]) = F(b) - F(a)
+                        \). This measure \( \mu \) allows for the integration of functions over more general spaces.</p>
+
+                    <p><strong>Integration on Non-Uniform Measures:</strong></p>
+                    <p>When dealing with weighted measures or non-uniform distributions, the Lebesgue–Stieltjes integral
+                        is an efficient integral to compute.</p>
+
+                    <p><strong>Extension of the Riemann Integral:</strong></p>
+                    <p>The Lebesgue–Stieltjes integral includes Riemann integration as a special case, extending it to handle functions with respect to arbitrary measures.</p>
+
+
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="inner">
+                    <h2>Part 2</h2>
+                    <hr>
+                    <h2>Fundamental Ideas of Main Encryption Methods and Their Statistical Properties</h2>
+
+                    <p>
+                        Encryption methods are broadly categorized into <strong>symmetric-key</strong> and
+                        <strong>asymmetric-key</strong> systems.
+                    </p>
+
+                    <hr>
+
+                    <h3>Symmetric-Key Encryption</h3>
+                    <ul>
+                        <li><strong>Definition</strong>: The same key is used for both encryption and decryption.</li>
+                        <li><strong>Examples</strong>: AES (Advanced Encryption Standard), DES (Data Encryption
+                            Standard).</li>
+                    </ul>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Efficiency</strong>: Very fast and suitable for large amounts of data.</li>
+                        <li><strong>Key Management</strong>: Requires secure distribution and management of the shared
+                            key.</li>
+                        <li><strong>Statistical Properties</strong>:
+                            <ul>
+                                <li>Ciphertext has a uniform distribution, making it statistically indistinguishable
+                                    from random noise.</li>
+                                <li>Any patterns in the plaintext are completely masked due to strong diffusion and
+                                    confusion mechanisms.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Asymmetric-Key Encryption</h3>
+                    <ul>
+                        <li><strong>Definition</strong>: Uses a pair of keys—a public key for encryption and a private
+                            key for decryption.</li>
+                        <li><strong>Examples</strong>: RSA, ECC (Elliptic Curve Cryptography).</li>
+                    </ul>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Scalability</strong>: Enables secure key exchange without pre-shared secrets.</li>
+                        <li><strong>Performance</strong>: Slower than symmetric methods, typically used for smaller
+                            amounts of data (e.g., key exchange, signatures).</li>
+                        <li><strong>Statistical Properties</strong>:
+                            <ul>
+                                <li>Ciphertext exhibits pseudo-random properties, ensuring it cannot be easily
+                                    correlated to the plaintext.</li>
+                                <li>Relies on hard mathematical problems (e.g., factorization, discrete logarithms) to
+                                    ensure security.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Hash-Based Methods</h3>
+                    <ul>
+                        <li><strong>Definition</strong>: Uses cryptographic hash functions to ensure data integrity and
+                            authenticity.</li>
+                        <li><strong>Examples</strong>: SHA-256, SHA-3.</li>
+                    </ul>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Output</strong>: Produces a fixed-length hash, regardless of input size.</li>
+                        <li><strong>One-Way Function</strong>: Computationally infeasible to reverse the hash or find
+                            two inputs with the same hash (collision resistance).</li>
+                        <li><strong>Statistical Properties</strong>:
+                            <ul>
+                                <li>The output has a uniform distribution, making it ideal for detecting any changes in
+                                    the input data.</li>
+                                <li>Small changes in input produce drastically different hashes (avalanche effect).</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Stream Ciphers</h3>
+                    <ul>
+                        <li><strong>Definition</strong>: Encrypts plaintext one bit or byte at a time, using a
+                            pseudorandom key stream.</li>
+                        <li><strong>Examples</strong>: RC4, ChaCha20.</li>
+                    </ul>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Simplicity</strong>: Suitable for real-time data encryption.</li>
+                        <li><strong>Statistical Properties</strong>:
+                            <ul>
+                                <li>Key stream is designed to be statistically random.</li>
+                                <li>Ensures that ciphertext does not reveal any patterns from the plaintext.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Block Ciphers</h3>
+                    <ul>
+                        <li><strong>Definition</strong>: Encrypts data in fixed-size blocks (e.g., 128 bits) using a
+                            symmetric key.</li>
+                        <li><strong>Examples</strong>: AES, Blowfish.</li>
+                    </ul>
+                    <p><strong>Characteristics:</strong></p>
+                    <ul>
+                        <li><strong>Modes of Operation</strong>: CBC (Cipher Block Chaining), ECB (Electronic Codebook),
+                            etc.</li>
+                        <li><strong>Statistical Properties</strong>:
+                            <ul>
+                                <li>Proper modes (e.g., CBC) ensure ciphertext blocks appear random and uncorrelated.
+                                </li>
+                                <li>Improper use (e.g., ECB mode) can leak patterns from plaintext.</li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    <hr>
+
+                    <h3>Statistical Security Goals of Encryption Methods</h3>
+
+                    <ul>
+                        <li><strong>Confusion</strong>: Ensures that the relationship between the plaintext, key, and
+                            ciphertext is complex.</li>
+                        <li><strong>Diffusion</strong>: Spreads plaintext structure over the entire ciphertext,
+                            minimizing statistical patterns.</li>
+                        <li><strong>Randomness</strong>: The ciphertext should be statistically indistinguishable from
+                            random data.</li>
+                        <li><strong>Entropy</strong>: High entropy ensures ciphertext cannot be predicted or reproduced
+                            without the key.</li>
+                    </ul>
+                    <p>
+                        By adhering to these principles, encryption methods ensure the confidentiality, integrity, and
+                        authenticity of the data, even under statistical analysis.
+                    </p>
+
+                </div>
+            </div>
+</body>
+</div>
+</div>
+<div class="wrapper">
+    <div class="inner">
+        <h2 class="major">Simulation Exercise</h2>
+        <h3>Part 1</h3>
+        <p>
+            Taking the basis of homework 7, the means and variances of the empirical variances were
+            calculated for the 1000 samples of 20, 30 and 100 throws of the same rigged die. Two lines graphs are
+            generated showing these values and their behaviour, letting us see how the
+            distributions change increasing the sample size. The frequency
+            distribution of empirical variance were also generated for the 3 sizes of 20, 30 and
+            100 throws of the rigged die.
+        </p>
+
+        <p>Let's see the code and the generated plots:
+            <img src="images/HW9/SimulateEmpiricalDistribution.png" alt="Empirical Distribution" />
+            <br>
+            The <strong>"Simulate"</strong> button triggers the same function of Hwk7, where what has changed is shown
+            in the code: we
+            generate 1000 samples of sizes 20, 30 and 100 and for each of these we computed the empirical corrected
+            variance and we add it to the <code>empiricalVariances</code> list. Then we compute the means and variances
+            of the increasing list of empirical variances and we plot in the two convergence graphs shown below.
+            <br>
+            <br>
+            <img src="images/HW9/simulation1.png" alt="Simulation" />
+            <br>
+        </p>
+        <h4>How the variance distribution changes with size</h4>
+        <p>
+            <strong>Mean of the empirical variances:</strong> as the sample size increases, the mean of the empirical
+            variance moves closer to the theoretical variance (red line in the variance' mean convergence graph).
+            Indeed,
+            the yellow line shown for the 100 size samples is almost overlapping the theoretical variance red line.
+            <br>
+            <strong>Variance of the empirical variances:</strong> For a rigged die, the variance of the empirical
+            variance will depend on the sample size. The bigger the sample, the smaller the variance of the empirical
+            variances will be.
+            <br>
+            With small samples, the variance of samples can be very spread out, so it may vary a lot from one sample to
+            another.
+            <br>
+            With large samples (eg 100 wrt 20 or 30), the distribution of variances will stabilise, and the distribution
+            of the samples will be more concentrated around the theoretical value of the variance.
+        </p>
+        <p>
+            In summary, as the sample size increases, the distribution of sample variances becomes more concentrated
+            around the theoretical variance.
+            This can be observed in the three graphs below, where the third graph, for \( n = 100 \), shows a narrower
+            and taller bell shape, in correspondence with the theoretical value of the variance.
+        </p>
+
+        <h3>Part 2</h3>
+        <p>
+            The <strong>"Optional Simulation"</strong> button triggers the <code>BtnSimulate_optional_Click</code>
+            method, which calls the <code>SubstitutionCipher</code> method.
+            <hr>
+            <img src="images/HW9/SubstitutionCipher.png" alt="SubstitutionCipher" />
+            <br>
+            The method starts by analyzing the plain message "I AM NESCILALCO". The <code>AnalyzeFrequency</code>
+            function calculates the
+            frequency distribution of its characters, showing how often each character appears. The most
+            frequent letters here are "I", "A", and "L", since "I" appears twice, "A" appears twice, etc..
+            <br>
+            This distribution is then used to compute Shannon entropy through the <code>CalculateShannonEntropy</code>
+            function.
+        </p>
+        <p>
+            Next, the method applies a substitution cipher to encrypt the message. The cipher uses a substitutionKey to
+            map each character to another (unique), obscuring the original content.
+            <br>
+            Once encrypted, the frequency distribution of the message is analyzed again.
+        </p>
+        <p>
+            Finally, the method reverses the encrypted message and analyses it again.
+        </p>
+        <img src="images/HW9/optionalsimulation.png" alt="Optional Simulation" width="1200" />
+        <br>
+        <img src="images/HW9/console_optionalSimulation.png" alt="Optional Simulation Console" />
+        <hr>
+        <h4>Impact of Substitution Cipher on the Distribution</h4>
+        <p>
+            In the original message, the way letters are distributed shows the typical patterns of the language used.
+            This natural distribution gives clues about the language and structure of the message before any
+            encryption is applied.
+        </p>
+        <p>
+            When the message is encrypted using a substitution cipher, each letter in the original message is replaced
+            with a different letter based on a random key. This means the original letters are swapped for new ones,
+            following a specific mapping decided by the key. For instance, if "E" was the most frequent letter in the
+            original message,
+            after substitution, it might be mapped to a completely different letter ("B", for example). Similarly, "B"
+            in the
+            original message could become "S", and so on.
+        </p>
+        <p>
+            The result is that the familiar frequency patterns of the language
+            disappear. Instead, the frequency of the letters is "randomized", making it
+            harder for an hypothetical attacker to guess the original message just by
+            analyzing the frequencies of the letters.
+        </p>
+
+        <p>
+            We can see in the graph that in the case of a monoalphabetic substitution cipher, frequency distribution and
+            entropy do not change compared to the original text. Each letter of the original message is replaced by a
+            single
+            letter, but the relative frequency of each letter does not change.
+            <br>
+            Therefore, the frequency distribution of each letter in the encrypted message will be identical to that of
+            the original message, simply with an alteration of the letters (for example, the letter "A" could become
+            "X", but the frequency of "A" in the encrypted message will be the same as that of "X" in the original
+            message).
+        </p>
+        <h4>Entropy</h4>
+        <p>
+            The entropy of a message measures the amount of uncertainty or "randomness" in the probabilities of
+            occurrence of symbols in the message. In the case of a monoalphabetic substitution cipher, the entropy of
+            the ciphered message will be the same as that of the original message, because the probabilities of
+            occurrence of the letters do not change.
+        </p>
+        <p>
+            If, on the other hand, I used a polyalphabetic substitution cipher (such as the Vigenère cipher) or a block
+            cipher (such as AES), the effect would be different. The frequency distribution would be altered, as in
+            these ciphers the letters are replaced in a more complex way, taking more variables into account. Entropy
+            would increase, because in a more complex cipher each letter would be less predictable and the frequency
+            distribution would be more uniform.
+        </p>
+        <h4>Reverse</h4>
+        <p>
+            Reversing the encrypted message does not change the letter frequencies or entropy in terms of distribution,
+            as discussed previously. The frequencies and entropy will remain the same, but the order of the letters will
+            be different.
+        </p>
+        <p>
+            Reversing the message does not introduce additional randomness, though it might obscure the structure and
+            patterns related to the position of the letters in the message.
+        </p>
+        </p>
+    </div>
+    <div class="link-container">
+        <a href="https://drive.google.com/file/d/19M02EZULij1T-pOp2qwS8XZv4eGSKQ7u/view?usp=sharing"
+            class="underline-link">Link to the zip of the project</a>
+    </div>
+</div>
+</div>
+</section>
+
+<!-- Footer 
+    <section id="footer">
+        <div class="inner">
+            <h2 class="major">Get in touch</h2>
+            <p>Se hai domande o dubbi riguardanti il compito, sentiti libero di contattarmi.</p>
+            <form method="post" action="#">
+                <div class="fields">
+                    <div class="field">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" />
+                    </div>
+                    <div class="field">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" />
+                    </div>
+                    <div class="field">
+                        <label for="message">Message</label>
+                        <textarea name="message" id="message" rows="4"></textarea>
+                    </div>
+                </div>
+                <ul class="actions">
+                    <li><input type="submit" value="Send Message" /></li>
+                </ul>
+            </form>
+            <ul class="contact">
+                <li class="icon solid fa-home">
+                    Untitled Inc<br />
+                    1234 Somewhere Road Suite #2894<br />
+                    Nashville, TN 00000-0000
+                </li>
+                <li class="icon solid fa-phone">(000) 000-0000</li>
+                <li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled Inc. All rights reserved.</li>
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </section>
+    -->
+
+</div>
+
+<!-- Scripts -->
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.scrollex.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
