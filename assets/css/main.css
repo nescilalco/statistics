@@ -4358,6 +4358,7 @@ body.is-preload #banner p {
 	/* Centers the text under the image */
 	flex: 1;
 	/* Ensures that both images take up equal space */
+	max-width: 1000px;
 }
 
 .image-item img {
