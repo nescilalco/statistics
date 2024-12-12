@@ -223,169 +223,30 @@
                         This method handles discrete, continuous, or mixed distributions. For example:
                     </p>
                     <ul>
-                        <li><strong>Probability Mass Concentrations:</strong> If \( F(x) \) has jumps, the integral accounts for point probabilities, as in the case of discrete random variables.</li>
-                        <li><strong>Non-Uniform Distributions:</strong> \( F(x) \) can assign different weights to various regions of the domain, enabling integration in cases where probabilities are unevenly distributed.</li>
+                        <li><strong>Probability Mass Concentrations:</strong> If \( F(x) \) has jumps, the integral
+                            accounts for point probabilities, as in the case of discrete random variables.</li>
+                        <li><strong>Non-Uniform Distributions:</strong> \( F(x) \) can assign different weights to
+                            various regions of the domain, enabling integration in cases where probabilities are
+                            unevenly distributed.</li>
                     </ul>
 
                     <h2>Applications to Measure Theory</h2>
-                    <p>In Measure Theory, the Lebesgue–Stieltjes integral connects integration with abstract measures
+                    <p>
+                        In measure theory, the Lebesgue–Stieltjes integral is the base for integrating with respect to a
+                        measure \( \mu \). Here, \( F(x) \) defines a measure, and the integral adapts accordingly. Some
+                        applications include:
                     </p>
-
-                    <p><strong>Construction of Measures:</strong></p>
-                    <p>The function \( F(x) \) can generate a measure \( \mu \) such that \( \mu((a, b]) = F(b) - F(a)
-                        \). This measure \( \mu \) allows for the integration of functions over more general spaces.</p>
-
-                    <p><strong>Integration on Non-Uniform Measures:</strong></p>
-                    <p>When dealing with weighted measures or non-uniform distributions, the Lebesgue–Stieltjes integral
-                        is an efficient integral to compute.</p>
-
-                    <p><strong>Extension of the Riemann Integral:</strong></p>
-                    <p>The Lebesgue–Stieltjes integral includes Riemann integration as a special case, extending it to
-                        handle functions with respect to arbitrary measures.</p>
-
-
+                    <ul>
+                        <li><strong>Integration with Respect to a Measure:</strong> The integral is used for lengths,
+                            areas, probabilities, or other generalized "sizes."</li>
+                        <li><strong>Radon–Nikodym Derivative:</strong> It is essential for expressing one measure in
+                            terms of another.</li>
+                        <li><strong>Mixed Measures:</strong> The integral handles distributions with both discrete and
+                            continuous parts naturally.</li>
+                    </ul>
                 </div>
             </div>
-            <div class="wrapper">
-                <div class="inner">
-                    <h2>Part 2</h2>
-                    <hr>
-                    <h2>Fundamental Ideas of Main Encryption Methods and Their Statistical Properties</h2>
 
-                    <p>
-                        Encryption methods are broadly categorized into <strong>symmetric-key</strong> and
-                        <strong>asymmetric-key</strong> systems.
-                    </p>
-
-                    <hr>
-
-                    <h3>Symmetric-Key Encryption</h3>
-                    <ul>
-                        <li><strong>Definition</strong>: The same key is used for both encryption and decryption.</li>
-                        <li><strong>Examples</strong>: AES (Advanced Encryption Standard), DES (Data Encryption
-                            Standard).</li>
-                    </ul>
-                    <p><strong>Characteristics:</strong></p>
-                    <ul>
-                        <li><strong>Efficiency</strong>: Very fast and suitable for large amounts of data.</li>
-                        <li><strong>Key Management</strong>: Requires secure distribution and management of the shared
-                            key.</li>
-                        <li><strong>Statistical Properties</strong>:
-                            <ul>
-                                <li>Ciphertext has a uniform distribution, making it statistically indistinguishable
-                                    from random noise.</li>
-                                <li>Any patterns in the plaintext are completely masked due to strong diffusion and
-                                    confusion mechanisms.</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <hr>
-
-                    <h3>Asymmetric-Key Encryption</h3>
-                    <ul>
-                        <li><strong>Definition</strong>: Uses a pair of keys—a public key for encryption and a private
-                            key for decryption.</li>
-                        <li><strong>Examples</strong>: RSA, ECC (Elliptic Curve Cryptography).</li>
-                    </ul>
-                    <p><strong>Characteristics:</strong></p>
-                    <ul>
-                        <li><strong>Scalability</strong>: Enables secure key exchange without pre-shared secrets.</li>
-                        <li><strong>Performance</strong>: Slower than symmetric methods, typically used for smaller
-                            amounts of data (e.g., key exchange, signatures).</li>
-                        <li><strong>Statistical Properties</strong>:
-                            <ul>
-                                <li>Ciphertext exhibits pseudo-random properties, ensuring it cannot be easily
-                                    correlated to the plaintext.</li>
-                                <li>Relies on hard mathematical problems (e.g., factorization, discrete logarithms) to
-                                    ensure security.</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <hr>
-
-                    <h3>Hash-Based Methods</h3>
-                    <ul>
-                        <li><strong>Definition</strong>: Uses cryptographic hash functions to ensure data integrity and
-                            authenticity.</li>
-                        <li><strong>Examples</strong>: SHA-256, SHA-3.</li>
-                    </ul>
-                    <p><strong>Characteristics:</strong></p>
-                    <ul>
-                        <li><strong>Output</strong>: Produces a fixed-length hash, regardless of input size.</li>
-                        <li><strong>One-Way Function</strong>: Computationally infeasible to reverse the hash or find
-                            two inputs with the same hash (collision resistance).</li>
-                        <li><strong>Statistical Properties</strong>:
-                            <ul>
-                                <li>The output has a uniform distribution, making it ideal for detecting any changes in
-                                    the input data.</li>
-                                <li>Small changes in input produce drastically different hashes (avalanche effect).</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <hr>
-
-                    <h3>Stream Ciphers</h3>
-                    <ul>
-                        <li><strong>Definition</strong>: Encrypts plaintext one bit or byte at a time, using a
-                            pseudorandom key stream.</li>
-                        <li><strong>Examples</strong>: RC4, ChaCha20.</li>
-                    </ul>
-                    <p><strong>Characteristics:</strong></p>
-                    <ul>
-                        <li><strong>Simplicity</strong>: Suitable for real-time data encryption.</li>
-                        <li><strong>Statistical Properties</strong>:
-                            <ul>
-                                <li>Key stream is designed to be statistically random.</li>
-                                <li>Ensures that ciphertext does not reveal any patterns from the plaintext.</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <hr>
-
-                    <h3>Block Ciphers</h3>
-                    <ul>
-                        <li><strong>Definition</strong>: Encrypts data in fixed-size blocks (e.g., 128 bits) using a
-                            symmetric key.</li>
-                        <li><strong>Examples</strong>: AES, Blowfish.</li>
-                    </ul>
-                    <p><strong>Characteristics:</strong></p>
-                    <ul>
-                        <li><strong>Modes of Operation</strong>: CBC (Cipher Block Chaining), ECB (Electronic Codebook),
-                            etc.</li>
-                        <li><strong>Statistical Properties</strong>:
-                            <ul>
-                                <li>Proper modes (e.g., CBC) ensure ciphertext blocks appear random and uncorrelated.
-                                </li>
-                                <li>Improper use (e.g., ECB mode) can leak patterns from plaintext.</li>
-                            </ul>
-                        </li>
-                    </ul>
-
-                    <hr>
-
-                    <h3>Statistical Security Goals of Encryption Methods</h3>
-
-                    <ul>
-                        <li><strong>Confusion</strong>: Ensures that the relationship between the plaintext, key, and
-                            ciphertext is complex.</li>
-                        <li><strong>Diffusion</strong>: Spreads plaintext structure over the entire ciphertext,
-                            minimizing statistical patterns.</li>
-                        <li><strong>Randomness</strong>: The ciphertext should be statistically indistinguishable from
-                            random data.</li>
-                        <li><strong>Entropy</strong>: High entropy ensures ciphertext cannot be predicted or reproduced
-                            without the key.</li>
-                    </ul>
-                    <p>
-                        By adhering to these principles, encryption methods ensure the confidentiality, integrity, and
-                        authenticity of the data, even under statistical analysis.
-                    </p>
-
-                </div>
-            </div>
 </body>
 </div>
 </div>
@@ -394,27 +255,36 @@
         <h2 class="major">Simulation Exercise</h2>
         <h3>Part 1</h3>
         <p>
-            Taking the basis of homework 7, the means and variances of the empirical variances were
-            calculated for the 1000 samples of 20, 30 and 100 throws of the same rigged die. Two lines graphs are
-            generated showing these values and their behaviour, letting us see how the
-            distributions change increasing the sample size. The frequency
-            distribution of empirical variance were also generated for the 3 sizes of 20, 30 and
-            100 throws of the rigged die.
+            In this simulation, we compared Riemann and Lebesgue integrals for 4 different continuous functions and for
+            a maximum
+            number of subdivision equal to 500.
+        </p>
+        <p>
+            The two integrations offer distinct ways of calculating and interpreting an area under a curve. Computing a
+            Lebesgue integral numerically can be done by summing contributions of function values over measure-based
+            partitions (e.g., intervals grouped by function values), whereas the Riemann integral approximates the area
+            under a curve by partitioning the domain into small intervals. That's what we did in the following code:
         </p>
 
-        <p>Let's see the code and the generated plots:
-            <img src="images/HW9/SimulateEmpiricalDistribution.png" alt="Empirical Distribution" />
-            <br>
-            The <strong>"Simulate"</strong> button triggers the same function of Hwk7, where what has changed is shown
-            in the code: we
-            generate 1000 samples of sizes 20, 30 and 100 and for each of these we computed the empirical corrected
-            variance and we add it to the <code>empiricalVariances</code> list. Then we compute the means and variances
-            of the increasing list of empirical variances and we plot in the two convergence graphs shown below.
-            <br>
-            <br>
-            <img src="images/HW9/simulation1.png" alt="Simulation" />
-            <br>
+        <img src="images/HW10/SimulateDistribution.png" alt="Simulate Distribution" />
+
+        <p>Selecting one of the 4 factions using the radio button and clicking "Simulate" button, the
+            <code>SimulateDistribution</code> function is triggered. Here we define the integration bounds and the
+            maximum number of subdivisions. The integration bounds chosen is [0,1], as the interval \([0, 1]\) is a
+            standard choice in mathematical analysis, avoids significant
+            divergences, and provides a uniform
+            domain for comparing the four functions.
         </p>
+
+        <p>
+            For each increasing subdivision we compute the Riemann and Lebesgue
+            using the two separate methods.
+        </p>
+
+        <img src="images/HW10/RiemannAndLebesgueIntegrals.png" alt="Riemann and Lebesgue integrals" />
+
+
+
         <h4>How the variance distribution changes with size</h4>
         <p>
             <strong>Mean of the empirical variances:</strong> as the sample size increases, the mean of the empirical
