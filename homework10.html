@@ -298,94 +298,56 @@
 
         <img src="images/HW10/ComputeMeanAndVariance.png" alt="Compute Mean and Variance" />
 
+        <img src="images/HW10/ConsoleMeanVariance.png" alt="Console Mean and Variance" />
 
+        <p>
+            We can see that as \( n \to \infty \), both methods converge to the same value if the function is
+            integrable.
+            <br>
+            Further we can see also that Lebesgue integration may be advantageous when \( f \) has discontinuities or is
+            complex.
+        </p>
 
         <h3>Part 2</h3>
         <p>
             The <strong>"Optional Simulation"</strong> button triggers the <code>BtnSimulate_optional_Click</code>
-            method, which calls the <code>SubstitutionCipher</code> method.
-            <hr>
-            <img src="images/HW9/SubstitutionCipher.png" alt="SubstitutionCipher" />
+            method, which cause the certificates analysis of 3 domains: microsoft.com, github.com and google.com.
             <br>
-            The method starts by analyzing the plain message "I AM NESCILALCO". The <code>AnalyzeFrequency</code>
-            function calculates the
-            frequency distribution of its characters, showing how often each character appears. The most
-            frequent letters here are "I", "A", and "L", since "I" appears twice, "A" appears twice, etc..
+            <img src="images/HW10/AnalyzeCertificates.png" alt="Certificate Analysis" />
             <br>
-            This distribution is then used to compute Shannon entropy through the <code>CalculateShannonEntropy</code>
-            function.
+            For each domain a request is sent to the URL "https://crt.sh/?q={domain}&output=json". This website gives us
+            some informations about the certificates of the specified domain, putting it in a json style file.
         </p>
         <p>
-            Next, the method applies a substitution cipher to encrypt the message. The cipher uses a substitutionKey to
-            map each character to another (unique), obscuring the original content.
+            Once we have retrieved this informations we perform some statistical analysis on them, using the
+            PerformAnalysis method.
             <br>
-            Once encrypted, the frequency distribution of the message is analyzed again.
-        </p>
-        <p>
-            Finally, the method reverses the encrypted message and analyses it again.
-        </p>
-        <img src="images/HW9/optionalsimulation.png" alt="Optional Simulation" width="1200" />
-        <br>
-        <img src="images/HW9/console_optionalSimulation.png" alt="Optional Simulation Console" />
-        <hr>
-        <h4>Impact of Substitution Cipher on the Distribution</h4>
-        <p>
-            In the original message, the way letters are distributed shows the typical patterns of the language used.
-            This natural distribution gives clues about the language and structure of the message before any
-            encryption is applied.
-        </p>
-        <p>
-            When the message is encrypted using a substitution cipher, each letter in the original message is replaced
-            with a different letter based on a random key. This means the original letters are swapped for new ones,
-            following a specific mapping decided by the key. For instance, if "E" was the most frequent letter in the
-            original message,
-            after substitution, it might be mapped to a completely different letter ("B", for example). Similarly, "B"
-            in the
-            original message could become "S", and so on.
-        </p>
-        <p>
-            The result is that the familiar frequency patterns of the language
-            disappear. Instead, the frequency of the letters is "randomized", making it
-            harder for an hypothetical attacker to guess the original message just by
-            analyzing the frequencies of the letters.
+            <img src="images/HW10/PerformAnalysis.png" alt="Perform Analysis" />
+            <br>
+            This method compute the issuer distribution and plots the result in a pie chart. The values are showed in
+            the console.
+            <br>
+            Then it computes the average validity time for each domain. It proceeds to calculate the distribution of
+            expiration and emission time of the certificates for each domain, plotting the results in the timeline graphs.
         </p>
 
-        <p>
-            We can see in the graph that in the case of a monoalphabetic substitution cipher, frequency distribution and
-            entropy do not change compared to the original text. Each letter of the original message is replaced by a
-            single
-            letter, but the relative frequency of each letter does not change.
-            <br>
-            Therefore, the frequency distribution of each letter in the encrypted message will be identical to that of
-            the original message, simply with an alteration of the letters (for example, the letter "A" could become
-            "X", but the frequency of "A" in the encrypted message will be the same as that of "X" in the original
-            message).
-        </p>
-        <h4>Entropy</h4>
-        <p>
-            The entropy of a message measures the amount of uncertainty or "randomness" in the probabilities of
-            occurrence of symbols in the message. In the case of a monoalphabetic substitution cipher, the entropy of
-            the ciphered message will be the same as that of the original message, because the probabilities of
-            occurrence of the letters do not change.
-        </p>
-        <p>
-            If, on the other hand, I used a polyalphabetic substitution cipher (such as the Vigenère cipher) or a block
-            cipher (such as AES), the effect would be different. The frequency distribution would be altered, as in
-            these ciphers the letters are replaced in a more complex way, taking more variables into account. Entropy
-            would increase, because in a more complex cipher each letter would be less predictable and the frequency
-            distribution would be more uniform.
-        </p>
-        <h4>Reverse</h4>
-        <p>
-            Reversing the encrypted message does not change the letter frequencies or entropy in terms of distribution,
-            as discussed previously. The frequencies and entropy will remain the same, but the order of the letters will
-            be different.
-        </p>
-        <p>
-            Reversing the message does not introduce additional randomness, though it might obscure the structure and
-            patterns related to the position of the letters in the message.
-        </p>
-        </p>
+        <img src="images/HW10/microsoftAnalysis.png" alt="Microsoft Analysis" />
+        <br>
+        <img src="images/HW10/microsoftDataAnalysis.png" alt="Microsoft Data Analysis" />
+
+        <br>
+        <br>
+        <img src="images/HW10/googleAnalysis.png" alt="Google Analysis" />
+        <br>
+        <img src="images/HW10/googleDataAnalysis.png" alt="Google Data Analysis" />
+
+        <br>
+        <br>
+        <img src="images/HW10/githubAnalysis.png" alt="Github Analysis" />
+        <br>
+        <img src="images/HW10/githubDataAnalysis.png" alt="Github Data Analysis" />
+
+        
     </div>
     <div class="link-container">
         <a href="https://drive.google.com/file/d/19M02EZULij1T-pOp2qwS8XZv4eGSKQ7u/view?usp=sharing"
