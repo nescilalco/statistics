@@ -4372,6 +4372,7 @@ body.is-preload #banner p {
 	/* Crop the image to fit the container without distortion */
 	margin-bottom: 10px;
 	/* Adds space between the image and the text */
+	max-width: 1000px;
 }
 
 @media (max-width: 600px) {
