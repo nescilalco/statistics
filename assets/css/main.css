@@ -4362,8 +4362,6 @@ body.is-preload #banner p {
 }
 
 .image-item img {
-	max-width: 100%;
-	/* Make image responsive */
 	width: 100%;
 	/* Make image fill the width of its container */
 	height: auto;
