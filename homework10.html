@@ -268,7 +268,7 @@
 
         <img src="images/HW10/SimulateDistribution.png" alt="Simulate Distribution" />
 
-        <p>Selecting one of the 4 factions using the radio button and clicking "Simulate" button, the
+        <p>Selecting one of the 4 functions using the radio button and clicking "Simulate" button, the
             <code>SimulateDistribution</code> function is triggered. Here we define the integration bounds and the
             maximum number of subdivisions. The integration bounds chosen is [0,1], as the interval \([0, 1]\) is a
             standard choice in mathematical analysis, avoids significant
@@ -313,14 +313,15 @@
             <br>
             <img src="images/HW10/AnalyzeCertificates.png" alt="Certificate Analysis" />
             <br>
-            For each domain a request is sent to the URL "https://crt.sh/?q={domain}&output=json". This website gives us
+            For each domain a request is sent to the URL <code>"https://crt.sh/?q={domain}&output=json"</code>. This
+            website gives us
             some informations about the certificates of the specified domain, putting it in a json style file.
         </p>
         <p>
             Once we have retrieved this informations we perform some statistical analysis on them, using the
-            PerformAnalysis method.
+            <code>PerformAnalysis</code> method.
             <br>
-            <img src="images/HW10/PerformAnalysis.png" alt="Perform Analysis" />
+            <img src="images/HW10/PerformAnalysis.png" alt="Perform Analysis" width="1000" />
             <br>
             This method compute the issuer distribution and plots the result in a pie chart. The values are showed in
             the console.
@@ -330,32 +331,63 @@
             graphs.
         </p>
 
-        <img src="images/HW10/microsoftAnalysis.png" alt="Microsoft Analysis" />
+        <h3>microsoft.com</h3>
         <br>
-        <img src="images/HW10/microsoftDataAnalysis.png" alt="Microsoft Data Analysis" />
+        <br>
+        <img src="images/HW10/microsoftAnalysis.png" alt="Microsoft Analysis" width="1000" />
+        <br>
+        <img src="images/HW10/microsoftDataAnalysis.png" alt="Microsoft Data Analysis" width="1000" />
 
         <br>
         <br>
-        <img src="images/HW10/googleAnalysis.png" alt="Google Analysis" />
-        <br>
-        <img src="images/HW10/googleDataAnalysis.png" alt="Google Data Analysis" />
-
+        <h3>google.com</h3>
         <br>
         <br>
-        <img src="images/HW10/githubAnalysis.png" alt="Github Analysis" />
+        <img src="images/HW10/googleAnalysis.png" alt="Google Analysis" width="1000" />
         <br>
-        <img src="images/HW10/githubDataAnalysis.png" alt="Github Data Analysis" />
+        <img src="images/HW10/googleDataAnalysis.png" alt="Google Data Analysis" width="1000" />
+        <br>
+        <br>
+        <h3>github.com</h3>
+        <br>
+        <br>
+        <img src="images/HW10/githubAnalysis.png" alt="Github Analysis" width="1000" />
+        <br>
+        <img src="images/HW10/githubDataAnalysis.png" alt="Github Data Analysis" width="1000" />
 
         <p>
-            For the timeline graphs that only show data up to 2014, this is due to the fact that the site places a
+            The timeline graphs allow us to observe peaks in certificate issues and their expiration dates. For each
+            date, the number of issued and expired/expiring certificates are shown. 
+            <br>
+            For the timeline graphs that only
+            show data up to 2014, this is due to the fact that the site places a
             limit on the number of results shown and truncates the display of them. To get a result with more recent
             dates and
-            unexpired certificates, one could modify the query by adding ‘&exclude=expired’.
+            unexpired certificates, we could modify the query by adding <code>‘&exclude=expired’</code>.
+            <br>
+            These are just some of the possible analysis we can do with the retrieved informations about the certificates. Other possible analysis could be:
+            <ul>
+                <li><strong>Key Length Analysis:</strong> Visual representation of the distribution of key lengths in certificates.</li>
+                
+                <li><strong>Certificate Revocation Rates:</strong> Percentage of certificates revoked compared to those issued, useful for assessing security.</li>
+                
+                <li><strong>Frequency of Significant Digits in Serial Numbers:</strong> Checks for any numerical bias in serial numbers, useful for identifying non-standard implementations.</li>
+                
+                <li><strong>Hashing Algorithm Analysis:</strong> Which hashing algorithms (e.g., SHA-256, SHA-1) are used most frequently.</li>
+                
+                <li><strong>Temporal Distribution of Key Lengths:</strong> How key lengths have changed over time, highlighting the adoption of more secure standards.</li>
+        
+                <li><strong>Compliance with Standards:</strong> The number of certificates using configurations that comply with current standards (e.g., avoiding SHA-1, having keys of at least 2048 bits).</li>
+        
+                <li><strong>Wildcard Certificate Distribution:</strong> The number of wildcard certificates (*.<domain>) compared to specific certificates.</li>
+        
+                <li><strong>Issuer Emission Speed:</strong> How quickly a given issuer releases new certificates.</li>
+            </ul> 
         </p>
 
     </div>
     <div class="link-container">
-        <a href="https://drive.google.com/file/d/19M02EZULij1T-pOp2qwS8XZv4eGSKQ7u/view?usp=sharing"
+        <a href="https://drive.google.com/file/d/1C3R1hgIhV1rpuZvPDPgvhv0hPOwwhzJK/view?usp=sharing"
             class="underline-link">Link to the zip of the project</a>
     </div>
 </div>
