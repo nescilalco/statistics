@@ -164,17 +164,25 @@
 
                     <hr>
                     <h2>Lebesgue–Stieltjes Integration</h2>
-
-                    <p>The <strong>Lebesgue–Stieltjes integral</strong> generalizes the classical Riemann and Lebesgue
-                        integrals. It is defined with respect to a non-decreasing function \( F(x) \) (called a
-                        <em>Stieltjes measure function</em>).
+                    <p>
+                        The <strong>Lebesgue–Stieltjes integral</strong> generalizes the classical Riemann integral to
+                        handle cases where
+                        the integration process is influenced by a non-decreasing function \( F(x) \).
+                        This integration method is useful when \( F(x) \) has jumps,
+                        discontinuities,
+                        or a non-uniform growth.
                     </p>
-                    <p>The integral of a function \( f(x) \) with respect to \( F(x) \) is denoted as:</p>
-                    <p style="text-align: center;">\[
-                        \int_a^b f(x) \, dF(x)
-                        \]</p>
-                    <p>This integral allows to take into account discontinuities or weighting schemes in the function \(
-                        F(x) \).</p>
+
+                    <p>
+                        Unlike the Riemann integral, which divides the domain into equal intervals, the
+                        Lebesgue–Stieltjes integral
+                        considers the cumulative changes in \( F(x) \). These changes may include discrete jumps, which
+                        correspond to
+                        concentrated measures. The function \( F(x) \) determines how much "weight" each part of the
+                        domain contributes
+                        to the integral.
+                    </p>
+
                     <p>A function has discontinuities if it contains jumps, that represent point masses like these:</p>
                     <p>
                         \[
@@ -187,23 +195,37 @@
                                 integration, so some parts of the domain contribute more to the integral than others.
                             </p>
 
-                            <h2>Applications to Probability Theory</h2>
-                            <p><strong>Cumulative Distribution Function (CDF):</strong></p>
-                            <p>If \( F(x) \) is the CDF of a random variable \( X \), the expected value of a function
-                                \( g(X) \) is given by:
-                            <p>\[
-                                \mathbb{E}[g(X)] = \int_{-\infty}^\infty g(x) \, dF(x)
-                                \]
-                            </p>
+                    </p>
+                    <p>The integral of a function \( f(x) \) with respect to \( F(x) \) is denoted as:</p>
+                    <p style="text-align: center;">\[
+                        \int_a^b f(x) \, dF(x)
+                        \]</p>
+                    <p>
+                        where \( dF(x) \) incorporates information about the changes in \( F(x) \).
                     </p>
 
-                    <p><strong>Discrete, Continuous, or Mixed Distributions:</strong></p>
-                    <p>The framework handles distributions that are not purely discrete or continuous. For example, if
-                        \( F(x) \) has jumps, those jumps correspond to point masses in the distribution of \( X \).</p>
 
-                    <p><strong>Change of Variables:</strong></p>
-                    <p>The Stieltjes formulation simplifies transformations involving random variables, as the
-                        integration accounts for the underlying distribution structure.</p>
+                    <h2>Applications to Probability Theory</h2>
+                    <p>
+                        In probability theory, \( F(x) \) often represents a cumulative distribution function (CDF). The
+                        Lebesgue–Stieltjes
+                        integral is used to calculate expectations, variances, and other moments for random variables.
+                        For a random
+                        variable \( X \) with a CDF \( F(x) \), the expectation is given by:
+                    </p>
+                    <p>
+                        \[
+                        \mathbb{E}[X] = \int_{-\infty}^\infty x \, dF(x).
+                        \]
+                    </p>
+
+                    <p>
+                        This method handles discrete, continuous, or mixed distributions. For example:
+                    </p>
+                    <ul>
+                        <li><strong>Probability Mass Concentrations:</strong> If \( F(x) \) has jumps, the integral accounts for point probabilities, as in the case of discrete random variables.</li>
+                        <li><strong>Non-Uniform Distributions:</strong> \( F(x) \) can assign different weights to various regions of the domain, enabling integration in cases where probabilities are unevenly distributed.</li>
+                    </ul>
 
                     <h2>Applications to Measure Theory</h2>
                     <p>In Measure Theory, the Lebesgue–Stieltjes integral connects integration with abstract measures
@@ -218,7 +240,8 @@
                         is an efficient integral to compute.</p>
 
                     <p><strong>Extension of the Riemann Integral:</strong></p>
-                    <p>The Lebesgue–Stieltjes integral includes Riemann integration as a special case, extending it to handle functions with respect to arbitrary measures.</p>
+                    <p>The Lebesgue–Stieltjes integral includes Riemann integration as a special case, extending it to
+                        handle functions with respect to arbitrary measures.</p>
 
 
                 </div>
